@@ -1,7 +1,7 @@
 # Личный проект «Девайс»
 
 * Студент: [Artem Prokopiev](https://up.htmlacademy.ru/htmlcss/23/user/81345).
-* Наставник: `Неизвестно`.
+* Наставник: [Сергей Жданов](https://htmlacademy.ru/profile/id162307).
 
 ---
 
