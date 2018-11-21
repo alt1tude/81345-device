@@ -4,53 +4,112 @@
     <meta charset="utf-8">
     <title>HTML Academy: Девайс</title>
   </head>
-  <body>
-     <header class="main-header">
-     	<nav class="main-navigation">
-     	  <a class="main-header-logo" href="#">
+  <body>  	
+    <header class="main-header">     	
+     	<a class="main-header-logo" href="#">
      	   <img src="#"> width="" height="" alt="Логотип интернет-магазина Девайс">
-     	  </a>
-     	  <!-- В стайлгаде при клике, превращается в поле с кнопкой "Найти".
-     	  Не сталкивался с разметкой "Поиска по сайту". Покак сделал ссылкой. -->
-     	  <ul class="site-finder">
-     		 <li><a href="#">Поиск по сайту</a></li>
-     	  </ul>	
-     	  <ul class="catalog-menu">
-     	  	<li><a href="#">Каталог товаров</a></li>
-             <!--Тут не понял. Выпадающая менюшка в стайлгайде. Это вложенный список который стилизуется псевдоклассами? -->
-     	  </ul>    
-          <!-- Код для разметки "Войти" идентичен коду разметки "Вход" для барбершопа. -->
-          <ul class="user-navigation">
-            <li class="login-link">Войти</li>
-          </ul>
-          <!-- Повторяется в футере. Попытался сделать по логике. Это похоже на список. Судя по разметки, у меня получилось что сравнивать товары и кидать их в корзину могут только авторизированные юзеры.  Можно/нужно делать по-другому?. -->
-          <ul class="user-option">
-            <li class="user-compare">Сравнить</li>
-            <li class="user-order">Корзина</li>
-          </ul>
-          <!-- Повторяется в футере. Попытался сделать по логике и это тоже похоже на список в разметке. Как я понял, клик по "Гарантии" должен вести на страницу с гарантией, а по "Доставке" и "Контакты" на форму и попАП с картой, которые еще не доделали. Или их тоже надо в ссылки оборачивать? -->
-          <ul class="site-navigation">
-          	<li class="delivery">Доставка</li>
-          	<li class="warranty"><a href="#">Гарантия</a></li>
-            <li class="contacts">Контакты</li>
+     	</a>
+     	 <!-- Тут будет форма + инпут с кнопкой     		
+     	 <input type="text" name="site-finder Поиск по сайту" value="#"> -->
+     	<ul class="menu-catalog">
+     	   <li><a href="#">Каталог товаров</a></li>
+     	   <!-- Тут будет вложенный список
+            <ul class="menu-list">
+               <li><a href="#">Виртуальная реальность</a></li>
+               <li><a href="#">Моноподы для селфи</a></li>
+               <li><a href="#">Экшн-камеры</a></li>
+               <li><a href="#">Фитнес-браслеты</a></li>
+               <li><a href="#">Умные часы</a></li>
+               <li><a href="#">Квадрокоптеры</a></li>	
+            </ul> -->
+     	</ul>    
+        <ul class="user-navigation">       
+           <li class="login-link"><a href="#">Войти</a></li>
+           <li class="user-compare"><a href="#">Сравнить</a></li>
+           <li class="user-order"><a href="#">Корзина</a></li>
+        </ul>
+        <nav class="main-navigation">
+        <ul class="site-navigation">
+           <li class="delivery"><a href="#">Доставка</a></li>
+           <li class="warranty"><a href="#">Гарантия</a></li>
+           <li class="contacts"><a href="#">Контакты</a></li>
         </ul>
      	</nav>
-     </header>
+    </header>
      
-     <main class="container">     	
-       
-      <!--  В процессе -->
+    <main class="container">
+       <h1 class="visually-hidden">Интернет-магазин «Device»</h1>
 
-     </main>
+       <!-- Тут будет основный блок с наполнением -->
 
-     <footer class="main-footer">
+       <section class="about-us">
+         <h2>О нас</h2>
+         <p>Огромный выбор гаджетов не оставит равнодушным гика, который есть в каждом из нас.</p>
+         <p>Мы можем доставить ваш товар в самые отдаленные точки России! DEVICE работает со многими транспортными компаниями:</p>
+         <ul class="transport-partnership">
+       	   <li><a href="#">Деловые линии</a></li>
+       	   <li><a href="">Автотрейдинг</a></li>
+       	   <li><a href="">ЖелДорЭкспедиция</a></li>
+         </ul>
+         <a class"button" href="#">ПОДРОБНЕЕ О НАС</a>       	
+       </section>
 
-     	<!-- В процессе -->
-     	<ul class="user-navigation">
-          <li class="login-link">Войти</li>
+       <section class="contacts">
+         <h2>Контакты</h2>
+         <p>Вы можете забрать товар сами, заехав в наш офис. Заодно, вы сможете проверить работоспособность покупки. Всякое бывает.</p>
+        <!-- Тут картинка вырезанной карты, по клику которой открывается попАП полноразмерной гугловской карты -->
+        <a href="§">
+         <img src="#" alt="Как до нас добраться">
+        </a>
+        <a class="button" href="#">НАПИШИТЕ НАМ</a>        
+       </section>
+    </main>
+
+    <footer class="main-footer">
+        <a class="main-footer-logo" href="#">
+     	   <img src="#"> width="" height="" alt="Логотип интернет-магазина Девайс">
+     	</a>
+     	<p>г. Москва, ул. Строителей, 15</p>
+     	<ul class="site-navigation">
+           <li class="delivery"><a href="#">Доставка</a></li>
+           <li class="warranty"><a href="#">Гарантия</a></li>
+           <li class="contacts"><a href="#">Контакты</a></li>           
         </ul>
+        <ul>
+          <li><a class="social-button" href="#">Фейсбук</a></li>
+          <li><a class="social-button" href="#">Инстаграм</a></li>
+          <li><a class="social-button" href="#">Твиттер</a></li>
+        </ul>
+        <ul class="user-navigation">       
+           <li class="login-link"><a href="#">Войти</a></li>
+           <li class="user-compare"><a href="#">Сравнить</a></li>
+           <li class="user-order"><a href="#">Корзина</a></li>
+        </ul>
+        <p>Тел.: +7(495)495-95-95</p>
+        <a href="https://htmlacademy.ru/intensive/htmlcss">
+        <img src="#" alt="Разработано: HTML Academy">
+        </a>  
+    </footer>
 
-     </footer>
+    <section class="modal write-us">
+        <h2 class="visually-hidden">Написать нам</h2>
+    	<!-- Тут идет форма, пока загатовка
+    	<form action="#" method="post">
+    	<label for="name-field">Ваше имя:</label>
+    	<input type="text" name="login" id="name-field">
+        <label for="email-field">Ваш e-mail:</label>
+        <input type="text" name="email" id="email-field">
+        <p>Текст письма:</p>
+        <textarea name="text-email" id="email-field" cols="30" rows="10">В свободной форме</textarea>
+        <input type="submit" value="Отправить">
+    	</form> -->      
+        <span class="modal-close">x</span>
+    </section>
+
+    <section class="modal modal-map">
+        <h2 class="visually-hidden">Как до нас добраться</h2>
+        <!-- Тут будет форма попАПа с картой -->
+    </section>
 
   </body>
 </html>
