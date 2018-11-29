@@ -14,7 +14,7 @@
             <img src="img/search.svg" class="search" width="16" height="16" alt="Поиск по сайту">               
             <input type="text" name="search" id="search-field" placeholder="Поиск по сайту">
           </label>
-          <input type="submit" value="Найти">
+          <input class="button" type="submit" value="Найти">
         </form>
      	<ul class="menu-catalog">
      	  <li><a href="#">Каталог товаров<img src="img/plus.png" width="16" height="16" alt="Каталог товаров"></a></li>
@@ -61,21 +61,64 @@
           <fieldset>
             <legend>Цвет:</legend>
               <ul>
-                <li class="filter-option"></li>
-                <li class="filter-option"></li>
-                <li class="filter-option"></li>
-                <li class="filter-option"></li>
-                <li class="filter-option"></li>
+                <li class="filter-option">
+                <label> 
+                  <img src="img/checkbox-on.svg" alt="Черный">  
+                    <input class="visually-hiden filter-input filte-input-checkbox " type="checkbox" name="black" checked>  
+                    Черный
+                </label>   
+                </li>
+                <li class="filter-option">
+                <label>  
+                  <img src="img/checkbox-off.svg" alt="Белый">  
+                    <input class="visually-hiden filter-input filte-input-checkbox " type="checkbox" name="white">
+                    Белый
+                </label>  
+                </li>
+                <li class="filter-option">
+                <label>
+                  <img src="img/checkbox-on.svg" alt="Синий"> 
+                    <input class="visually-hiden filter-input filte-input-checkbox " type="checkbox" name="blue" checked>
+                    Синий
+                </label>  
+                </li>
+                <li class="filter-option">
+                <label>
+                  <img src="img/checkbox-on.svg" alt="Красный">  
+                    <input class="visually-hiden filter-input filte-input-checkbox " type="checkbox" name="red" checked>
+                    Красный
+                </label>   
+                </li>
+                <li class="filter-option">
+                <label>  
+                  <img src="img/checkbox-off.svg" alt="Красный">  
+                    <input class="visually-hiden filter-input filte-input-checkbox " type="checkbox" name="pink">  
+                    Розовый
+                </label> 
+                </li>
               </ul>  
               
             </fieldset>
             <fieldset>
               <legend>Bluetooth</legend>  
                 <ul>
-                  <li class="filter-option"></li>
-                  <li class="filter-option"></li>
+                  <li class="filter-option">
+                  <label>  
+                    <img src="img/radio-on.svg" alt="Блютуз есть">  
+                      <input class="visually-hidden filter-input filter-input-radio" type="radio" name="product-group" value="bluetooth-yes" checked>  
+                      Есть
+                  </label>  
+                  </li>
+                  <li class="filter-option">
+                  <label>  
+                    <img src="img/radio-off.svg" alt="Блютуза нет">  
+                      <input class="visually-hidden filter-input filter-input-radio" type="radio" name="product-group" value="bluetooth-no">                    
+                      Нет
+                  </label>  
+                  </li>
                 </ul>                         
-            </fieldset>          
+            </fieldset>
+            <input class="button filter-button" type="submit" value="ПОКАЗАТЬ">          
         </form>
       </section>
 
