@@ -31,14 +31,14 @@
 	font-weight: lighter;
 }
 
-body: {
+body {
   margin: 0;
 
   font-family: "Open Sans Light", Arial, sans-serif;
-  font-size: 25px;
+  font-size: 15px;
   line-height: 30px;
-  background-color: black;	
-}
-ul {
- list-style: none;
+  font-weight: 400;
+  color: #ffffff;
+  text-transform: uppercase;
+  
 }
