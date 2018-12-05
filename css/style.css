@@ -38,7 +38,173 @@ body {
   font-size: 15px;
   line-height: 30px;
   font-weight: 400;
-  color: #000000;
-  background-color: #ffffff;   
+  color: rgba(0, 0, 0);
+  background-color: rgb(255, 255, 255);   
 }
 
+header {
+  background-color: rgb(247, 226, 150);
+}
+
+.header-logo {
+  color: rgb(0, 0, 0);
+
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;	
+  font-size: 48px;
+  line-height: 48px;  
+}
+
+.header-logo:hover,
+.header-logo:focus {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.header-logo:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);	
+}
+
+.search-form input[type="text"] {
+ background-color: transparent;	
+ border: none; 
+}
+/*Для Chrome работает без ::-webkit-input-placeholder. На Opera/Safari не проверялось*/
+.search-form input[type="text"]::placeholder { 
+  color: rgba(0, 0, 0, 0.3); 	
+}
+
+.search-form input[type="text"]:hover::placeholder {
+ color: rgba(0, 0, 0, 0.6);
+}
+/* Загуглил для IE 10+ */
+.search-form :-ms-input-placeholder { 
+ color: rgba(0, 0, 0, 0.3);
+}
+
+.search-form :-ms-input-placeholder:hover {
+  color: rgba(0, 0, 0, 0.6);	
+}
+/* Firefox 18- */
+.search-form :-moz-placeholder {
+  color: rgba(0, 0, 0, 0.3);	
+}
+
+.search-form :-moz-placeholder:hover {
+ color: rgba(0, 0, 0, 0.6);	
+}
+/* Firefox 19+ */
+.search-form ::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.3);	
+}
+
+.search-form ::-moz-placeholder:hover {
+  color: rgba(0, 0, 0, 0.6);	
+}
+
+.search-form input[type="submit"] {
+  font: inherit; 
+  color: rgb(0, 0, 0);
+  text-align: center;
+  vertical-align: middle;
+  background-color: transparent;
+  border: 2px solid rgb(0, 0, 0);	
+}
+
+.search-form input[type="submit"]:hover,
+.search-form input[type="submit"]:focus {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0); 	
+}
+
+.search-form input[type="submit"]:active {
+  color: rgba(255, 255, 255, 0.3);
+  background-color: rgb(0, 0, 0);
+}
+
+/*.menu-title */
+.menu-catalog > li > a {	
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em; 
+}
+
+.menu-catalog,
+.menu-list,
+.user-navigation,
+.site-navigation {
+  list-style: none;	
+}
+
+.menu-catalog a:hover,
+.menu-catalog a:focus,
+.menu-list a:hover,
+.menu-list a:focus,
+.user-navigation a:hover,
+.user-navigation a:focus,
+.site-navigation a:hover,
+.site-navigation a:focus {
+  color: rgba(0, 0, 0, 0.6);  	
+}
+
+.menu-catalog a:active,
+.menu-list a:active,
+.user-navigation a:active,
+.site-navigation a:active {
+  color: rgba(0, 0, 0, 0.3);	
+}
+
+.user-navigation {
+  color: rgb(0, 0, 0);
+  
+  font-size: 15px;
+  line-height: 30px;   	
+}
+
+.site-navigation {
+  color: rgb(0, 0, 0);
+
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.about-us h2,
+.contacts h2 {
+  color: rgb(0, 0, 0);
+
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;	
+  font-size: 47px;
+  line-height: 48px;
+}
+
+.transport-partnership {
+  color: rgb(0, 0, 0);
+
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  list-style-type: none;
+  font-size: 16px;
+  line-height: 40px;	
+}
+.button {
+  color: rgb(0, 0, 0);
+
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+
+/*Отсюда пошел футер*/
+footer {
+  background-color: #464646;
+}
