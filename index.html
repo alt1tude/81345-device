@@ -15,10 +15,10 @@
      	  <label>                 		
      	    <input type="text" name="search" placeholder="Поиск по сайту">
      	  </label>
-     	  <input class="button" type="submit" value="Найти">
+     	  <input class="form-button" type="submit" value="Найти">
         </form> 
       <ul class="menu-catalog">
-        <li class="menu-title"><a href="#">Каталог товаров</a></li>
+        <li class="menu-title"><a href="catalog.html">Каталог товаров</a></li>
      	  <ul class="menu-list">
             <li><a href="#">Виртуальная реальность</a></li>
             <li><a href="#">Моноподы для селфи</a></li>
@@ -59,7 +59,7 @@
        	   <li><a href="#">Автотрейдинг</a></li>
        	   <li><a href="#">ЖелДорЭкспедиция</a></li>
          </ul>
-         <a class="button" href="#">ПОДРОБНЕЕ О НАС</a>       	
+         <a class="a-button" href="#">ПОДРОБНЕЕ О НАС</a>       	
        </section>
 
        <section class="contacts">
@@ -69,13 +69,11 @@
 
          <!-- Тут будет попАП с картой. Переделать интерактивно с помощью google maps на js, но пока как-то так. -->
 
-         <form class="modal-map" action="#" method="post">
-           <a href="img/map-big.jpg">
-             <img src="img/map.jpg" class="map" width="560" height="222" alt="Офис по адресу: Москва, ул. Строителей, 15">
-           </a>
-           <input class="modal map-close" type="submit" value="Закрыть">
-         </form>
-         <a class="button" href="#">НАПИШИТЕ НАМ</a>        
+       <a href="img/map-big.jpg">
+         <img src="img/map.jpg" class="map" width="560" height="222" alt="Офис по адресу: Москва, ул. Строителей, 15">
+       </a>
+         <input class="modal map-close" type="submit" value="Закрыть">         
+         <a class="a-button" href="#">НАПИШИТЕ НАМ</a>        
        </section>
     </main>
 
@@ -117,14 +115,13 @@
     	  </label>
           <label>Ваш e-mail:
           <input type="text" name="email" placeholder="email@example.com">
-          </label>
-          <br>
+          </label>          
           <label>Текст письма:
-          <textarea name="text-email" cols="50" rows="10">В свободной форме</textarea>
+          <textarea name="text-email" cols="50" rows="10" placeholder="В свободной форме"></textarea>
           </label>
-          <input type="submit" value="Отправить">
-          <input class="modal feedback-close" type="submit" value="Закрыть">
-      	</form>
+          <input type="submit" value="Отправить">          
+      	</form>        
+        <button class="modal feedback-close" type="button">Закрыть</button>
     </section>
   </body>
 </html>
