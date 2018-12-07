@@ -3,7 +3,7 @@
 	src: url("fonts/gilroyextrabold.woff2") format("woff2"),
 	     local("Gilroy-ExtraBold");
 	font-style: normal;
-	font-weight: bold;
+	font-weight: 700;
 }
 
 @font-face {
@@ -11,7 +11,7 @@
 	src: url("fonts/gilroylight.woff2") format("woff2"),
 	     local("Gilroy-Light");
 	font-style: normal;
-	font-weight: normal;
+	font-weight: 400;
 }
 
 }
@@ -20,7 +20,7 @@
 	src: url("fonts/opensans.woff2") format("woff2"),
 	     local("OpenSans");
 	font-style: normal;
-	font-weight: normal;
+	font-weight: 400;
 }
 
 @font-face {
@@ -28,7 +28,7 @@
 	src: url("fonts/opensanslight.woff2") format("woff2"),
 	     local("OpenSans-Light");
 	font-style: normal;
-	font-weight: lighter;
+	font-weight: 300;
 }
 
 body {
@@ -46,7 +46,7 @@ header {
   background-color: rgb(255, 225, 150);
 }
 
-.header-logo {
+.logo {
   color: rgb(0, 0, 0);
 
   font-family: "Gilroy ExtraBold", Arial, sans-serif;	
@@ -73,38 +73,38 @@ a {
  border: none; 
 }
 /*Для Chrome работает без ::-webkit-input-placeholder. На Opera/Safari не проверялось*/
-.search-form input[type="text"]::placeholder { 
-  color: rgba(0, 0, 0, 0.3); 	
+.search-form input[type="text"]::placeholder {
+  color: rgba(0, 0, 0, 0.3);  
 }
+ /*Загуглил для IE 10+*/
+.search-form :-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.3); 
+}
+ /*Firefox 18-*/
+.search-form :-moz-placeholder {
+  color: rgba(0, 0, 0, 0.3); 
+}
+/*Firefox 19+*/
+.search-form ::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.3);  
+} 
 
 .search-form input[type="text"]:hover::placeholder {
- color: rgba(0, 0, 0, 0.6);
-}
-/* Загуглил для IE 10+ */
-.search-form :-ms-input-placeholder { 
- color: rgba(0, 0, 0, 0.3);
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .search-form :-ms-input-placeholder:hover {
-  color: rgba(0, 0, 0, 0.6);	
-}
-/* Firefox 18- */
-.search-form :-moz-placeholder {
-  color: rgba(0, 0, 0, 0.3);	
+  color: rgba(0, 0, 0, 0.6);  
 }
 
 .search-form :-moz-placeholder:hover {
- color: rgba(0, 0, 0, 0.6);	
-}
-/* Firefox 19+ */
-.search-form ::-moz-placeholder {
-  color: rgba(0, 0, 0, 0.3);	
+  color: rgba(0, 0, 0, 0.6); 
 }
 
 .search-form ::-moz-placeholder:hover {
-  color: rgba(0, 0, 0, 0.6);	
-}
-
+  color: rgba(0, 0, 0, 0.6);  
+} 
+ 
 .search-form input[type="submit"] {
   font: inherit; 
   color: rgb(0, 0, 0);
@@ -125,12 +125,15 @@ a {
   background-color: rgb(0, 0, 0);
 }
  
-.menu-title a {	
+.btn-style {
+  color: rgb(0, 0, 0);
+
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
   text-transform: uppercase;
-  letter-spacing: 0.2em; 
+  letter-spacing: 0.2em;  
+  vertical-align: middle; 
 }
 
 .menu-catalog,
@@ -166,16 +169,6 @@ a {
 }
 .user-navigation > li {
   text-align: right;	
-}
-
-.site-navigation {
-  color: rgb(0, 0, 0);
-
-  font-family: "Gilroy ExtraBold", Arial, sans-serif;
-  font-size: 18px;
-  line-height: 24px;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
 }
 
 .site-navigation > li {
@@ -283,15 +276,7 @@ a {
   line-height: 24px;
 }
 
-.add-cart {
-  color: rgb(0, 0, 0);
-  
-  font-family: "Gilroy ExtraBold", Arial, sans-serif;
-  font-size: 18px;
-  line-height: 24px;
-  letter-spacing: 0.2em;
-  text-align: center;
-  vertical-align: middle;  
+.add-cart {    
   background-color: transparent;
   border: none;      	
 }
@@ -375,7 +360,6 @@ a {
   letter-spacing: 0.2em;	
 }
 
-
 /*Отсюда идет секция "О нас". Выше будут стили основного наполнения и слайдер*/
 .about-us h2,
 .contacts h2 {
@@ -394,15 +378,7 @@ a {
   font-size: 16px;
   line-height: 40px;	
 }
-.a-button {
-  color: rgb(0, 0, 0);
 
-  font-family: "Gilroy ExtraBold", Arial, sans-serif;
-  font-size: 18px;
-  line-height: 24px;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-}
 /*Отсюда пошел футер*/
 footer {
   background-color: #464646;
@@ -410,11 +386,8 @@ footer {
 
 .footer-logo {
   color: rgb(255, 198, 0);
-
-  font-family: "Gilroy ExtraBold", Arial, sans-serif;	
-  font-size: 48px;
-  line-height: 48px; 	
 }
+
 .footer-logo:hover,
 .footer-logo:focus {
   color: rgba(255, 198, 0, 0.6);	
@@ -439,8 +412,8 @@ footer {
   color: rgba(0, 0, 0, 0.6);	
 }
 
-footer .user-navigation  a,
-footer .site-navigation  a {
+footer .user-navigation a,
+footer .site-navigation a {
   color: rgb(255, 255, 255);	
 }
 
@@ -475,4 +448,51 @@ footer .site-navigation > li {
 .footer-copyright {
   text-align: right;	
 }
+/*Отсюда пошла форма для отправки письма*/
+.feedback label {
+  color: rgb(0, 0, 0);
 
+  font-family: "Gilroy ExtraBold", Arial, sans-serif; 
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.feedback input[type="text"]::placeholder,
+.feedback textarea::placeholder { 
+  color: rgba(0, 0, 0, 0.4);
+
+  font-family: "Open Sans";
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.feedback :-ms-input-placeholder { 
+  color: rgba(0, 0, 0, 0.4);
+
+  font-family: "Open Sans";
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.feedback :-moz-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+
+  font-family: "Open Sans";
+  font-size: 14px;
+  line-height: 18px;  
+}
+
+.feedback ::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.4);
+  
+  font-family: "Open Sans";
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.feedback input[type="submit"] {
+  text-align: center;
+  vertical-align: middle;  
+  background-color: transparent;
+  border: none;
+}
