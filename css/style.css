@@ -38,7 +38,7 @@ body {
   font-size: 15px;
   line-height: 30px;
   font-weight: 400;
-  color: rgba(0, 0, 0);
+  color: rgb(0, 0, 0);
   background-color: rgb(255, 255, 255);   
 }
 
@@ -70,7 +70,8 @@ a {
 
 .search-form input[type="text"] {
  background-color: transparent;	
- border: none; 
+ border: none;
+ cursor: pointer; 
 }
 /*Для Chrome работает без ::-webkit-input-placeholder. На Opera/Safari не проверялось*/
 .search-form input[type="text"]::placeholder {
@@ -93,36 +94,42 @@ a {
   color: rgba(0, 0, 0, 0.6);
 }
 
-.search-form :-ms-input-placeholder:hover {
+.search-form:hover :-ms-input-placeholder {
   color: rgba(0, 0, 0, 0.6);  
 }
 
-.search-form :-moz-placeholder:hover {
+.search-form:hover :-moz-placeholder {
   color: rgba(0, 0, 0, 0.6); 
 }
 
-.search-form ::-moz-placeholder:hover {
+.search-form:hover ::-moz-placeholder {
   color: rgba(0, 0, 0, 0.6);  
 } 
  
-.search-form input[type="submit"] {
-  font: inherit; 
+.search-form input[type="submit"] {   
   color: rgb(0, 0, 0);
+
+  font-family: "Open Sans Light", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 30px;
   text-align: center;
   vertical-align: middle;
   background-color: transparent;
-  border: 2px solid rgb(0, 0, 0);	
+  border: 2px solid rgb(0, 0, 0);
+  cursor: pointer;	
 }
 
 .search-form input[type="submit"]:hover,
 .search-form input[type="submit"]:focus {
   color: rgb(255, 255, 255);
-  background-color: rgb(0, 0, 0); 	
+  background-color: rgb(0, 0, 0);
+  transition: all 0.1s linear;   	
 }
 
 .search-form input[type="submit"]:active {
   color: rgba(255, 255, 255, 0.3);
   background-color: rgb(0, 0, 0);
+  transition: all 0.1s linear;
 }
  
 .btn-style {
@@ -133,14 +140,16 @@ a {
   line-height: 24px;
   text-transform: uppercase;
   letter-spacing: 0.2em;  
-  vertical-align: middle; 
+  vertical-align: middle;
+  cursor: pointer; 
 }
 
 .menu-catalog,
 .menu-list,
 .user-navigation,
 .site-navigation {
-  list-style: none;	
+  list-style: none;
+  padding-left: 0	
 }
 
 .menu-catalog a:hover,
@@ -151,14 +160,16 @@ a {
 .user-navigation a:focus,
 .site-navigation a:hover,
 .site-navigation a:focus {
-  color: rgba(0, 0, 0, 0.6);  	
+  color: rgba(0, 0, 0, 0.6);
+  transition: all 0.1s linear;  	
 }
 
 .menu-catalog a:active,
 .menu-list a:active,
 .user-navigation a:active,
 .site-navigation a:active {
-  color: rgba(0, 0, 0, 0.3);	
+  color: rgba(0, 0, 0, 0.3);
+  transition: all 0.1s linear;	
 }
 
 .user-navigation {
@@ -194,7 +205,8 @@ a {
 }
 
 .breadcrumbs {
-  list-style: none; 
+  list-style: none;
+  padding-left: 0 
 }
 
 .breadcrumbs a {
@@ -203,11 +215,13 @@ a {
 
 .breadcrumbs a:hover,
 .breadcrubms a:focus {
-  color: rgba(0, 0, 0, 0.6);	
+  color: rgba(0, 0, 0, 0.6);
+  transition: all 0.1s linear;	
 }
 
 .breadcrumbs a:active {
-  color: rgba(0, 0, 0, 0.1);	
+  color: rgba(0, 0, 0, 0.1);
+  transition: all 0.1s linear;	
 }
 
 .filter {
@@ -228,22 +242,28 @@ a {
 
 .filter ul {
   list-style: none;
-  line-height: 40px;	
+  line-height: 40px;
+  padding-left: 0  	
 }
-
 
 /*Переделать после добавления декоративных чек-боксов/радио
 т.к. при наведении/фокусе цвет меняет только иконка чек-бокса/радио*/
+.filter input[type="checkbox"],
+.filter input[type="radio"] {
+  cursor: pointer;
+}
+
 .filter-input:hover + label,
 .filter-input:focus + label {
   color: rgba(0, 0, 0, 0.6);
+  transition: all 0.1s linear;      
 }
 
 .filter-input:disabled + label {
  color: rgba(166, 166, 166);	
  opacity: 0.25; 	
 }
-
+/*Кнопка показать в фильтре*/
 .filter input[type="submit"] {   
   color: rgb(0, 0, 0);
   
@@ -253,11 +273,13 @@ a {
   text-align: center;
   vertical-align: middle;  
   background-color: transparent;
-  border: none;  
+  border: none;
+  cursor: pointer;  
 }
 
 .catalog-list {
  list-style: none;
+ padding-left: 0
 }
 
 .item {
@@ -283,7 +305,8 @@ a {
 /*Добавить стилизацию для покоя/наведения/нажатия*/
 .add-cart:active {
   color: rgba(0, 0, 0, 0.3);
-  outline: none;	
+  outline: none;
+  transition: all 0.1s linear;	
 }
 
 .add-compare {
@@ -295,22 +318,53 @@ a {
   text-align: center;
   vertical-align: middle;  
   background-color: transparent;
-  border: none;    		
+  border: none;
+  cursor: pointer;    		
 }
 
 .add-compare:hover,
 .add-compare:focus {
-  color: rgb(0, 0, 0);	
+  color: rgb(0, 0, 0);
+  transition: all 0.1s linear;	
 }
 
 .add-compare:active {
   color: rgba(0, 0, 0, 0.2);
   outline: none;
+  transition: all 0.1s linear;
 }
 
 .pagination-list {
-  list-style: none; 	
+  list-style: none;
+  padding-left: 0 	
 }
+
+.pagination-item:first-child a,
+.pagination-item:last-child a {
+  color: rgba(0, 0, 0);
+
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2em;
+}
+
+/*Дописать для кнопок "НАЗАД" и "ВПЕРЕД" стили
+ для изменения состония цвет по всей геометрии*/
+.pagination-item:first-child a:hover,
+.pagination-item:first-child a:focus,
+.pagination-item:last-child a:hover,
+.pagination-item:last-child a:focus {
+  color: rgba(0, 0, 0);
+  transition: all 0.1s linear;
+}
+
+.pagination-item:first-child a:active,
+.pagination-item:last-child a:active {
+  color: rgba(0, 0, 0, 0.3);
+  transition: all 0.1s linear;
+}
+
 
 .pagination-item a {
   color: rgba(0, 0, 0, 0.3);
@@ -328,7 +382,8 @@ a {
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
-  letter-spacing: 0.2em;	
+  letter-spacing: 0.2em;
+  transition: all 0.1s linear;	
 }
 
 .pagination-item a:active {
@@ -337,7 +392,8 @@ a {
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
-  letter-spacing: 0.2em;	
+  letter-spacing: 0.2em;
+  transition: all 0.1s linear;	
 }
 
 .pagination-item-current a {
@@ -357,7 +413,8 @@ a {
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
-  letter-spacing: 0.2em;	
+  letter-spacing: 0.2em;
+  transition: all 0.1s linear;	
 }
 
 /*Отсюда идет секция "О нас". Выше будут стили основного наполнения и слайдер*/
@@ -376,7 +433,8 @@ a {
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
   list-style-type: none;
   font-size: 16px;
-  line-height: 40px;	
+  line-height: 40px;
+  padding-left: 0	
 }
 
 /*Отсюда пошел футер*/
@@ -390,11 +448,13 @@ footer {
 
 .footer-logo:hover,
 .footer-logo:focus {
-  color: rgba(255, 198, 0, 0.6);	
+  color: rgba(255, 198, 0, 0.6);
+  transition: all 0.1s linear;	
 }
 
 .footer-logo:active {
   color: rgba(255, 198, 0, 0.3);
+  transition: all 0.1s linear;
 }
 
 .address {
@@ -409,7 +469,8 @@ footer {
 
 .telephone:hover,
 .telephone > a:hover {
-  color: rgba(0, 0, 0, 0.6);	
+  color: rgba(0, 0, 0, 0.6);
+  transition: all 0.1s linear;	
 }
 
 footer .user-navigation a,
@@ -421,12 +482,14 @@ footer .user-navigation a:hover,
 footer .user-navigation a:focus,
 footer .site-navigation a:hover,
 footer .site-navigation a:focus {
-  color: rgba(255, 255, 255, 0.6);	
+  color: rgba(255, 255, 255, 0.6);
+  transition: all 0.1s linear;	
 }
 
 footer .user-navigation a:active,
 footer .site-navigation a:active {
   color: rgba(255, 255, 255, 0.3);
+  transition: all 0.1s linear;
 }
 
 footer .site-navigation > li {
@@ -444,10 +507,11 @@ footer .site-navigation > li {
 .social-button {
   color: rgb(255, 255, 255);  	
 }
-
+/*Вопрос с выравниванием для лого разработчика в футере*/
 .footer-copyright {
   text-align: right;	
 }
+
 /*Отсюда пошла форма для отправки письма*/
 .feedback label {
   color: rgb(0, 0, 0);
@@ -460,34 +524,28 @@ footer .site-navigation > li {
 .feedback input[type="text"]::placeholder,
 .feedback textarea::placeholder { 
   color: rgba(0, 0, 0, 0.4);
-
-  font-family: "Open Sans";
-  font-size: 14px;
-  line-height: 18px;
 }
 
 .feedback :-ms-input-placeholder { 
-  color: rgba(0, 0, 0, 0.4);
-
-  font-family: "Open Sans";
-  font-size: 14px;
-  line-height: 18px;
+  color: rgba(0, 0, 0, 0.4);  
 }
 
 .feedback :-moz-placeholder {
-  color: rgba(0, 0, 0, 0.4);
-
-  font-family: "Open Sans";
-  font-size: 14px;
-  line-height: 18px;  
+  color: rgba(0, 0, 0, 0.4); 
 }
 
 .feedback ::-moz-placeholder {
-  color: rgba(0, 0, 0, 0.4);
-  
+  color: rgba(0, 0, 0, 0.4);  
+}
+
+.feedback input[type="text"],
+.feedback textarea {
+  color: rgb(0, 0, 0);
+
   font-family: "Open Sans";
   font-size: 14px;
   line-height: 18px;
+  cursor: pointer;
 }
 
 .feedback input[type="submit"] {
@@ -495,4 +553,7 @@ footer .site-navigation > li {
   vertical-align: middle;  
   background-color: transparent;
   border: none;
+  transition: all 0.1s linear;
+  cursor: pointer;
 }
+
