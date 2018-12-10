@@ -31,6 +31,18 @@
 	font-weight: 300;
 }
 
+*, *::before, *::after {
+  box-sizing: inherit;  
+}
+
+html {
+  box-sizing: border-box;  
+}
+
+.content-box-component {
+  box-sizing: content-box; 
+}
+
 body {
   margin: 0;
 
@@ -44,11 +56,6 @@ body {
 
 header {
   background-color: rgb(255, 225, 150);
-  width: 1160px;
-  margin: 0 auto;
-  padding-left: 60px;
-  padding-right: 60px;
-  box-sizing: border-box;  
 }
 
 .logo {
@@ -184,7 +191,7 @@ a {
   line-height: 30px;   	
 }
 
-/*Отсюда идут стили для каталога*/
+/*-----Отсюда идут стили для каталога-----*/
 .page-title {
   color: rgb(0, 0, 0);
 
@@ -436,7 +443,7 @@ a {
   padding-left: 0	
 }
 
-/*Отсюда пошел футер*/
+/*-----Отсюда пошел футер-----*/
 footer {
   background-color: #464646;
 }
@@ -462,8 +469,7 @@ footer {
 
 .telephone,
 .telephone > a {
-  color: rgb(255, 255, 255);
-  text-align: right;	
+  color: rgb(255, 255, 255); 	
 }
 
 .telephone:hover,
@@ -491,10 +497,6 @@ footer .site-navigation a:active {
   transition: all 0.1s linear;
 }
 
-footer .site-navigation > li {
-  text-align: center;
-}
-
 .footer-social ul {
   list-style: none;   	
 }
@@ -502,12 +504,7 @@ footer .site-navigation > li {
 .social-button {
   color: rgb(255, 255, 255);  	
 }
-/*Вопрос с выравниванием для лого разработчика в футере*/
-.footer-copyright {
-  text-align: right;	
-}
-
-/*Отсюда пошла форма для отправки письма*/
+/*-----Отсюда пошла форма для отправки письма-----*/
 .feedback label {
   color: rgb(0, 0, 0);
 
@@ -551,6 +548,57 @@ footer .site-navigation > li {
   transition: all 0.1s linear;
   cursor: pointer;
 }
+/*-----Отсюда пошли сеточные стили-----*/
+
+html,
+body {
+ min-width: 1440px;
+ min-height: 3118px;  
+}
+
+header {
+  width: 1160px;
+  min-height: 300px;
+  margin: 0 auto;
+  padding-left: 60px;
+  padding-right: 60px;  
+}
+
+.header-top,
+.header-middle {
+  display: flex;
+  margin: 0 -20px;
+  justify-content: space-between;
+  align-items: center;  
+}
+
+.search-form,
+.user-navigation {  
+  width: 50%;
+  padding: 0 20px;
+  outline: 1px solid #000000; 
+}
+
+.menu-catalog,
+.site-navigation {
+  width: 50%;
+  padding: 0 20px;
+  outline: 1px solid #000000;
+}
+
+.user-navigation,
+.site-navigation {
+  display: flex;    
+}
+
+.user-navigation li {
+  outline: 1px solid #000000;   
+}
+
+.site-navigation li {
+  outline: 1px solid #000000;  
+}
+
 
 .footer-top,
 .footer-middle,
@@ -572,18 +620,3 @@ footer .site-navigation > li {
   margin-right: 0;
 }
 
-.search-form,
-.user-navigation {
-  width: 50%;
-  padding: 0 20px;
-}
-
-.header-top,
-.header-middle {
-  margin: 0 -20px;
-  display: flex;
-}
-
-.site-navigation {
-  display: flex;
-}
