@@ -117,7 +117,7 @@ a {
 .search-form:hover ::-moz-placeholder {
   color: rgba(0, 0, 0, 0.6);  
 } 
- 
+/*-----Кнопка "Найти"-----*/
 .search-form input[type="submit"] {   
   color: rgb(0, 0, 0);
 
@@ -161,7 +161,7 @@ a {
 .user-navigation,
 .site-navigation {
   list-style: none;
-  padding-left: 0	
+  padding-left: 0;  	
 }
 
 .menu-catalog a:hover,
@@ -212,7 +212,7 @@ a {
 
 .breadcrumbs {
   list-style: none;
-  padding-left: 0 
+  padding-left: 0; 
 }
 
 .breadcrumbs a {
@@ -249,7 +249,7 @@ a {
 .filter ul {
   list-style: none;
   line-height: 40px;
-  padding-left: 0  	
+  padding-left: 0;    	
 }
 
 /*Переделать после добавления декоративных чек-боксов/радио
@@ -285,7 +285,7 @@ a {
 
 .catalog-list {
  list-style: none;
- padding-left: 0
+ padding-left: 0;
 }
 
 .item {
@@ -342,7 +342,7 @@ a {
 
 .pagination-list {
   list-style: none;
-  padding-left: 0 	
+  padding-left: 0; 	
 }
 
 .pagination-item:first-child a,
@@ -440,7 +440,7 @@ a {
   list-style-type: none;
   font-size: 16px;
   line-height: 40px;
-  padding-left: 0	
+  padding-left: 0;	
 }
 
 /*-----Отсюда пошел футер-----*/
@@ -498,12 +498,20 @@ footer .site-navigation a:active {
 }
 
 .footer-social ul {
-  list-style: none;   	
+  list-style: none;
+  padding-left: 0;   	
 }
 
 .social-button {
   color: rgb(255, 255, 255);  	
 }
+
+.footer-decoration-line {
+  min-width: 80px;
+  min-height: 7px;
+  background-color: rgb(255, 198, 0);
+}
+
 /*-----Отсюда пошла форма для отправки письма-----*/
 .feedback label {
   color: rgb(0, 0, 0);
@@ -560,6 +568,7 @@ header {
   width: 1160px;
   min-height: 300px;
   margin: 0 auto;
+  margin-top: 20px;  
   padding-left: 60px;
   padding-right: 60px;  
 }
@@ -567,56 +576,125 @@ header {
 .header-top,
 .header-middle {
   display: flex;
-  margin: 0 -20px;
+  /*margin: 0 -20px;*/
   justify-content: space-between;
-  align-items: center;  
+  
+}
+/*-----Отсюда пошел верхний контейнер хедера-----*/
+.header-top {
+  align-items: center;
 }
 
 .search-form,
-.user-navigation {  
+.header-top .user-navigation {  
   width: 50%;
-  padding: 0 20px;
-  outline: 1px solid #000000; 
+  /*padding: 0 20px;*/
+  outline: 1px solid #000000;     
 }
 
-.menu-catalog,
-.site-navigation {
+.header-top .user-navigation,
+.header-middle .site-navigation {
+  display: flex;      
+}
+
+.header-top .user-navigation {
+  justify-content: space-between;
+  padding-left: 20px; 
+}
+
+.header-top .user-navigation li:first-child {
+  margin-right: auto;   
+}
+
+.header-top .user-navigation li:last-child {
+  margin-left: 40px;   
+}
+/*-----Отсюда пошел центральный контейнер хедера-----*/
+.menu-catalog { 
   width: 50%;
-  padding: 0 20px;
+  /*padding: 0 20px;*/
   outline: 1px solid #000000;
 }
 
-.user-navigation,
-.site-navigation {
-  display: flex;    
+.header-middle nav {
+  width: 50%;
 }
 
-.user-navigation li {
-  outline: 1px solid #000000;   
+.header-middle .site-navigation {
+  justify-content: space-between;
+  padding-left: 20px;
+ /*width: 100%;*/
+ /*padding: 0 20px;*/
+  outline: 1px solid #000000;
+  align-self: flex-start;  
 }
 
-.site-navigation li {
+.header-middle .site-navigation li:first-child {
+  margin-right: 35px;  
+}
+
+.header-middle .site-navigation li:last-child {
+  margin-left: auto;
+}
+
+.header-top .user-navigation li {
   outline: 1px solid #000000;  
 }
 
+.header-middle .site-navigation li {
+  outline: 1px solid #000000;  
+}
+ 
+.menu-list {
+  /*display: none;*/
+}
+/*-----Отсюда пошли контейнеров футера-----*/
+footer {
+  width: 1160px;
+  min-height: 323px;
+  margin: 0 auto;
+  padding-left: 140px;
+  padding-right: 140px;    
+}
 
 .footer-top,
+.footer-top .user-navigation,
 .footer-middle,
-.footer-bottom {
+.footer-middle .site-navigation,
+.footer-bottom,
+.social-list {
   display: flex;
   justify-content: space-between;
-  align-items: center;  
+  align-items: center; 
+  outline: 1px solid #000000;   
 }
 
-.footer-social > ul {
-  display: flex;
+.footer-top .user-navigation li {
+  margin-right: 65px;
+  outline: 1px solid #000000;
 }
 
-.footer-social li {
-  margin-right: 15px;
+.footer-top .user-navigation li:last-child {
+  margin-right: 0; 
 }
 
-.footer-social li:last-child {
+.footer-middle .site-navigation li {  
+  margin-right: 35px;
+  outline: 1px solid #000000;  
+}
+
+.footer-middle .site-navigation li:last-child {
+  margin-right: 0; 
+}
+
+.social-list li {
+  margin-right: 23px;
+  outline: 1px solid #000000;
+}
+
+.social-list li:last-child {
   margin-right: 0;
 }
+
+
 
