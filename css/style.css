@@ -171,15 +171,22 @@ a {
 .user-navigation a:hover,
 .user-navigation a:focus,
 .site-navigation a:hover,
-.site-navigation a:focus {
+.site-navigation a:focus,
+.inner-page header .login-link a:hover:last-child,
+.inner-page header .login-link a:focus:last-child {
   color: rgba(0, 0, 0, 0.6);
   transition: all 0.1s linear;  	
+}
+
+.inner-page header .login-link a:last-child {
+ color: rgba(0, 0, 0, 0.3);
 }
 
 .menu-catalog a:active,
 .menu-list a:active,
 .user-navigation a:active,
-.site-navigation a:active {
+.site-navigation a:active,
+.inner-page header .login-link a:active:last-child{
   color: rgba(0, 0, 0, 0.3);
   transition: all 0.1s linear;	
 }
@@ -480,19 +487,26 @@ footer {
 
 footer .user-navigation a,
 footer .site-navigation a {
-  color: rgb(255, 255, 255);	
+  color: rgba(255, 255, 255, 0.7);	
+}
+
+.inner-page .login-link a:last-child {
+  color: rgba(255, 255, 255, 0.3);
 }
 
 footer .user-navigation a:hover,
 footer .user-navigation a:focus,
 footer .site-navigation a:hover,
-footer .site-navigation a:focus {
-  color: rgba(255, 255, 255, 0.6);
-  transition: all 0.1s linear;	
+footer .site-navigation a:focus,
+.inner-page footer .login-link a:hover:last-child,
+.inner-page footer .login-link a:focus:last-child {
+  color: rgb(255, 255, 255);
+  transition: all 0.1s linear;  	
 }
 
 footer .user-navigation a:active,
-footer .site-navigation a:active {
+footer .site-navigation a:active,
+.inner-page footer .login-link a:active:last-child {
   color: rgba(255, 255, 255, 0.3);
   transition: all 0.1s linear;
 }
@@ -566,7 +580,6 @@ body {
 
 header {
   width: 1160px;
-  min-height: 300px;
   margin: 0 auto;
   margin-top: 20px;  
   padding-left: 60px;
@@ -588,8 +601,7 @@ header {
 .search-form,
 .header-top .user-navigation {  
   width: 50%;
-  /*padding: 0 20px;*/
-  outline: 1px solid #000000;     
+  /*padding: 0 20px;*/       
 }
 
 .header-top .user-navigation,
@@ -612,8 +624,7 @@ header {
 /*-----Отсюда пошел центральный контейнер хедера-----*/
 .menu-catalog { 
   width: 50%;
-  /*padding: 0 20px;*/
-  outline: 1px solid #000000;
+  /*padding: 0 20px;*/  
 }
 
 .header-middle nav {
@@ -624,8 +635,7 @@ header {
   justify-content: space-between;
   padding-left: 20px;
  /*width: 100%;*/
- /*padding: 0 20px;*/
-  outline: 1px solid #000000;
+ /*padding: 0 20px;*/  
   align-self: flex-start;  
 }
 
@@ -636,25 +646,14 @@ header {
 .header-middle .site-navigation li:last-child {
   margin-left: auto;
 }
-
-.header-top .user-navigation li {
-  outline: 1px solid #000000;  
-}
-
-.header-middle .site-navigation li {
-  outline: 1px solid #000000;  
-}
- 
 .menu-list {
   /*display: none;*/
 }
 /*-----Отсюда пошли контейнеров футера-----*/
 footer {
-  width: 1160px;
-  min-height: 323px;
+  width: 1160px;  
   margin: 0 auto;
-  padding-left: 140px;
-  padding-right: 140px;    
+  padding: 60px 140px;    
 }
 
 .footer-top,
@@ -665,13 +664,11 @@ footer {
 .social-list {
   display: flex;
   justify-content: space-between;
-  align-items: center; 
-  outline: 1px solid #000000;   
+  align-items: center;     
 }
 
 .footer-top .user-navigation li {
-  margin-right: 65px;
-  outline: 1px solid #000000;
+  margin-right: 65px;  
 }
 
 .footer-top .user-navigation li:last-child {
@@ -679,8 +676,7 @@ footer {
 }
 
 .footer-middle .site-navigation li {  
-  margin-right: 35px;
-  outline: 1px solid #000000;  
+  margin-right: 35px;    
 }
 
 .footer-middle .site-navigation li:last-child {
@@ -688,8 +684,7 @@ footer {
 }
 
 .social-list li {
-  margin-right: 23px;
-  outline: 1px solid #000000;
+  margin-right: 23px;  
 }
 
 .social-list li:last-child {
