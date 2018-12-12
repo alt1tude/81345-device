@@ -85,18 +85,22 @@ a {
  border: none;
  cursor: pointer; 
 }
+
 /*Для Chrome работает без ::-webkit-input-placeholder. На Opera/Safari не проверялось*/
 .search-form input[type="text"]::placeholder {
   color: rgba(0, 0, 0, 0.3);  
 }
+
  /*Загуглил для IE 10+*/
 .search-form :-ms-input-placeholder {
   color: rgba(0, 0, 0, 0.3); 
 }
+ 
  /*Firefox 18-*/
 .search-form :-moz-placeholder {
   color: rgba(0, 0, 0, 0.3); 
 }
+
 /*Firefox 19+*/
 .search-form ::-moz-placeholder {
   color: rgba(0, 0, 0, 0.3);  
@@ -117,6 +121,7 @@ a {
 .search-form:hover ::-moz-placeholder {
   color: rgba(0, 0, 0, 0.6);  
 } 
+
 /*-----Кнопка "Найти"-----*/
 .search-form input[type="submit"] {   
   color: rgb(0, 0, 0);
@@ -276,7 +281,9 @@ a {
  color: rgba(166, 166, 166);	
  opacity: 0.25; 	
 }
-/*Кнопка показать в фильтре*/
+
+/*-----Дописать стили для измнения геометрии-----*/
+/*-----Кнопка показать в фильтре-----*/
 .filter input[type="submit"] {   
   color: rgb(0, 0, 0);
   
@@ -315,6 +322,7 @@ a {
   background-color: transparent;
   border: none;      	
 }
+
 /*Добавить стилизацию для покоя/наведения/нажатия*/
 .add-cart:active {
   color: rgba(0, 0, 0, 0.3);
@@ -430,15 +438,36 @@ a {
   transition: all 0.1s linear;	
 }
 
-/*Отсюда идет секция "О нас". Выше будут стили основного наполнения и слайдер*/
+/*Отсюда идет секция О нас и Контакты.
+Выше будут стили основного наполнения и слайдер*/
+.decoration-line {
+  max-width: 80px;
+  min-height: 7px;
+  background-color: rgb(0, 0, 0);
+
+}
+
 .about-us h2,
-.contacts h2 {
+.address-map h2 {
   color: rgb(0, 0, 0);
 
   font-family: "Gilroy ExtraBold", Arial, sans-serif;	
   font-size: 47px;
   line-height: 48px;
 }
+
+/*-----Дописать стили для измнения геометрии-----*/
+.about-us-btn:hover,
+.about-us-btn:focus,
+.write-us-btn:hover,
+.write-us-btn:focus {}
+
+.about-us-btn:active,
+.write-us-btn:active {
+  color: rgba(0, 0, 0, 0.3);
+  transition: all 0.1s linear;  
+}
+
 
 .transport-partnership {
   color: rgb(0, 0, 0);
@@ -520,9 +549,8 @@ footer .site-navigation a:active,
   color: rgb(255, 255, 255);  	
 }
 
-.footer-decoration-line {
+footer .decoration-line {
   min-width: 80px;
-  min-height: 7px;
   background-color: rgb(255, 198, 0);
 }
 
@@ -570,8 +598,8 @@ footer .site-navigation a:active,
   transition: all 0.1s linear;
   cursor: pointer;
 }
-/*-----Отсюда пошли сеточные стили-----*/
 
+/*-----Отсюда пошли сеточные стили-----*/
 html,
 body {
  min-width: 1440px;
@@ -590,9 +618,9 @@ header {
 .header-middle {
   display: flex;
   /*margin: 0 -20px;*/
-  justify-content: space-between;
-  
+  justify-content: space-between;  
 }
+
 /*-----Отсюда пошел верхний контейнер хедера-----*/
 .header-top {
   align-items: center;
@@ -621,6 +649,7 @@ header {
 .header-top .user-navigation li:last-child {
   margin-left: 40px;   
 }
+
 /*-----Отсюда пошел центральный контейнер хедера-----*/
 .menu-catalog { 
   width: 50%;
@@ -649,9 +678,32 @@ header {
 .menu-list {
   /*display: none;*/
 }
-/*-----Отсюда пошли контейнеров футера-----*/
+
+/*-----Отсюда пошли сеточные стили основного наполнения-----*/
+main {
+  width: 1440px;  
+  margin: 0 auto;
+  padding: 90px 140px;
+}
+
+/*-----Выше идет блок с представленными брендами и слайдеры-----*/
+.about-us {
+  width: 460px;
+}
+
+.address-map {
+  width: 560px;  
+}
+
+.index-columns {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/*-----Отсюда пошли контейнеры футера-----*/
 footer {
-  width: 1160px;  
+  width: 1440px;  
   margin: 0 auto;
   padding: 60px 140px;    
 }
@@ -691,5 +743,45 @@ footer {
   margin-right: 0;
 }
 
+/*-----Отсюда пошли сеточные стили контейнеров каталога-----*/
 
+.page-title {
+  margin-bottom: 30px;  
+}
 
+.breadcrumbs {
+  margin-bottom: 50px;
+}
+
+.filters {
+  width: 200px;
+  min-height: 1290px;  
+}
+
+.catalog {
+  width: 760px;
+  min-height: 1290px;
+  margin-bottom: 37px;  
+}
+
+.catalog-columns {
+  display: flex;
+  justify-content: space-between;  
+}
+
+.catalog-item {
+  width: 360px;
+  min-height: 380px;
+  margin-bottom: 125px;     
+}
+
+.catalog-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;  
+}
+
+.pagination-list {
+  width: 760px;
+  min-height: 70px;  
+}
