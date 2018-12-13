@@ -58,6 +58,35 @@ header {
   background-color: rgb(255, 225, 150);
 }
 
+a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);  
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+
 .logo {
   color: rgb(0, 0, 0);
 
@@ -73,11 +102,6 @@ header {
 
 .header-logo:active {
   color: rgba(0, 0, 0, 0.3);
-}
-
-a {
-  text-decoration: none;
-  color: rgb(0, 0, 0);	
 }
 
 .search-form input[type="text"] {
@@ -169,6 +193,13 @@ a {
   padding-left: 0;  	
 }
 
+.user-navigation {
+  color: rgb(0, 0, 0);
+  
+  font-size: 15px;
+  line-height: 30px;    
+}
+
 .menu-catalog a:hover,
 .menu-catalog a:focus,
 .menu-list a:hover,
@@ -196,12 +227,7 @@ a {
   transition: all 0.1s linear;	
 }
 
-.user-navigation {
-  color: rgb(0, 0, 0);
-  
-  font-size: 15px;
-  line-height: 30px;   	
-}
+
 
 /*-----Отсюда идут стили для каталога-----*/
 .page-title {
@@ -634,8 +660,9 @@ header {
 
 .header-top .user-navigation,
 .header-middle .site-navigation {
-  display: flex;      
+  display: flex;
 }
+  
 
 .header-top .user-navigation {
   justify-content: space-between;
@@ -647,7 +674,7 @@ header {
 }
 
 .header-top .user-navigation li:last-child {
-  margin-left: 40px;   
+  margin-left: 41px;   
 }
 
 /*-----Отсюда пошел центральный контейнер хедера-----*/
@@ -716,7 +743,7 @@ footer {
 .social-list {
   display: flex;
   justify-content: space-between;
-  align-items: center;     
+  align-items: center;       
 }
 
 .footer-top .user-navigation li {
@@ -784,4 +811,112 @@ footer {
 .pagination-list {
   width: 760px;
   min-height: 70px;  
+}
+
+/*-----Отсюда пошли стили для декор. эл-в-----*/
+
+.user-navigation a {
+  display: block; 
+}
+
+.login-link,
+.user-compare,
+.user-order {
+  position: relative;  
+}
+
+.login-link a {
+  padding-left: 27px;
+}
+
+.user-compare a {
+  padding-left: 20px;
+}
+
+.user-order a {
+ padding-left: 24px;
+}
+
+.header-top .login-link::before,
+.footer-top .login-link::before {
+  content: "";
+
+  position: absolute;
+  width: 13px;
+  height: 12px;
+  top: 9px;
+
+  background-image: url(../img/user.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.footer-top .login-link::before {
+  background-image: url(../img/user-footer.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.header-top .user-compare::before,
+.footer-top .user-compare::before {
+  content: "";
+
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 9px;
+
+  background-image: url(../img/compare.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.footer-top .user-compare::before {
+  background-image: url(../img/compare-footer.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.header-top .user-order::before,
+.footer-top .user-order::before {
+  content: "";
+
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 9px;
+
+  background-image: url(../img/cart.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.footer-top .user-order::before {
+  background-image: url(../img/cart-footer.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.header-top .login-link:hover::before,
+.header-top .login-link:focus::before,
+.header-top .user-compare:hover::before,
+.header-top .user-compare:focus::before,
+.header-top .user-order:hover::before,
+.header-top .user-order:focus::before,
+.footer-top .login-link:hover::before,
+.footer-top .login-link:focus::before,
+.footer-top .user-compare:hover::before,
+.footer-top .user-compare:focus::before,
+.footer-top .user-order:hover::before,
+.footer-top .user-order:focus::before {
+  opacity: 0.6;
+}
+
+.header-top .login-link:active::before,
+.header-top .user-compare:active::before,
+.header-top .user-order:active::before,
+.footer-top .login-link:active::before,
+.footer-top .user-compare:active:before,
+.footer-top .user-order:active:before {
+  opacity: 0.3;
 }
