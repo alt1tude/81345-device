@@ -762,13 +762,13 @@ footer {
   margin-right: 0; 
 }
 
-.social-list li {
-  margin-right: 23px;  
-}
+/*.social-list li {
+  margin-right: 24px;     
+}*/
 
-.social-list li:last-child {
+/*.social-list li:last-child {
   margin-right: 0;
-}
+}*/
 
 /*-----Отсюда пошли сеточные стили контейнеров каталога-----*/
 
@@ -910,6 +910,7 @@ footer {
 .footer-top .user-order:hover::before,
 .footer-top .user-order:focus::before {
   opacity: 0.6;
+  transition: all 0.1s linear;
 }
 
 .header-top .login-link:active::before,
@@ -919,4 +920,65 @@ footer {
 .footer-top .user-compare:active:before,
 .footer-top .user-order:active:before {
   opacity: 0.3;
+  transition: all 0.1s linear;
 }
+
+/*.facebook,
+.instagramm,
+.twitter {
+ position: relative;
+}
+
+.facebook {
+  margin-right: 39px;
+}
+
+.facebook::before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -16px;
+  margin-left: -16px;  
+  width: 32px;
+  height: 32px;
+  
+
+  background-image: url(../img/facebook.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.instagramm::before {
+  content: "";
+
+  position: absolute;
+  top: 50%
+  left: 50%;
+  margin-top: -16px;
+  margin-left: -16px;
+  width: 32px;
+  height: 32px;
+
+  background-image: url(../img/instagram.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.twitter::before {
+  content: "";
+
+  position: absolute;
+  top: 50%
+  left: 50%;
+  margin-top: -16px;
+  margin-left: -16px;
+  width: 32px;
+  height: 32px;
+
+  background-image: url(../img/twitter.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}*/
+
