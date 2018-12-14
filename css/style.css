@@ -107,7 +107,8 @@ input[type="radio"].visually-hidden {
 .search-form input[type="text"] {
  background-color: transparent;	
  border: none;
- cursor: pointer; 
+ cursor: pointer;
+ margin-left: 36px; 
 }
 
 /*Для Chrome работает без ::-webkit-input-placeholder. На Opera/Safari не проверялось*/
@@ -762,12 +763,12 @@ footer {
   margin-right: 0; 
 }
 
-/*.social-list li {
-  margin-right: 24px;     
-}*/
+.social-list li {
+ margin-right: 55px;  
+}
 
 /*.social-list li:last-child {
-  margin-right: 0;
+  margin-right: 0;  
 }*/
 
 /*-----Отсюда пошли сеточные стили контейнеров каталога-----*/
@@ -814,6 +815,44 @@ footer {
 }
 
 /*-----Отсюда пошли стили для декор. эл-в-----*/
+/*-----Отсюда пошли стили для верхнего контейнера хедера
+и верхнего контейнера футер-----*/
+.search-form {
+  position: relative;  
+}
+
+.search-form::before {
+  content: "";
+
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 8px;
+
+  background-image: url(../img/search.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;  
+}
+
+.menu-title a {
+  outline: 1px solid black; 
+  position: relative; 
+}
+
+.menu-title a::after {
+  content: "";
+
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 4px;
+  margin-left: 16px; 
+
+  background-image: url(../img/plus.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  opacity: 0.3;
+}
 
 .user-navigation a {
   display: block; 
@@ -923,62 +962,84 @@ footer {
   transition: all 0.1s linear;
 }
 
-/*.facebook,
+/*-----Отсюда пошли стили для иконок соц.сетей и академии -----*/
+.facebook,
 .instagramm,
-.twitter {
+.twitter,
+.footer-copyright {
  position: relative;
 }
 
-.facebook {
-  margin-right: 39px;
-}
-
-.facebook::before {
+.facebook::before,
+.instagramm::before,
+.twitter::before {
   content: "";
 
   position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -16px;
-  margin-left: -16px;  
   width: 32px;
   height: 32px;
+  top: 50%;
+  left: 50%;  
+  margin-top: -16px;
+  margin-left: -16px;  
+  
   
 
   background-image: url(../img/facebook.svg);
   background-repeat: no-repeat;
   background-position: 0 0;
+  opacity: 0.3;
 }
 
 .instagramm::before {
-  content: "";
-
-  position: absolute;
-  top: 50%
-  left: 50%;
-  margin-top: -16px;
-  margin-left: -16px;
-  width: 32px;
-  height: 32px;
-
   background-image: url(../img/instagram.svg);
   background-repeat: no-repeat;
   background-position: 0 0;
 }
 
 .twitter::before {
-  content: "";
-
-  position: absolute;
-  top: 50%
-  left: 50%;
-  margin-top: -16px;
-  margin-left: -16px;
-  width: 32px;
-  height: 32px;
-
   background-image: url(../img/twitter.svg);
   background-repeat: no-repeat;
   background-position: 0 0;
-}*/
+}
+
+.facebook:hover:before,
+.facebook:focus:before,
+.instagramm:hover::before,
+.instagramm:focus::before,
+.twitter:hover::before,
+.twitter:focus::before,
+.footer-copyright:hover::before,
+.footer-copyright:focus::before {
+  opacity: 0.6;
+  transition: all 0.1s linear;
+}
+
+.facebook:active:before,
+.instagramm:active::before,
+.twitter:active::before {
+ opacity: 0.1;
+ transition: all 0.1s linear;  
+}
+
+.footer-copyright::before {
+  content: "";
+
+  position: absolute;
+  width: 27px;
+  height: 35px;
+  top: 50%;
+  left: 50%;
+  margin-top: -18px;
+  margin-left: -27px;
+
+  position: absolute;
+  background-image: url(../img/logo-html.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.footer-copyright:active::before {
+  opacity: 0.3;  
+}
 
