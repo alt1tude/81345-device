@@ -229,6 +229,81 @@ input[type="radio"].visually-hidden {
 }
 
 
+/*Отсюда идет секция О нас и Контакты.
+Выше будут стили основного наполнения и слайдер*/
+
+.brands {
+ margin: 0 auto; 
+ margin-bottom: 94px;
+ outline: 1px solid black;
+}
+
+.brands-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  justify-content: space-between;   
+}
+
+.brands-list a {
+  opacity: 0.2;
+  -webkit-filter: grayscale(100%); 
+  -webkit-filter: grayscale(1); 
+  -moz-filter: grayscale(100%); 
+  -ms-filter: grayscale(100%); 
+  -o-filter: grayscale(100%); 
+  filter: grayscale(100%); 
+  filter: gray;  
+}
+
+.brands-list a:hover,
+.brands-list a:focus {
+  opacity: 1;
+  -webkit-filter: none; 
+  -webkit-filter: none; 
+  -moz-filter: none; 
+  -ms-filter: none; 
+  -o-filter: none; 
+  filter: none; 
+  filter: none;  
+}
+
+.decoration-line {
+  max-width: 80px;
+  min-height: 7px;
+  background-color: rgb(0, 0, 0);
+}
+
+.about-us h2,
+.address-map h2 {
+  color: rgb(0, 0, 0);
+
+  font-family: "Gilroy ExtraBold", Arial, sans-serif; 
+  font-size: 47px;
+  line-height: 48px;
+}
+
+/*-----Дописать стили для измнения геометрии-----*/
+.about-us-btn:hover,
+.about-us-btn:focus,
+.write-us-btn:hover,
+.write-us-btn:focus {}
+
+.about-us-btn:active,
+.write-us-btn:active {
+  color: rgba(0, 0, 0, 0.3);
+  transition: all 0.1s linear;  
+}
+
+.transport-partnership {
+  color: rgb(0, 0, 0);
+
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  list-style-type: none;
+  font-size: 16px;
+  line-height: 40px;
+  padding-left: 0;  
+}
 
 /*-----Отсюда идут стили для каталога-----*/
 .page-title {
@@ -465,47 +540,6 @@ input[type="radio"].visually-hidden {
   transition: all 0.1s linear;	
 }
 
-/*Отсюда идет секция О нас и Контакты.
-Выше будут стили основного наполнения и слайдер*/
-.decoration-line {
-  max-width: 80px;
-  min-height: 7px;
-  background-color: rgb(0, 0, 0);
-
-}
-
-.about-us h2,
-.address-map h2 {
-  color: rgb(0, 0, 0);
-
-  font-family: "Gilroy ExtraBold", Arial, sans-serif;	
-  font-size: 47px;
-  line-height: 48px;
-}
-
-/*-----Дописать стили для измнения геометрии-----*/
-.about-us-btn:hover,
-.about-us-btn:focus,
-.write-us-btn:hover,
-.write-us-btn:focus {}
-
-.about-us-btn:active,
-.write-us-btn:active {
-  color: rgba(0, 0, 0, 0.3);
-  transition: all 0.1s linear;  
-}
-
-
-.transport-partnership {
-  color: rgb(0, 0, 0);
-
-  font-family: "Gilroy ExtraBold", Arial, sans-serif;
-  list-style-type: none;
-  font-size: 16px;
-  line-height: 40px;
-  padding-left: 0;	
-}
-
 /*-----Отсюда пошел футер-----*/
 footer {
   background-color: #464646;
@@ -727,6 +761,7 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  outline: 1px solid black;
 }
 
 /*-----Отсюда пошли контейнеры футера-----*/
@@ -834,8 +869,7 @@ footer {
   background-position: 0 0;  
 }
 
-.menu-title a {
-  outline: 1px solid black; 
+.menu-title a {  
   position: relative; 
 }
 
@@ -983,8 +1017,6 @@ footer {
   margin-top: -16px;
   margin-left: -16px;  
   
-  
-
   background-image: url(../img/facebook.svg);
   background-repeat: no-repeat;
   background-position: 0 0;
