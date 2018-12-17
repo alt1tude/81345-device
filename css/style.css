@@ -208,22 +208,15 @@ input[type="radio"].visually-hidden {
 .user-navigation a:hover,
 .user-navigation a:focus,
 .site-navigation a:hover,
-.site-navigation a:focus,
-.inner-page header .login-link a:hover:last-child,
-.inner-page header .login-link a:focus:last-child {
+.site-navigation a:focus {
   color: rgba(0, 0, 0, 0.6);
   transition: all 0.1s linear;  	
-}
-
-.inner-page header .login-link a:last-child {
- color: rgba(0, 0, 0, 0.3);
 }
 
 .menu-catalog a:active,
 .menu-list a:active,
 .user-navigation a:active,
-.site-navigation a:active,
-.inner-page header .login-link a:active:last-child{
+.site-navigation a:active {
   color: rgba(0, 0, 0, 0.3);
   transition: all 0.1s linear;	
 }
@@ -326,11 +319,16 @@ input[type="radio"].visually-hidden {
 
 .breadcrumbs {
   list-style: none;
-  padding-left: 0; 
+  padding-left: 0;
 }
 
 .breadcrumbs a {
-  color: rgba(0, 0, 0, 0.3);	
+  color: rgba(0, 0, 0, 0.3);
+
+  font-family: "Open Sans Light", Arial, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 300;	
 } 
 
 .breadcrumbs a:hover,
@@ -580,23 +578,16 @@ footer .site-navigation a {
   color: rgba(255, 255, 255, 0.7);	
 }
 
-.inner-page .login-link a:last-child {
-  color: rgba(255, 255, 255, 0.3);
-}
-
 footer .user-navigation a:hover,
 footer .user-navigation a:focus,
 footer .site-navigation a:hover,
-footer .site-navigation a:focus,
-.inner-page footer .login-link a:hover:last-child,
-.inner-page footer .login-link a:focus:last-child {
+footer .site-navigation a:focus {
   color: rgb(255, 255, 255);
   transition: all 0.1s linear;  	
 }
 
 footer .user-navigation a:active,
-footer .site-navigation a:active,
-.inner-page footer .login-link a:active:last-child {
+footer .site-navigation a:active {
   color: rgba(255, 255, 255, 0.3);
   transition: all 0.1s linear;
 }
@@ -737,9 +728,10 @@ header {
 .header-middle .site-navigation li:last-child {
   margin-left: auto;
 }
-.menu-list {
-  /*display: none;*/
-}
+
+/*.menu-list {
+  display: none;
+}*/
 
 /*-----Отсюда пошли сеточные стили основного наполнения-----*/
 main {
@@ -895,11 +887,16 @@ footer {
 .login-link,
 .user-compare,
 .user-order {
-  position: relative;  
+  display: flex;
+  position: relative;    
 }
 
 .login-link a {
   padding-left: 27px;
+}
+
+.inner-page .login-link a {
+  padding-left: 20px;
 }
 
 .user-compare a {
@@ -1065,7 +1062,6 @@ footer {
   margin-top: -18px;
   margin-left: -27px;
 
-  position: absolute;
   background-image: url(../img/logo-html.svg);
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -1074,4 +1070,40 @@ footer {
 .footer-copyright:active::before {
   opacity: 0.3;  
 }
+
+/*-----Отсюда пошли декор. стили "хлебных крошек" в каталоге-----*/
+.breadcrumbs {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap; 
+}
+
+.breadcrumbs li {
+  position: relative; 
+  margin-right: 40px;
+}
+
+.breadcrumb-current {
+ margin-right: 0;  
+}
+
+.breadcrumbs-current::after {
+  display: none;
+}
+
+.breadcrumbs li::after {
+  content: "";
+
+  position: absolute;
+  width: 4px;
+  height: 7px;
+  top: 13px;
+  right: -16px;  
+ 
+  background-image: url(../img/nav-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+
 
