@@ -60,7 +60,8 @@ header {
 
 a {
   text-decoration: none;
-  color: rgb(0, 0, 0);  
+  color: rgb(0, 0, 0);
+  transition: all 0.1s linear;  
 }
 
 img {
@@ -106,8 +107,7 @@ input[type="radio"].visually-hidden {
 
 .search-form input[type="text"] {
  background-color: transparent;	
- border: none;
- cursor: pointer;
+ border: none; 
  margin-left: 36px; 
 }
 
@@ -158,20 +158,19 @@ input[type="radio"].visually-hidden {
   vertical-align: middle;
   background-color: transparent;
   border: 2px solid rgb(0, 0, 0);
+  transition: all 0.1s linear;
   cursor: pointer;	
 }
 
 .search-form input[type="submit"]:hover,
 .search-form input[type="submit"]:focus {
   color: rgb(255, 255, 255);
-  background-color: rgb(0, 0, 0);
-  transition: all 0.1s linear;   	
+  background-color: rgb(0, 0, 0);     	
 }
 
 .search-form input[type="submit"]:active {
   color: rgba(255, 255, 255, 0.3);
-  background-color: rgb(0, 0, 0);
-  transition: all 0.1s linear;
+  background-color: rgb(0, 0, 0);  
 }
  
 .btn-style {
@@ -183,6 +182,7 @@ input[type="radio"].visually-hidden {
   text-transform: uppercase;
   letter-spacing: 0.2em;  
   vertical-align: middle;
+  transition: all 0.1s linear;
   cursor: pointer; 
 }
 
@@ -209,16 +209,14 @@ input[type="radio"].visually-hidden {
 .user-navigation a:focus,
 .site-navigation a:hover,
 .site-navigation a:focus {
-  color: rgba(0, 0, 0, 0.6);
-  transition: all 0.1s linear;  	
+  color: rgba(0, 0, 0, 0.6);  	
 }
 
 .menu-catalog a:active,
 .menu-list a:active,
 .user-navigation a:active,
 .site-navigation a:active {
-  color: rgba(0, 0, 0, 0.3);
-  transition: all 0.1s linear;	
+  color: rgba(0, 0, 0, 0.3);  	
 }
 
 
@@ -285,8 +283,8 @@ input[type="radio"].visually-hidden {
 .about-us-btn:active,
 .write-us-btn:active {
   color: rgba(0, 0, 0, 0.3);
-  transition: all 0.1s linear;  
 }
+  
 
 .transport-partnership {
   color: rgb(0, 0, 0);
@@ -333,13 +331,11 @@ input[type="radio"].visually-hidden {
 
 .breadcrumbs a:hover,
 .breadcrubms a:focus {
-  color: rgba(0, 0, 0, 0.6);
-  transition: all 0.1s linear;	
+  color: rgba(0, 0, 0, 0.6);  	
 }
 
 .breadcrumbs a:active {
-  color: rgba(0, 0, 0, 0.1);
-  transition: all 0.1s linear;	
+  color: rgba(0, 0, 0, 0.1);  
 }
 
 .filter {
@@ -374,8 +370,8 @@ input[type="radio"].visually-hidden {
 .filter-input:hover + label,
 .filter-input:focus + label {
   color: rgba(0, 0, 0, 0.6);
-  transition: all 0.1s linear;      
 }
+  
 
 .filter-input:disabled + label {
  color: rgba(166, 166, 166);	
@@ -420,22 +416,20 @@ input[type="radio"].visually-hidden {
 
 .add-cart {    
   background-color: transparent;
-  border: none;      	
 }
 
 /*Добавить стилизацию для покоя/наведения/нажатия*/
 .add-cart:active {
-  color: rgba(0, 0, 0, 0.3);
-  outline: none;
-  transition: all 0.1s linear;	
+  color: rgba(0, 0, 0, 0.3);    	
 }
 
 .add-compare {
   color: rgba(0, 0, 0, 0.5);
 
-  font: inherit;
+  font-family: "Open Sans Light", Arial, sans-serif;
   font-size: 13px;
-  line-height: 20px;
+  line-height: 36px;
+  font-weight: 300; 
   text-align: center;
   vertical-align: middle;  
   background-color: transparent;
@@ -445,14 +439,11 @@ input[type="radio"].visually-hidden {
 
 .add-compare:hover,
 .add-compare:focus {
-  color: rgb(0, 0, 0);
-  transition: all 0.1s linear;	
+  color: rgb(0, 0, 0);  	
 }
 
 .add-compare:active {
-  color: rgba(0, 0, 0, 0.2);
-  outline: none;
-  transition: all 0.1s linear;
+  color: rgba(0, 0, 0, 0.2);    
 }
 
 .pagination-list {
@@ -476,14 +467,12 @@ input[type="radio"].visually-hidden {
 .pagination-item:first-child a:focus,
 .pagination-item:last-child a:hover,
 .pagination-item:last-child a:focus {
-  color: rgba(0, 0, 0);
-  transition: all 0.1s linear;
+  color: rgba(0, 0, 0);  
 }
 
 .pagination-item:first-child a:active,
 .pagination-item:last-child a:active {
-  color: rgba(0, 0, 0, 0.3);
-  transition: all 0.1s linear;
+  color: rgba(0, 0, 0, 0.3);  
 }
 
 
@@ -503,8 +492,7 @@ input[type="radio"].visually-hidden {
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
-  letter-spacing: 0.2em;
-  transition: all 0.1s linear;	
+  letter-spacing: 0.2em;  	
 }
 
 .pagination-item a:active {
@@ -513,8 +501,7 @@ input[type="radio"].visually-hidden {
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
-  letter-spacing: 0.2em;
-  transition: all 0.1s linear;	
+  letter-spacing: 0.2em;  	
 }
 
 .pagination-item-current a {
@@ -534,8 +521,7 @@ input[type="radio"].visually-hidden {
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
-  letter-spacing: 0.2em;
-  transition: all 0.1s linear;	
+  letter-spacing: 0.2em;  	
 }
 
 /*-----Отсюда пошел футер-----*/
@@ -549,13 +535,11 @@ footer {
 
 .footer-logo:hover,
 .footer-logo:focus {
-  color: rgba(255, 198, 0, 0.6);
-  transition: all 0.1s linear;	
+  color: rgba(255, 198, 0, 0.6);  	
 }
 
 .footer-logo:active {
-  color: rgba(255, 198, 0, 0.3);
-  transition: all 0.1s linear;
+  color: rgba(255, 198, 0, 0.3);  
 }
 
 .address {
@@ -569,8 +553,7 @@ footer {
 
 .telephone:hover,
 .telephone > a:hover {
-  color: rgba(0, 0, 0, 0.6);
-  transition: all 0.1s linear;	
+  color: rgba(0, 0, 0, 0.6);  	
 }
 
 footer .user-navigation a,
@@ -582,14 +565,12 @@ footer .user-navigation a:hover,
 footer .user-navigation a:focus,
 footer .site-navigation a:hover,
 footer .site-navigation a:focus {
-  color: rgb(255, 255, 255);
-  transition: all 0.1s linear;  	
+  color: rgb(255, 255, 255);    	
 }
 
 footer .user-navigation a:active,
 footer .site-navigation a:active {
-  color: rgba(255, 255, 255, 0.3);
-  transition: all 0.1s linear;
+  color: rgba(255, 255, 255, 0.3);  
 }
 
 .footer-social ul {
@@ -638,24 +619,20 @@ footer .decoration-line {
 
   font-family: "Open Sans";
   font-size: 14px;
-  line-height: 18px;
-  cursor: pointer;
+  line-height: 18px;  
 }
 
 .feedback input[type="submit"] {
   text-align: center;
   vertical-align: middle;  
   background-color: transparent;
-  border: none;
-  transition: all 0.1s linear;
-  cursor: pointer;
+  border: none;  
 }
 
 /*-----Отсюда пошли сеточные стили-----*/
 html,
 body {
- min-width: 1440px;
- min-height: 3118px;  
+ min-width: 1440px;   
 }
 
 header {
@@ -836,9 +813,47 @@ footer {
   justify-content: space-between;  
 }
 
+.product-wrap {
+  position: relative; 
+}
+
+.product-button-wrap {  
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 360px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-title-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-title-wrap span { 
+ align-self: center; 
+}
+
 .pagination-list {
-  width: 760px;
-  min-height: 70px;  
+  background-color: rgb(235, 235, 235);
+  outline: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 760px;   
+}
+.pagination-item-prev,
+.pagination-item-next {
+ padding: 30px 30px; 
+ outline: 1px solid black;
+}
+
+.pagination-item-prev:hover,
+.pagination-item-next:hover {
+ background-color: rgb(217, 217, 217); 
 }
 
 /*-----Отсюда пошли стили для декор. эл-в-----*/
@@ -979,8 +994,7 @@ footer {
 .footer-top .user-compare:focus::before,
 .footer-top .user-order:hover::before,
 .footer-top .user-order:focus::before {
-  opacity: 0.6;
-  transition: all 0.1s linear;
+  opacity: 0.6;  
 }
 
 .header-top .login-link:active::before,
@@ -989,8 +1003,7 @@ footer {
 .footer-top .login-link:active::before,
 .footer-top .user-compare:active:before,
 .footer-top .user-order:active:before {
-  opacity: 0.3;
-  transition: all 0.1s linear;
+  opacity: 0.3;  
 }
 
 /*-----Отсюда пошли стили для иконок соц.сетей и академии -----*/
@@ -1040,15 +1053,13 @@ footer {
 .twitter:focus::before,
 .footer-copyright:hover::before,
 .footer-copyright:focus::before {
-  opacity: 0.6;
-  transition: all 0.1s linear;
+  opacity: 0.6;  
 }
 
 .facebook:active:before,
 .instagramm:active::before,
 .twitter:active::before {
- opacity: 0.1;
- transition: all 0.1s linear;  
+ opacity: 0.1;   
 }
 
 .footer-copyright::before {
@@ -1105,5 +1116,4 @@ footer {
   background-position: 0 0;
 }
 
-
-
+/*-----Отсюда пошли декор. стили для карточек товара в каталоге-----*/
