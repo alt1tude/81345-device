@@ -87,7 +87,6 @@ input[type="radio"].visually-hidden {
   overflow: hidden;
 }
 
-
 .logo {
   color: rgb(0, 0, 0);
 
@@ -219,10 +218,8 @@ input[type="radio"].visually-hidden {
   color: rgba(0, 0, 0, 0.3);  	
 }
 
-
 /*Отсюда идет секция О нас и Контакты.
 Выше будут стили основного наполнения и слайдер*/
-
 .brands {
  margin: 0 auto; 
  margin-bottom: 94px;
@@ -278,18 +275,10 @@ input[type="radio"].visually-hidden {
   margin-bottom: 78px;
 }
 
-
-/*-----Дописать стили для измнения геометрии-----*/
-.about-us-btn:hover,
-.about-us-btn:focus,
-.write-us-btn:hover,
-.write-us-btn:focus {}
-
 .about-us-btn:active,
 .write-us-btn:active {
   color: rgba(0, 0, 0, 0.3);
 }
-  
 
 .transport-partnership {
   color: rgb(0, 0, 0);
@@ -468,7 +457,7 @@ input[type="radio"].visually-hidden {
 }
 
 /*Дописать для кнопок "НАЗАД" и "ВПЕРЕД" стили
- для изменения состония цвет по всей геометрии*/
+ для изменения состания цвет по всей геометрии*/
 .pagination-item:first-child a:hover,
 .pagination-item:first-child a:focus,
 .pagination-item:last-child a:hover,
@@ -480,7 +469,6 @@ input[type="radio"].visually-hidden {
 .pagination-item:last-child a:active {
   color: rgba(0, 0, 0, 0.3);  
 }
-
 
 .pagination-item a {
   color: rgba(0, 0, 0, 0.3);
@@ -721,8 +709,87 @@ main {
   margin: 0 auto;
   padding: 90px 140px;
 }
+/*Отсюда пошел главный слайдер*/
 
-/*-----Выше идет блок с представленными брендами и слайдеры-----*/
+
+
+
+
+/*-----Отсюда пошел блок популярных товаров-----*/
+.popular-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start; 
+  outline: 1px solid black;
+}
+
+.popular-wrap { 
+  width: 160px;           
+  background-color: rgb(247, 226, 150);
+  outline: 1px solid black;
+  margin-bottom: 35px;  
+}
+
+.popular-1 img {
+ margin-top: 52px;
+ margin-bottom: 53px;
+ margin-left: 31px;
+ margin-right: 32px;      
+}
+
+.popular-2 img {
+ margin-top: 41px;
+ margin-bottom: 2px;
+ margin-left: 38px;
+ margin-right: 36px;
+}
+
+.popular-3 img {
+ margin-top: 38px;
+ margin-bottom: 35px;
+ margin-left: 49px;
+ margin-right: 40px; 
+}
+
+.popular-4 img {
+ margin-top: 50px;
+ margin-bottom: 45px;
+ margin-left: 28px;
+ margin-right: 25px;
+}
+
+.popular-5 img {
+ margin-top: 32px;
+ margin-bottom: 30px;
+ margin-left: 55px;
+ margin-right: 49px;
+}
+
+.popular-6 img {
+ margin-top: 49px;
+ margin-bottom: 42px;
+ margin-left: 13px;
+ margin-right: 15px;
+}
+
+.popular-title {
+  color: rgb(0, 0, 0);
+
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  outline: 1px solid black;
+  width: 160px;
+}
+/*Отсюда пошел слайдер Доставка-Контакты-Кредит*/
+
+
+
+
+
 .about-us {
   width: 460px;
   outline: 1px solid black;
@@ -1032,7 +1099,44 @@ footer {
 
   background-image: url(../img/slider-button-gray.svg);
   background-repeat: no-repeat;
-  background-position: 0 0;  
+  background-position: 0 0;    
+}
+
+/*-----Отсюда пошли декор. стили для кнопок/ссылок-----*/
+/*-----Отсюда пошлик декор стили для кнопкок на главной-----*/
+
+/*-----Добавить кнопку для слайдера ПОДРОБНЕЕ-----*/
+.about-us-btn,
+.write-us-btn {
+  outline: 1px solid black;
+  position: relative;
+  padding: 0 23px;
+  z-index: 0;    
+}
+
+.about-us-btn::before,
+.write-us-btn::before {
+  content: "";
+
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  top: 7px;
+  left: 0px;
+  z-index: -1;
+  transition: all 0.1s linear;
+  
+  background-color: rgb(240, 197, 96);      
+}
+
+.about-us-btn:hover::before,
+.about-us-btn:focus::before,
+.write-us-btn:hover::before,
+.write-us-btn:focus::before {
+  height: 100%;
+  top: 0px;
+
+  background-color: rgb(240, 197, 96);
 }
 
 /*-----Отсюда пошли стили для иконок соц.сетей и академии -----*/
@@ -1146,36 +1250,5 @@ footer {
 }
 
 /*-----Отсюда пошли декор. стили для карточек товара в каталоге-----*/
-.about-us-btn,
-.write-us-btn {
-  outline: 1px solid black;
-  position: relative;
-  padding: 0 23px;
-  z-index: 0;    
-}
 
-.about-us-btn::before,
-.write-us-btn::before {
-  content: "";
-
-  position: absolute;
-  width: 100%;
-  height: 8px;
-  top: 7px;
-  left: 0px;
-  z-index: -1;
-  transition: all 0.1s linear;
-  
-  background-color: rgb(240, 197, 96);      
-}
-
-.about-us-btn:hover::before,
-.about-us-btn:focus::before,
-.write-us-btn:hover::before,
-.write-us-btn:focus::before {
-  height: 100%;
-  top: 0px;
-
-  background-color: rgb(240, 197, 96);
-}
 
