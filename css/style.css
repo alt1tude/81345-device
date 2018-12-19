@@ -274,6 +274,11 @@ input[type="radio"].visually-hidden {
   line-height: 48px;
 }
 
+.address-map img {
+  margin-bottom: 78px;
+}
+
+
 /*-----Дописать стили для измнения геометрии-----*/
 .about-us-btn:hover,
 .about-us-btn:focus,
@@ -293,7 +298,8 @@ input[type="radio"].visually-hidden {
   list-style-type: none;
   font-size: 16px;
   line-height: 40px;
-  padding-left: 0;  
+  padding-left: 35px;
+  margin-bottom: 82px;    
 }
 
 /*-----Отсюда идут стили для каталога-----*/
@@ -665,7 +671,6 @@ header {
 .header-middle .site-navigation {
   display: flex;
 }
-  
 
 .header-top .user-navigation {
   justify-content: space-between;
@@ -720,17 +725,19 @@ main {
 /*-----Выше идет блок с представленными брендами и слайдеры-----*/
 .about-us {
   width: 460px;
+  outline: 1px solid black;
 }
 
 .address-map {
-  width: 560px;  
+  width: 560px;
+  outline: 1px solid black;  
 }
 
 .index-columns {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  outline: 1px solid black;
+  
 }
 
 /*-----Отсюда пошли контейнеры футера-----*/
@@ -1006,6 +1013,28 @@ footer {
   opacity: 0.3;  
 }
 
+.transport-partnership li {
+  outline: 1px solid black; 
+}
+
+.transport-partnership a {
+  position: relative;  
+}
+
+.transport-partnership a::before {
+  content: ""; 
+
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 0;
+  left: -39px;  
+
+  background-image: url(../img/slider-button-gray.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;  
+}
+
 /*-----Отсюда пошли стили для иконок соц.сетей и академии -----*/
 .facebook,
 .instagramm,
@@ -1117,3 +1146,36 @@ footer {
 }
 
 /*-----Отсюда пошли декор. стили для карточек товара в каталоге-----*/
+.about-us-btn,
+.write-us-btn {
+  outline: 1px solid black;
+  position: relative;
+  padding: 0 23px;
+  z-index: 0;    
+}
+
+.about-us-btn::before,
+.write-us-btn::before {
+  content: "";
+
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  top: 7px;
+  left: 0px;
+  z-index: -1;
+  transition: all 0.1s linear;
+  
+  background-color: rgb(240, 197, 96);      
+}
+
+.about-us-btn:hover::before,
+.about-us-btn:focus::before,
+.write-us-btn:hover::before,
+.write-us-btn:focus::before {
+  height: 100%;
+  top: 0px;
+
+  background-color: rgb(240, 197, 96);
+}
+
