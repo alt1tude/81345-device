@@ -182,7 +182,7 @@ input[type="radio"].visually-hidden {
   letter-spacing: 0.2em;  
   vertical-align: middle;
   transition: all 0.1s linear;
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 .menu-catalog,
@@ -230,7 +230,8 @@ input[type="radio"].visually-hidden {
   list-style: none;
   padding-left: 0;
   display: flex;
-  justify-content: space-between;   
+  justify-content: space-between;
+
 }
 
 .brands-list a {
@@ -241,7 +242,8 @@ input[type="radio"].visually-hidden {
   -ms-filter: grayscale(100%); 
   -o-filter: grayscale(100%); 
   filter: grayscale(100%); 
-  filter: gray;  
+  filter: gray;
+  transition: all 0.1s linear;   
 }
 
 .brands-list a:hover,
@@ -590,6 +592,15 @@ footer .decoration-line {
   line-height: 24px;
 }
 
+.feedback input[type="text"],
+.feedback textarea {
+  color: rgb(0, 0, 0);
+
+  font-family: "Open Sans";
+  font-size: 14px;
+  line-height: 18px;  
+}
+
 .feedback input[type="text"]::placeholder,
 .feedback textarea::placeholder { 
   color: rgba(0, 0, 0, 0.4);
@@ -607,21 +618,144 @@ footer .decoration-line {
   color: rgba(0, 0, 0, 0.4);  
 }
 
-.feedback input[type="text"],
-.feedback textarea {
-  color: rgb(0, 0, 0);
-
-  font-family: "Open Sans";
-  font-size: 14px;
-  line-height: 18px;  
-}
-
-.feedback input[type="submit"] {
+/*Не работают декор. стили с инпутом, заменил на <button> в разметки,
+пока закоментил как лишнее*/
+/*.feedback input[type="submit"] {
   text-align: center;
   vertical-align: middle;  
   background-color: transparent;
-  border: none;  
+  border: none;
+}*/
+
+ 
+
+
+
+/*-----Отсюда пошли декор. стили для формы отправки письма-----*/
+.write-us {
+  color: rgb(0, 0, 0);
+  position: fixed;
+
+  top: 350px;
+  margin-left: -480px;
+  left: 50%;
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
+  background-color: rgb(255, 255, 255);
+
+  width: 960px;  
+  padding-top: 99px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 92px;
+} 
+
+.fields-wrap {  
+  display: flex;
+  justify-content: space-between;  
 }
+
+.fields-wrap .login,
+.fields-wrap .email {
+ display: flex;
+ flex-direction: column;
+ margin: 0;
+ width: 50%;
+ margin-right: 40px;
+}
+
+.fields-wrap .email {
+  margin-right: auto;  
+}
+
+.fields-wrap .login input[type="text"],
+.fields-wrap .email input[type="text"] {
+  background-color: rgb(242, 242, 242);
+  width: 100%;
+  padding: 21px 21px;
+  margin-bottom: 35px;
+  border: none;    
+}
+
+.text-email { 
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 50px;  
+}
+
+.text-email textarea {
+  background-color: rgb(242, 242, 242);
+  width: 100%;
+  padding: 21px 21px;
+  resize: none;
+  border: none;
+}
+
+.feedback-close {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+
+  width: 55px;
+  height: 55px;
+
+  font-size: 0;
+  border: 0;  
+  background-image: url(../img/modal-close.svg); 
+  background-color: transparent;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  transition: all 0.1s linear;
+  cursor: pointer; 
+}
+
+.feedback-close:hover,
+.feedback-close:focus {
+  opacity: 1;  
+}
+
+.feedback-close:active {
+  opacity: 0.3;  
+}
+
+.feedback-send {
+  text-align: center;
+  vertical-align: middle;  
+  background-color: transparent;
+  border: none;
+  
+  position: relative;
+  padding: 0 23px;
+  z-index: 0;  
+}
+
+.feedback-send::before {
+  content: "";
+
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  top: 7px;
+  left: 0px;
+  z-index: -1;
+  transition: all 0.1s linear;
+  
+  background-color: rgb(240, 197, 96);
+}
+
+.feedback-send:hover::before,
+.feedback-send:focus::before {
+  height: 100%;
+  top: 0px;
+
+  background-color: rgb(240, 197, 96);
+}
+
+.feedback-send:active {
+  color: rgba(0, 0, 0, 0.3);  
+}
+
 
 /*-----Отсюда пошли сеточные стили-----*/
 html,
@@ -729,15 +863,17 @@ main {
 .popular-wrap { 
   width: 160px;           
   background-color: rgb(247, 226, 150);
-  outline: 1px solid black;
-  margin-bottom: 35px;  
+  
+  margin-bottom: 35px;
+  transition: all 0.1s linear;  
 }
 
 .popular-1 img {
  margin-top: 52px;
  margin-bottom: 53px;
  margin-left: 31px;
- margin-right: 32px;      
+ margin-right: 32px;
+ transition: all 0.1s linear;      
 }
 
 .popular-2 img {
@@ -745,13 +881,15 @@ main {
  margin-bottom: 2px;
  margin-left: 38px;
  margin-right: 36px;
+ transition: all 0.1s linear;
 }
 
 .popular-3 img {
  margin-top: 38px;
  margin-bottom: 35px;
  margin-left: 49px;
- margin-right: 40px; 
+ margin-right: 40px;
+ transition: all 0.1s linear; 
 }
 
 .popular-4 img {
@@ -759,6 +897,7 @@ main {
  margin-bottom: 45px;
  margin-left: 28px;
  margin-right: 25px;
+ transition: all 0.1s linear;
 }
 
 .popular-5 img {
@@ -766,6 +905,7 @@ main {
  margin-bottom: 30px;
  margin-left: 55px;
  margin-right: 49px;
+ transition: all 0.1s linear;
 }
 
 .popular-6 img {
@@ -773,6 +913,31 @@ main {
  margin-bottom: 42px;
  margin-left: 13px;
  margin-right: 15px;
+ transition: all 0.1s linear;
+}
+
+.popular-1:hover .popular-wrap,
+.popular-1:focus .popular-wrap,
+.popular-2:hover .popular-wrap,
+.popular-2:focus .popular-wrap,
+.popular-3:hover .popular-wrap,
+.popular-3:focus .popular-wrap,
+.popular-4:hover .popular-wrap,
+.popular-4:focus .popular-wrap,
+.popular-5:hover .popular-wrap,
+.popular-5:focus .popular-wrap,
+.popular-6:hover .popular-wrap,
+.popular-6:focus .popular-wrap {
+  background-color: rgb(247, 197, 46);
+}
+
+.popular-1:active .popular-wrap img,
+.popular-2:active .popular-wrap img,
+.popular-3:active .popular-wrap img,
+.popular-4:active .popular-wrap img,
+.popular-5:active .popular-wrap img,
+.popular-6:active .popular-wrap img {
+  opacity: 0.3;
 }
 
 .popular-title {
@@ -785,8 +950,6 @@ main {
   width: 160px;
 }
 /*Отсюда пошел слайдер Доставка-Контакты-Кредит*/
-
-
 
 
 
@@ -1008,12 +1171,14 @@ footer {
   background-image: url(../img/user.svg);
   background-repeat: no-repeat;
   background-position: 0 0;
+  transition: all 0.1s linear;
 }
 
 .footer-top .login-link::before {
   background-image: url(../img/user-footer.svg);
   background-repeat: no-repeat;
   background-position: 0 0;
+  transition: all 0.1s linear;
 }
 
 .header-top .user-compare::before,
@@ -1028,12 +1193,14 @@ footer {
   background-image: url(../img/compare.svg);
   background-repeat: no-repeat;
   background-position: 0 0;
+  transition: all 0.1s linear;
 }
 
 .footer-top .user-compare::before {
   background-image: url(../img/compare-footer.svg);
   background-repeat: no-repeat;
   background-position: 0 0;
+  transition: all 0.1s linear;
 }
 
 .header-top .user-order::before,
@@ -1048,12 +1215,14 @@ footer {
   background-image: url(../img/cart.svg);
   background-repeat: no-repeat;
   background-position: 0 0;
+  transition: all 0.1s linear;
 }
 
 .footer-top .user-order::before {
   background-image: url(../img/cart-footer.svg);
   background-repeat: no-repeat;
   background-position: 0 0;
+  transition: all 0.1s linear;
 }
 
 .header-top .login-link:hover::before,
@@ -1139,6 +1308,13 @@ footer {
   background-color: rgb(240, 197, 96);
 }
 
+.about-us-btn:active,
+.write-us-btn:active {
+ color: rgba(0, 0, 0, 0.3);
+}
+
+
+
 /*-----Отсюда пошли стили для иконок соц.сетей и академии -----*/
 .facebook,
 .instagramm,
@@ -1164,18 +1340,21 @@ footer {
   background-repeat: no-repeat;
   background-position: 0 0;
   opacity: 0.3;
+  transition: all 0.1s linear;
 }
 
 .instagramm::before {
   background-image: url(../img/instagram.svg);
   background-repeat: no-repeat;
   background-position: 0 0;
+  transition: all 0.1s linear;
 }
 
 .twitter::before {
   background-image: url(../img/twitter.svg);
   background-repeat: no-repeat;
   background-position: 0 0;
+  transition: all 0.1s linear;
 }
 
 .facebook:hover:before,
@@ -1209,6 +1388,7 @@ footer {
   background-image: url(../img/logo-html.svg);
   background-repeat: no-repeat;
   background-position: 0 0;
+  transition: all 0.1s linear;
 }
 
 .footer-copyright:active::before {
