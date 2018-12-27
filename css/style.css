@@ -45,11 +45,12 @@ html {
 
 body {
   margin: 0;
+  padding: 0;
 
   font-family: "Open Sans Light", Arial, sans-serif;
   font-size: 15px;
   line-height: 30px;
-  font-weight: 400;
+  font-weight: 300;
   color: rgb(0, 0, 0);
   background-color: rgb(255, 255, 255);   
 }
@@ -215,11 +216,317 @@ input[type="radio"].visually-hidden {
 .menu-list a:active,
 .user-navigation a:active,
 .site-navigation a:active {
-  color: rgba(0, 0, 0, 0.3);  	
+  color: rgba(0, 0, 0, 0.3);
 }
 
-/*Отсюда идет секция О нас и Контакты.
-Выше будут стили основного наполнения и слайдер*/
+/*Для проверки Сергея.
+Стили 1го основного слайдера, пока все кривое.
+Пытался делать также и как 2й слайдер, по аналогии со демки Нердс.
+Не понятно, почему "ломается" 2й слайдер
+при клики на лабелы 1го слайдера*/
+/*-----Отсюда пошел основной слайдер-----*/
+
+/*.slider-main {
+  color: rgb(0, 0, 0);  
+  outline: 1px solid black;
+  position: relative; 
+}
+
+.slider-main-list { 
+  margin: 0;
+  list-style: none;  
+}
+
+.slider-main-item img {
+  outline: 1px solid black;
+}
+.slider-main-wrap {
+  outline: 1px solid black;
+  margin-left: 126px;  
+}*/
+
+/*-----Полоска в слайдере временно черная-----*/
+
+/*.slide-main-decoration-line {
+  width: 7px; 
+  background-color: black;
+}
+
+.slider-main-wrap h3 {
+  color: rgb(0, 0, 0);
+
+  font-family: "Gilroy ExtraBold", Arial, sans-serif; 
+  font-size: 47px;
+  line-height: 56px;
+  margin: 0;
+  margin-bottom: 23px;  
+
+  outline: 1px solid black;
+}
+
+.slider-main-wrap p {
+  margin-bottom: 53px;
+}
+
+.slide-button {
+  position: relative;
+  padding: 11px 44px;  
+  z-index: 0;       
+}
+
+.slide-button::before {
+  content: "";
+
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  top: 18px;
+  left: 0px;
+  z-index: -1;
+  transition: all 0.1s linear;
+
+  background-color: rgb(240, 197, 96);
+}
+
+.slide-button:hover::before,
+.slide-button:focus::before {
+  height: 100%;
+  top: 0px;
+
+  background-color: rgb(240, 197, 96);
+}*/
+
+/*Таблица в слайдере, вызывает много для меня непонятного поведения.
+Не реагирует на margin-bottom от вышестоящего тега,
+когда делаешь родительский контейнер флексом не реагирует на padding*/
+
+/*.slide-item-features {
+  color: rgb(0, 0, 0);
+
+  font-family: "Open Sans Light", Arial, sans-serif;
+  font-size: 36px;
+  line-height: 48px;
+  font-weight: 300;
+  margin-top: 60px;    
+}
+
+.slide-item-features tr:last-child {
+  color: rgb(0, 0, 0);
+
+  font-family: "Open Sans Light", Arial, sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 300;
+}
+
+.slide-item-features td {
+ padding-right: 80px;
+}
+
+.slide-item-features td:last-child {
+ padding-right: 0px;
+}
+
+.slider-main-item {
+ display: flex; 
+}*/
+
+/*-----Отсюда надо переделывать-----*/
+
+/*.slider-main-controls label {  
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 21px;   
+
+  vertical-align: top;
+
+  background-color: transparent;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider-main-controls {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;  
+  
+  font-size: 0;
+}
+
+.main-slide {
+  display: none;
+}
+
+#slide-1:checked ~ .slider-main-list #main-slide1,
+#slide-2:checked ~ .slider-main-list #main-slide2,
+#slide-3:checked ~ .slider-main-list #main-slide3 {
+  display: flex;
+}*/
+
+
+
+
+/*-----Отсюда пошел 2й слайдер, слайдер сервисов-----*/
+.slider-services {
+  color: rgb(0, 0, 0);  
+  display: flex; 
+  justify-content: space-between;  
+  position: relative;
+  z-index: 0;
+  margin-bottom: 70px;   
+}
+
+.slider-services::before {
+   content: "";
+
+   position: absolute;
+   width: 1440px;
+   height: 373px;
+   bottom: -69px; 
+   left: 50%;
+   margin-left: -720px;    
+   
+   background-color: rgb(229, 229, 229);
+   z-index: -1;
+   outline: 1px solid black;    
+}
+
+.slider-services h3 {
+  color: rgb(0, 0, 0);
+
+  font-family: "Gilroy ExtraBold", Arial, sans-serif; 
+  font-size: 47px;
+  line-height: 48px;
+  margin: 0;
+  margin-bottom: 36px;   
+}
+
+.slider-services-decoration-line {
+  width: 7px; 
+  background-color: black;
+}
+
+.slider-controls {
+  margin: 0;  
+  width: 277px;
+  display: flex;
+  flex-direction: column;
+}
+
+.slider-list {
+  margin: 0;
+  list-style: none;
+  padding-left: 116px;  
+  width: 876px;
+  display: flex;
+}
+
+.slider-item img {  
+  outline: 1px solid black;
+}
+
+.slide-wrap {
+  width: 460px;
+  margin: 0;
+  margin-right: 100px;
+  margin-top: 87px;   
+}
+
+.slider-delivery,
+.slider-warranty,
+.slider-credit {  
+  position: relative;  
+  z-index: 0;
+  margin-bottom: 50px;
+  transition: all 0.1s linear;     
+}
+
+.slider-delivery {
+  padding: 14px 23px;
+  margin-top: 94px;
+}
+
+.slider-warranty { 
+  padding: 14px 25px;  
+}
+
+.slider-credit {
+  padding: 14px 38px;
+  margin-bottom: 74px;
+}
+
+.slider-delivery::before,
+.slider-warranty::before,
+.slider-credit::before {
+  content: "";
+
+  position: absolute;
+  width: 160px;
+  height: 8px;
+  top: 22px;
+  left: 0px;
+  z-index: -1;
+  transition: all 0.1s linear;  
+  
+  background-color: rgb(240, 197, 96);
+}
+
+.slider-delivery:hover::before,
+.slider-delivery:focus::before,
+.slider-warranty:hover::before,
+.slider-warranty:focus::before,
+.slider-credit:hover::before,
+.slider-credit:focus::before {
+  height: 100%;
+  top: 0px;
+
+  background-color: rgb(240, 197, 96);
+}
+
+.services-slide {
+  display: none;
+}
+
+#service-1:checked ~ .slider-list #services-slide1,
+#service-2:checked ~ .slider-list #services-slide2,
+#service-3:checked ~ .slider-list #services-slide3 {
+  display: flex;  
+}
+
+#service-1:checked  ~ .slider-controls .slider-delivery {
+  padding: 14px 23px;
+  color: rgb(247, 225,132);
+  background-color: rgb(0, 0, 0);    
+}
+
+#service-1:checked ~ .slider-controls .slider-delivery::before {
+  background-color: rgb(0, 0, 0);
+}
+
+#service-2:checked  ~ .slider-controls .slider-warranty {
+  padding: 14px 25px;
+  color: rgb(247, 225,132);
+  background-color: rgb(0, 0, 0);  
+}
+
+#service-2:checked  ~ .slider-controls .slider-warranty::before {
+  background-color: rgb(0, 0, 0);
+}
+
+#service-3:checked ~ .slider-controls .slider-credit {
+  padding: 14px 38px;
+  color: rgb(247, 225,132);
+  background-color: rgb(0, 0, 0);  
+}
+
+#service-3:checked ~ .slider-controls .slider-credit::before {
+  background-color: rgb(0, 0, 0);
+}
+
+/*-----Отсюда пошел блок представляемых брендов-----*/
 .brands {
  margin: 0 auto; 
  margin-bottom: 94px;
@@ -231,7 +538,6 @@ input[type="radio"].visually-hidden {
   padding-left: 0;
   display: flex;
   justify-content: space-between;
-
 }
 
 .brands-list a {
@@ -300,21 +606,13 @@ input[type="radio"].visually-hidden {
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
   font-size: 47px;
   line-height: 48px;
-}
-
-.filters h2 {
-  color: rgb(0, 0, 0);
-
-  font-family: "Gilroy ExtraBold", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
+  margin-left: 60px;
 }
 
 .breadcrumbs {
   list-style: none;
   padding-left: 0;
+  margin-left: 60px;
 }
 
 .breadcrumbs a {
@@ -335,12 +633,30 @@ input[type="radio"].visually-hidden {
   color: rgba(0, 0, 0, 0.1);  
 }
 
-.filter {
+.filters {
+  width: 200px;
+  margin-left: 60px;
+  outline: 1px solid black;   
+}
+
+.filters h2 {
+  color: rgb(0, 0, 0);
+
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+.filter { 
  background-color: rgb(238, 238, 238);	
 } 
 
 .filter fieldset {
-  border: none;	
+  padding: 0;
+  margin: 0;
+  border: none;  
+  margin-bottom: 40px;  	
 }
 
 .filter legend {
@@ -348,13 +664,116 @@ input[type="radio"].visually-hidden {
 
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
   font-size: 18px;
-  line-height: 24px;
+  line-height: 24px;     
 }
 
 .filter ul {
   list-style: none;
   line-height: 40px;
-  padding-left: 0;    	
+  margin: 0;
+  padding: 0;
+}
+
+.filter-option {  
+  padding-left: 40px;
+}
+
+.filter-option label {
+  position: relative;
+
+  display: block;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.filter-input-checkbox + label::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: -40px;
+
+  width: 23px;
+  height: 23px;
+  background-image: url("../img/checkbox-off.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.filter-input-checkbox:checked + label::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: -40px;
+
+  width: 27px;
+  height: 23px;  
+  
+  background-image: url("../img/checkbox-on.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.filter-input-radio + label::before {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: -40px;
+
+  width: 25px;
+  height: 25px;
+  
+  background-image: url("../img/radio-off.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.filter-input-radio:checked + label::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: -40px;
+
+  width: 25px;
+  height: 25px;
+  
+  background-image: url("../img/radio-on.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.filter-button {
+  position: relative;
+  padding: 11px 40px;
+  z-index: 0; 
+  background-color: transparent;
+  border: none; 
+}
+
+.filter-button::before {
+  content: "";
+
+  position: absolute;
+  width: 100%;
+  height: 10px;
+  top: 18px;
+  left: 0px;
+  z-index: -1;
+  transition: all 0.1s linear;
+  
+  background-color: rgb(240, 197, 96);
+}
+
+.filter-button:hover::before,
+.filter-button:focus::before {
+  height: 100%;
+  top: 0px;
+
+  background-color: rgb(240, 197, 96);
+}
+
+.filter-button:active {
+  color: rgba(0, 0, 0, 0.3);
 }
 
 /*Переделать после добавления декоративных чек-боксов/радио
@@ -368,14 +787,12 @@ input[type="radio"].visually-hidden {
 .filter-input:focus + label {
   color: rgba(0, 0, 0, 0.6);
 }
-  
 
 .filter-input:disabled + label {
  color: rgba(166, 166, 166);	
  opacity: 0.25; 	
 }
 
-/*-----Дописать стили для измнения геометрии-----*/
 /*-----Кнопка показать в фильтре-----*/
 .filter input[type="submit"] {   
   color: rgb(0, 0, 0);
@@ -443,33 +860,19 @@ input[type="radio"].visually-hidden {
   color: rgba(0, 0, 0, 0.2);    
 }
 
+/*-----Тут пагинация------*/
+
 .pagination-list {
   list-style: none;
-  padding-left: 0; 	
-}
+  padding-left: 0;
+  margin: 0;
 
-.pagination-item:first-child a,
-.pagination-item:last-child a {
-  color: rgba(0, 0, 0);
+  background-color: rgb(235, 235, 235);  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
-  font-family: "Gilroy ExtraBold", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.2em;
-}
-
-/*Дописать для кнопок "НАЗАД" и "ВПЕРЕД" стили
- для изменения состания цвет по всей геометрии*/
-.pagination-item:first-child a:hover,
-.pagination-item:first-child a:focus,
-.pagination-item:last-child a:hover,
-.pagination-item:last-child a:focus {
-  color: rgba(0, 0, 0);  
-}
-
-.pagination-item:first-child a:active,
-.pagination-item:last-child a:active {
-  color: rgba(0, 0, 0, 0.3);  
+  width: 760px;    
 }
 
 .pagination-item a {
@@ -478,47 +881,50 @@ input[type="radio"].visually-hidden {
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
-  letter-spacing: 0.2em;	
+  letter-spacing: 0.2em;
+
+  display: flex;
+  padding: 25px 30px;  
+
+  outline: 1px solid black;
 }
+
+.pagination-item-prev a,
+.pagination-item-next a,
+.pagination-item-current a {
+  color: rgb(0, 0, 0);
+}
+
 
 .pagination-item a:hover,
 .pagination-item a:focus {
   color: rgba(0, 0, 0, 0.6);
-
-  font-family: "Gilroy ExtraBold", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.2em;  	
 }
 
 .pagination-item a:active {
-  color: rgba(0, 0, 0);
-
-  font-family: "Gilroy ExtraBold", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.2em;  	
+  color: rgb(0, 0, 0);
 }
 
-.pagination-item-current a {
-  color: rgb(0, 0, 0);
+.pagination-item-prev a:hover,
+.pagination-item-prev a:focus,
+.pagination-item-next a:hover,
+.pagination-item-next a:focus {
+ background-color: rgb(217, 217, 217);
+ color: rgb(0, 0, 0); 
+}
 
-  font-family: "Gilroy ExtraBold", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.2em;	
+.pagination-item-prev a:active,
+.pagination-item-next a:active {
+  background-color: rgb(217, 217, 217);
+  color: rgba(0, 0, 0, 0.3);
 }
 
 .pagination-item-current a:hover,
 .pagination-item-current a:focus,
 .pagination-item-current a:active {
   color: rgb(0, 0, 0);
-
-  font-family: "Gilroy ExtraBold", Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.2em;  	
 }
+
 
 /*-----Отсюда пошел футер-----*/
 footer {
@@ -647,6 +1053,7 @@ footer .decoration-line {
   padding-left: 100px;
   padding-right: 100px;
   padding-bottom: 92px;
+  display: none;
 } 
 
 .fields-wrap {  
@@ -949,18 +1356,19 @@ main {
   outline: 1px solid black;
   width: 160px;
 }
+
 /*Отсюда пошел слайдер Доставка-Контакты-Кредит*/
-
-
 
 .about-us {
   width: 460px;
   outline: 1px solid black;
+  padding-bottom: 9px;
 }
 
 .address-map {
   width: 560px;
-  outline: 1px solid black;  
+  outline: 1px solid black;
+  padding-bottom: 9px;  
 }
 
 .index-columns {
@@ -1022,11 +1430,6 @@ footer {
   margin-bottom: 50px;
 }
 
-.filters {
-  width: 200px;
-  min-height: 1290px;  
-}
-
 .catalog {
   width: 760px;
   min-height: 1290px;
@@ -1072,25 +1475,6 @@ footer {
 
 .product-title-wrap span { 
  align-self: center; 
-}
-
-.pagination-list {
-  background-color: rgb(235, 235, 235);
-  outline: 1px solid black;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 760px;   
-}
-.pagination-item-prev,
-.pagination-item-next {
- padding: 30px 30px; 
- outline: 1px solid black;
-}
-
-.pagination-item-prev:hover,
-.pagination-item-next:hover {
- background-color: rgb(217, 217, 217); 
 }
 
 /*-----Отсюда пошли стили для декор. эл-в-----*/
@@ -1273,14 +1657,12 @@ footer {
 
 /*-----Отсюда пошли декор. стили для кнопок/ссылок-----*/
 /*-----Отсюда пошлик декор стили для кнопкок на главной-----*/
-
-/*-----Добавить кнопку для слайдера ПОДРОБНЕЕ-----*/
 .about-us-btn,
 .write-us-btn {
   outline: 1px solid black;
   position: relative;
-  padding: 0 23px;
-  z-index: 0;    
+  padding: 11px 23px;
+  z-index: 0;      
 }
 
 .about-us-btn::before,
@@ -1290,7 +1672,7 @@ footer {
   position: absolute;
   width: 100%;
   height: 8px;
-  top: 7px;
+  top: 18px;
   left: 0px;
   z-index: -1;
   transition: all 0.1s linear;
@@ -1312,7 +1694,6 @@ footer {
 .write-us-btn:active {
  color: rgba(0, 0, 0, 0.3);
 }
-
 
 
 /*-----Отсюда пошли стили для иконок соц.сетей и академии -----*/
@@ -1428,6 +1809,8 @@ footer {
   background-repeat: no-repeat;
   background-position: 0 0;
 }
+
+
 
 /*-----Отсюда пошли декор. стили для карточек товара в каталоге-----*/
 
