@@ -48,6 +48,8 @@ body {
   padding: 0;
 
   font-family: "Open Sans Light", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
   font-size: 15px;
   line-height: 30px;
   font-style: normal;
@@ -117,6 +119,8 @@ input[type="radio"].visually-hidden {
   color: rgb(0, 0, 0);
 
   font-family: "Open Sans Light", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
   font-size: 15px;
   line-height: 30px;
   padding: 0;
@@ -172,6 +176,8 @@ input[type="radio"].visually-hidden {
   color: rgb(0, 0, 0);
   
   font-family: "Open Sans Light", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
   font-size: 15px;
   line-height: 30px;
   padding: 0;
@@ -289,7 +295,9 @@ input[type="radio"].visually-hidden {
 .slider-main-wrap h3 {
   color: rgb(0, 0, 0);
 
-  font-family: "Gilroy ExtraBold", Arial, sans-serif; 
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700; 
   font-size: 47px;
   line-height: 56px;
   margin: 0;
@@ -338,6 +346,8 @@ input[type="radio"].visually-hidden {
   color: rgb(0, 0, 0);
 
   font-family: "Open Sans Light", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
   font-size: 36px;
   line-height: 48px;
   font-weight: 300;
@@ -348,6 +358,8 @@ input[type="radio"].visually-hidden {
   color: rgb(0, 0, 0);
 
   font-family: "Open Sans Light", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
   font-size: 13px;
   line-height: 20px;
   font-weight: 300;
@@ -410,10 +422,11 @@ input[type="radio"].visually-hidden {
   justify-content: space-between;  
   position: relative;
   z-index: 0;
-  margin-bottom: 70px;   
+  margin-bottom: 70px;
+  background-color: rgb(229, 229, 229);   
 }
 
-.slider-services::before {
+/*.slider-services::before {
    content: "";
 
    position: absolute;
@@ -426,12 +439,14 @@ input[type="radio"].visually-hidden {
    background-color: rgb(229, 229, 229);
    z-index: -1;
    outline: 1px solid black;    
-}
+}*/
 
 .slider-services h3 {
   color: rgb(0, 0, 0);
 
-  font-family: "Gilroy ExtraBold", Arial, sans-serif; 
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700; 
   font-size: 47px;
   line-height: 48px;
   margin: 0;
@@ -608,7 +623,9 @@ input[type="radio"].visually-hidden {
 .address-map h2 {
   color: rgb(0, 0, 0);
 
-  font-family: "Gilroy ExtraBold", Arial, sans-serif; 
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700; 
   font-size: 47px;
   line-height: 48px;
 }
@@ -626,9 +643,11 @@ input[type="radio"].visually-hidden {
   color: rgb(0, 0, 0);
 
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
-  list-style-type: none;
+  font-style: normal;
+  font-weight: 700;
   font-size: 16px;
   line-height: 40px;
+  list-style-type: none;
   padding-left: 35px;
   margin-bottom: 82px;    
 }
@@ -638,6 +657,8 @@ input[type="radio"].visually-hidden {
   color: rgb(0, 0, 0);
 
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
   font-size: 47px;
   line-height: 48px;
   margin-left: 60px;
@@ -653,6 +674,8 @@ input[type="radio"].visually-hidden {
   color: rgba(0, 0, 0, 0.3);
 
   font-family: "Open Sans Light", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
   font-size: 14px;
   line-height: 24px;
   font-weight: 300;	
@@ -677,6 +700,8 @@ input[type="radio"].visually-hidden {
   color: rgb(0, 0, 0);
 
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
   font-size: 16px;
   line-height: 24px;
   text-transform: uppercase;
@@ -697,6 +722,8 @@ input[type="radio"].visually-hidden {
   color: rgb(0, 0, 0);
 
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
   font-size: 18px;
   line-height: 24px;     
 }
@@ -832,6 +859,8 @@ input[type="radio"].visually-hidden {
   color: rgb(0, 0, 0);
   
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
   font-size: 18px;
   letter-spacing: 0.2em;
   text-align: center;
@@ -850,6 +879,8 @@ input[type="radio"].visually-hidden {
   color: rgb(0, 0, 0);
   
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
   font-size: 18px;
   line-height: 24px;
 }
@@ -858,6 +889,8 @@ input[type="radio"].visually-hidden {
   color: rgb(0, 0, 0);
   
   font-family: "Gilroy Light", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
   font-size: 16px;
   line-height: 24px;
 }
@@ -875,6 +908,8 @@ input[type="radio"].visually-hidden {
   color: rgba(0, 0, 0, 0.5);
 
   font-family: "Open Sans Light", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
   font-size: 13px;
   line-height: 36px;
   font-weight: 300; 
@@ -913,6 +948,8 @@ input[type="radio"].visually-hidden {
   color: rgba(0, 0, 0, 0.3);
 
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
   font-size: 16px;
   line-height: 24px;
   letter-spacing: 0.2em;
@@ -983,14 +1020,20 @@ footer {
 }
 
 .telephone,
-.telephone > a {
-  color: rgb(255, 255, 255); 	
+.telephone a {
+  color: rgba(255, 255, 255, 0.7); 	
 }
 
-.telephone:hover,
-.telephone > a:hover {
-  color: rgba(0, 0, 0, 0.6);  	
+
+.telephone a:hover,
+.telephone a:focus {
+  color: rgba(255, 255, 255);  	
 }
+
+.telephone a:active {
+  color: rgba(255, 255, 255, 0.3);
+}
+
 
 footer .user-navigation a,
 footer .site-navigation a {
@@ -1027,7 +1070,9 @@ footer .decoration-line {
 .feedback label {
   color: rgb(0, 0, 0);
 
-  font-family: "Gilroy ExtraBold", Arial, sans-serif; 
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700; 
   font-size: 18px;
   line-height: 24px;
 }
@@ -1037,6 +1082,8 @@ footer .decoration-line {
   color: rgb(0, 0, 0);
 
   font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
   font-size: 14px;
   line-height: 18px;  
 }
@@ -1385,6 +1432,8 @@ main {
   color: rgb(0, 0, 0);
 
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
   font-size: 18px;
   line-height: 24px;
   outline: 1px solid black;
@@ -1413,11 +1462,12 @@ main {
 }
 
 /*-----Отсюда пошли контейнеры футера-----*/
-footer {
+.footer-container {
   width: 1440px;  
   margin: 0 auto;
   padding: 60px 140px;    
 }
+
 
 .footer-top,
 .footer-top .user-navigation,
