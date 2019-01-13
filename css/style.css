@@ -229,7 +229,8 @@ input[type="radio"].visually-hidden {
 .user-navigation,
 .site-navigation {
   list-style: none;
-  padding-left: 0;  	
+  padding: 0;
+  margin: 0; 	
 }
 
 .user-navigation {
@@ -238,6 +239,17 @@ input[type="radio"].visually-hidden {
   font-size: 15px;
   line-height: 30px;    
 }
+
+.menu-title {
+  color: rgb(0, 0, 0);
+  
+  font-size: 15px;
+  line-height: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-list
 
 .menu-title a:hover,
 .menu-title a:focus,
@@ -631,7 +643,7 @@ input[type="radio"].visually-hidden {
   filter: none; 
   filter: none;  
 }
-
+/*-----Отсюда пошли блоки "О нас" + "Контакты"-----*/
 .decoration-line {
   max-width: 80px;
   min-height: 7px;
@@ -648,9 +660,63 @@ input[type="radio"].visually-hidden {
   font-size: 47px;
   line-height: 48px;
 }
-
+/*-----Отсюда пошли стили iframe GoogleMaps-----*/
 .address-map img {
   margin-bottom: 78px;
+  cursor: pointer;
+}
+
+.popup-show {
+  display: block;
+}
+
+.address-map .map-popup {
+  color: rgb(0, 0, 0);
+  position: fixed;
+
+  top: 5%;
+  margin-left: -480px;
+  left: 50%;
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
+  background-color: rgb(255, 255, 255);
+  
+  width: 960px;
+  height: 559px;    
+}
+
+.map-popup iframe {  
+  width: 960px;
+  height: 559px;
+  border: 0;  
+}
+
+.map-close {
+  position: absolute;
+  top: 40px;
+  right: 12px;
+
+  width: 55px;
+  height: 55px;
+
+  font-size: 0;
+  border: 0;  
+  background-image: url(../img/modal-close.svg); 
+  background-color: transparent;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  transition: all 0.1s linear;
+  cursor: pointer; 
+}
+
+.map-close:hover,
+.map-close:focus {
+  opacity: 1;
+  outline: none;  
+}
+
+.map-close:active {
+  opacity: 0.3;
+  outline: none;  
 }
 
 .about-us-btn:active,
@@ -1142,7 +1208,7 @@ footer .decoration-line {
   color: rgb(0, 0, 0);
   position: fixed;
 
-  top: 350px;
+  top: 50%;
   margin-left: -480px;
   left: 50%;
   box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
@@ -1152,13 +1218,12 @@ footer .decoration-line {
   padding-top: 99px;
   padding-left: 100px;
   padding-right: 100px;
-  padding-bottom: 92px;
-  display: none;
+  padding-bottom: 92px;  
 } 
 
 .fields-wrap {  
   display: flex;
-  justify-content: space-between;  
+  justify-content: space-between;
 }
 
 .fields-wrap .login,
@@ -1175,12 +1240,28 @@ footer .decoration-line {
 }
 
 .fields-wrap .login input[type="text"],
-.fields-wrap .email input[type="text"] {
-  background-color: rgb(242, 242, 242);
+.fields-wrap .email input[type="text"] {       
   width: 100%;
   padding: 21px 21px;
   margin-bottom: 35px;
   border: none;    
+}
+
+.fields-color{
+ background-color: rgba(229, 229, 229, 0.5); 
+}
+
+.fields-wrap .login input[type="text"]:hover,
+.fields-wrap .email input[type="text"]:hover,
+.text-email textarea:hover {
+ background-color: rgba(229, 229, 229, 0.8); 
+}
+
+.fields-wrap .login input[type="text"]:focus,
+.fields-wrap .email input[type="text"]:focus,
+.text-email textarea:focus {
+ background-color: rgb(255, 255, 255);
+ outline: 2px solid rgb(247, 226, 150);
 }
 
 .text-email { 
@@ -1192,7 +1273,7 @@ footer .decoration-line {
 }
 
 .text-email textarea {
-  background-color: rgb(242, 242, 242);
+  background-color: rgba(229, 229, 229, 0.5);
   width: 100%;
   padding: 21px 21px;
   resize: none;
@@ -1219,22 +1300,22 @@ footer .decoration-line {
 
 .feedback-close:hover,
 .feedback-close:focus {
-  opacity: 1;  
+  opacity: 1;
+  outline: none;  
 }
 
 .feedback-close:active {
-  opacity: 0.3;  
+  opacity: 0.3;
+  outline: none;  
 }
 
-.feedback-send {
-  text-align: center;
-  vertical-align: middle;  
+.feedback-send {    
   background-color: transparent;
   border: none;
   
   position: relative;
-  padding: 0 23px;
-  z-index: 0;  
+  padding: 11px 23px;
+  z-index: 0;    
 }
 
 .feedback-send::before {
@@ -1243,7 +1324,7 @@ footer .decoration-line {
   position: absolute;
   width: 100%;
   height: 8px;
-  top: 7px;
+  top: 18px;
   left: 0px;
   z-index: -1;
   transition: all 0.1s linear;
@@ -1262,6 +1343,51 @@ footer .decoration-line {
 .feedback-send:active {
   color: rgba(0, 0, 0, 0.3);  
 }
+
+.modal {
+  display: none;
+}
+/*-----Немного анимации-----*/
+@keyframes bounce-right {
+  0% {transform: translateX(1000px);}
+  30% {transform: translateX(-150px);}
+  60% {transform: translateX(50px);}
+  90% {transform: translateX(-25px);}
+  1000% {transform: translateX(0);}
+}
+
+.modal-show-right {
+  display: block;
+  animation-name: bounce-right;
+  animation-duration: 0.7s;  
+}
+
+@keyframes bounce-left {
+  0% {transform: translateX(-1000px);}
+  30% {transform: translateX(150px);}
+  60% {transform: translateX(-50px);}
+  90% {transform: translateX(25px);}
+  1000% {transform: translateX(0);}
+}
+
+.modal-show-left {
+  display: block;
+  animation-name: bounce-left;
+  animation-duration: 0.7s;  
+}
+
+@keyframes shake {
+  0%, 100% {transform: translateX(0);}
+  10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+  20%, 40%, 60%, 80% {transform: translateX(10px);}  
+}
+
+.modal-error {
+  background-color: rgb(237, 181, 181);  
+  animation-name: shake;
+  animation-duration: 0.7s; 
+}
+
 
 
 /*-----Отсюда пошли сеточные стили-----*/
@@ -1292,7 +1418,7 @@ header {
 
 .search-form,
 .header-top .user-navigation {  
-  width: 50%;
+  width: 50%;  
   /*padding: 0 20px;*/       
 }
 
@@ -1322,16 +1448,14 @@ header {
 }
 
 .menu-list li {
+  /*break-inside: avoid;*/
+  column-gap: 5px;
   outline: 1px solid black;
 }
 
 .menu-list {
-  /*width: 100%;*/
-  outline: 1px solid black;
-  display: flex;
-  /*flex-direction: column;*/
+ column-count: 3;   
 }
-
 
 .header-middle nav {
   width: 50%;
@@ -1909,8 +2033,7 @@ header {
   background-position: 0 0;
 }
 
-
-
 /*-----Отсюда пошли декор. стили для карточек товара в каталоге-----*/
+
 
 
