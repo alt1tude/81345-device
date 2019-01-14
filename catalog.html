@@ -59,13 +59,34 @@
 
       <div class="catalog-columns">
         <section class="filters">          
-          <h2 class="btn-style">Фильтр:</h2>
-          <form class="filter" action="#" method="post">
-          <!-- <fieldset>
-            <legend>Стоимость</legend>
-            Тут идет форма с фильтрами по стоимости, по цене и по наличию bluetooth модулю. Фильтр по стоимости пока без реализации
-          </fieldset> -->
-          <fieldset>
+          <h2 class="btn-style">Фильтр:</h2>          
+          <form class="filter" action="#" method="get">
+          
+          <fieldset class="filter-scrollbar">
+            <div class="filter-wrap">
+              <legend>Стоимость</legend>
+              <div class="range-filter">
+                <div class="range-controls">
+                  <div class="scale">
+                    <div class="bar"></div>
+                  </div>
+                  <div class="toggle toggle-min"></div>
+                  <div class="toggle toggle-max"></div>
+                </div> 
+
+                <div class="price-controls">
+                  <label class="min-price">от
+                  <input name="min-price" type="text" value="0">
+                  </label>
+                  <label class="max-price">до
+                  <input name="max-price" type="text" value="5000">
+                  </label>
+                </div>            
+              </div>
+            </div>
+          </fieldset>          
+
+          <fieldset class="filter-checkbox">
           <legend>Цвет:</legend>
             <ul>
               <li class="filter-option">                                  
@@ -91,7 +112,8 @@
             </ul>              
           </fieldset>
 
-          <fieldset>
+          <fieldset class="filter-radio">
+          <div class="filter-wrap">
           <legend>Bluetooth</legend>  
             <ul>
               <li class="filter-option">
@@ -104,7 +126,8 @@
                 name="product-group" id="bluetooth-no" value="bluetooth-off">
                 <label for="bluetooth-no">Нет</label>  
               </li>           
-            </ul>                         
+            </ul>
+          </div>                           
           </fieldset>
             <button class="btn-style filter-button" type="button">ПОКАЗАТЬ</button>
         </form>
