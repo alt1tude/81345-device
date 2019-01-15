@@ -35,7 +35,7 @@
   box-sizing: inherit;  
 }
 
-html {
+html {  
   box-sizing: border-box;  
 }
 
@@ -44,6 +44,7 @@ html {
 }
 
 body {
+  min-width: 1440px;
   margin: 0;
   padding: 0;
 
@@ -59,6 +60,11 @@ body {
 }
 
 header {
+  width: 1160px;
+  margin: 0 auto;
+  margin-top: 20px;  
+  padding-left: 60px;
+  padding-right: 60px;
   background-color: rgb(255, 225, 150);
 }
 
@@ -71,6 +77,12 @@ a {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.container {
+  width: 1440px;  
+  margin: 0 auto;
+  padding: 0 140px 185px;
 }
 
 .visually-hidden:not(:focus):not(:active),
@@ -110,11 +122,13 @@ input[type="radio"].visually-hidden {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.search-form {     
+/*-----Поле "Найти"-----*/
+.search-form {
+  width: 50%;     
   display: flex;  
 }
 
-/*-----Поле "Найти"-----*/
+
 .search-form input[type="text"] {  
   color: rgb(0, 0, 0);
 
@@ -202,8 +216,8 @@ input[type="radio"].visually-hidden {
 }
 
 .search-form input[type="text"]:focus {
- border-bottom: 2px solid black; 
- outline: none;
+  border-bottom: 2px solid black; 
+  outline: none;
 }
 
 .search-form input[type="text"]:focus ~ input[type="submit"] {
@@ -233,11 +247,136 @@ input[type="radio"].visually-hidden {
   margin: 0; 	
 }
 
-.user-navigation {
-  color: rgb(0, 0, 0);
-  
-  font-size: 15px;
-  line-height: 30px;    
+/*-----Отсюда пошел верхний контейнер хедера-----*/
+.header-top,
+.header-middle {  
+  display: flex;
+  /*margin: 0 -20px;*/
+  justify-content: space-between;  
+}
+
+.header-top .user-navigation,
+.header-middle nav {
+  width: 50%;
+  padding-left: 20px;  
+}
+
+.header-top .user-navigation,
+.header-middle .site-navigation {
+  display: flex;  
+  justify-content: space-between;      
+}
+
+.header-top .user-navigation li:first-child {
+  margin-right: auto;   
+}
+
+.header-top .user-navigation li:last-child {
+  margin-left: 41px;   
+}
+
+.header-middle .site-navigation li:first-child {
+  margin-right: 35px;  
+}
+
+.header-middle .site-navigation li:last-child {
+  margin-left: auto;
+}
+
+/*-----Хедер(Войти, Сравнить, Корзина)-----*/
+.header-top .login-link,
+.header-top .user-compare,
+.header-top .user-order {
+  position: relative;    
+}
+
+.header-top .login-link a {
+  padding-left: 27px;
+}
+
+/*-----Хедер(Войти)-----*/
+.header-top .login-link::before {
+  content: "";
+
+  position: absolute;
+  width: 13px;
+  height: 12px;
+  top: 9px;
+
+  background-image: url(../img/user.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  transition: all 0.1s linear;
+}
+
+.header-top .login-link:hover::before,
+.header-top .login-link:focus::before {
+  opacity: 0.6;
+}
+
+.header-top .login-link:active::before {
+  opacity: 0.3;
+}
+
+/*-----Хедер(Сравнить)-----*/
+.header-top .user-compare a {
+  padding-left: 20px;
+}
+
+.header-top .user-compare::before {
+  content: "";
+
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 9px;
+
+  background-image: url(../img/compare.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  transition: all 0.1s linear;
+}
+
+.header-top .user-compare:hover::before,
+.header-top .user-compare:focus::before {
+  opacity: 0.6;
+}
+
+.header-top .user-compare:active::before {
+  opacity: 0.3;
+}
+
+/*-----Хедер(Корзина)-----*/
+.header-top .user-order a {
+ padding-left: 24px;
+}
+
+.header-top .user-order::before {
+  content: "";
+
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 9px;
+
+  background-image: url(../img/cart.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  transition: all 0.1s linear;
+}
+
+.header-top .user-order:hover::before,
+.header-top .user-order:focus::before {
+  opacity: 0.6;
+}
+
+.header-top .user-order:active::before {
+  opacity: 0.3;
+}
+
+.menu-catalog {
+  width: 50%;
+  /*padding: 0 20px;*/  
 }
 
 .menu-title {
@@ -249,7 +388,35 @@ input[type="radio"].visually-hidden {
   margin: 0;
 }
 
-.menu-list
+.menu-title a {  
+  position: relative; 
+}
+
+.menu-title a::after {
+  content: "";
+
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 0;
+  margin-left: 16px; 
+
+  background-image: url(../img/plus.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  opacity: 0.3;
+}
+
+.menu-list li {
+  /*break-inside: avoid;*/
+  column-gap: 5px;
+  outline: 1px solid black;
+}
+
+.menu-list {
+ column-count: 3;
+ display: none;   
+}
 
 .menu-title a:hover,
 .menu-title a:focus,
@@ -269,6 +436,111 @@ input[type="radio"].visually-hidden {
   color: rgba(0, 0, 0, 0.3);
 }
 
+/*-----Отсюда пошел блок популярных товаров-----*/
+.popular-list {
+  list-style: none;
+  margin: 0;
+  padding: 0; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start; 
+  outline: 1px solid black;
+}
+
+.popular-wrap { 
+  width: 160px;           
+  background-color: rgb(247, 226, 150);
+  
+  margin-bottom: 35px;
+  transition: all 0.1s linear;  
+}
+
+.popular-1 img {
+  margin-top: 52px;
+  margin-bottom: 53px;
+  margin-left: 31px;
+  margin-right: 32px;
+  transition: all 0.1s linear;      
+}
+
+.popular-2 img {
+  margin-top: 41px;
+  margin-bottom: 2px;
+  margin-left: 38px;
+  margin-right: 36px;
+  transition: all 0.1s linear;
+}
+
+.popular-3 img {
+  margin-top: 38px;
+  margin-bottom: 35px;
+  margin-left: 49px;
+  margin-right: 40px;
+  transition: all 0.1s linear; 
+}
+
+.popular-4 img {
+  margin-top: 50px;
+  margin-bottom: 45px;
+  margin-left: 28px;
+  margin-right: 25px;
+  transition: all 0.1s linear;
+}
+
+.popular-5 img {
+  margin-top: 32px;
+  margin-bottom: 30px;
+  margin-left: 55px;
+  margin-right: 49px;
+  transition: all 0.1s linear;
+}
+
+.popular-6 img {
+  margin-top: 49px;
+  margin-bottom: 42px;
+  margin-left: 13px;
+  margin-right: 15px;
+  transition: all 0.1s linear;
+}
+
+.popular-1:hover .popular-wrap,
+.popular-1:focus .popular-wrap,
+.popular-2:hover .popular-wrap,
+.popular-2:focus .popular-wrap,
+.popular-3:hover .popular-wrap,
+.popular-3:focus .popular-wrap,
+.popular-4:hover .popular-wrap,
+.popular-4:focus .popular-wrap,
+.popular-5:hover .popular-wrap,
+.popular-5:focus .popular-wrap,
+.popular-6:hover .popular-wrap,
+.popular-6:focus .popular-wrap {
+  background-color: rgb(247, 197, 46);
+}
+
+.popular-1:active .popular-wrap img,
+.popular-2:active .popular-wrap img,
+.popular-3:active .popular-wrap img,
+.popular-4:active .popular-wrap img,
+.popular-5:active .popular-wrap img,
+.popular-6:active .popular-wrap img {
+  opacity: 0.3;
+}
+
+.popular-title { 
+  color: rgb(0, 0, 0);
+
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 24px;
+  outline: 1px solid black;
+  width: 160px;
+  margin: 0;
+  padding: 0;  
+}
 
 /*Для проверки Сергея.
 Стили 1го основного слайдера, пока все кривое.
@@ -425,7 +697,6 @@ input[type="radio"].visually-hidden {
 
 
 
-
 /*-----Отсюда пошел 2й слайдер, слайдер сервисов-----*/
 .slider-services {
  margin: 0;
@@ -443,21 +714,6 @@ input[type="radio"].visually-hidden {
   position: relative;  
   top: -120px;
 }
-
-/*.slider-services::before {
-   content: "";
-
-   position: absolute;
-   width: 1440px;
-   height: 373px;
-   bottom: -69px; 
-   left: 50%;
-   margin-left: -720px;    
-   
-   background-color: rgb(229, 229, 229);
-   z-index: -1;
-   outline: 1px solid black;    
-}*/
 
 .slider-services h3 {
   color: rgb(0, 0, 0);
@@ -643,7 +899,27 @@ input[type="radio"].visually-hidden {
   filter: none; 
   filter: none;  
 }
+
 /*-----Отсюда пошли блоки "О нас" + "Контакты"-----*/
+.index-columns {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;  
+}
+
+.about-us {
+  width: 460px;
+  outline: 1px solid black;
+  padding-bottom: 9px;
+}
+
+.address-map {
+  width: 560px;
+  outline: 1px solid black;
+  padding-bottom: 9px;  
+}
+
+
 .decoration-line {
   max-width: 80px;
   min-height: 7px;
@@ -660,6 +936,42 @@ input[type="radio"].visually-hidden {
   font-size: 47px;
   line-height: 48px;
 }
+
+.transport-partnership {
+  color: rgb(0, 0, 0);
+
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 40px;
+  list-style-type: none;
+  padding-left: 35px;
+  margin-bottom: 82px;    
+}
+
+.transport-partnership li {
+  outline: 1px solid black; 
+}
+
+.transport-partnership a {
+  position: relative;  
+}
+
+.transport-partnership a::before {
+  content: ""; 
+
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 0;
+  left: -39px;  
+
+  background-image: url(../img/slider-button-gray.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;    
+}
+
 /*-----Отсюда пошли стили iframe GoogleMaps-----*/
 .address-map img {
   margin-bottom: 78px;
@@ -719,25 +1031,567 @@ input[type="radio"].visually-hidden {
   outline: none;  
 }
 
+/*-----Кнопки "Подробнее" и "Напишите нам"-----*/
 .about-us-btn:active,
 .write-us-btn:active {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.transport-partnership {
+.about-us-btn,
+.write-us-btn {
+  outline: 1px solid black;
+  position: relative;
+  padding: 11px 23px;
+  z-index: 0;      
+}
+
+.about-us-btn::before,
+.write-us-btn::before {
+  content: "";
+
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  top: 18px;
+  left: 0px;
+  z-index: -1;
+  transition: all 0.1s linear;
+  
+  background-color: rgb(240, 197, 96);      
+}
+
+.about-us-btn:hover::before,
+.about-us-btn:focus::before,
+.write-us-btn:hover::before,
+.write-us-btn:focus::before {
+  height: 100%;
+  top: 0px;
+
+  background-color: rgb(240, 197, 96);
+}
+
+.about-us-btn:active,
+.write-us-btn:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+/*-----Отсюда пошел футер-----*/
+footer {
+  background-color: rgb(70, 70, 70);
+}
+/*-----Отсюда пошли контейнеры футера-----*/
+.footer-top,
+.footer-top .user-navigation,
+.footer-middle,
+.footer-middle .site-navigation,
+.footer-bottom,
+.social-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;       
+}
+
+.footer-top .user-navigation li {
+  margin-right: 65px;  
+}
+
+.footer-top .user-navigation li:last-child {
+  margin-right: 0; 
+}
+
+.footer-middle .site-navigation li {  
+  margin-right: 35px;    
+}
+
+.footer-middle .site-navigation li:last-child {
+  margin-right: 0; 
+}
+
+.footer-logo {
+  color: rgb(255, 198, 0);
+}
+
+.footer-logo:hover,
+.footer-logo:focus {
+  color: rgba(255, 198, 0, 0.6);    
+}
+
+.footer-logo:active {
+  color: rgba(255, 198, 0, 0.3);  
+}
+
+.address {
+  color: rgb(255, 255, 255); 
+}
+
+.telephone,
+.telephone a {
+  color: rgba(255, 255, 255, 0.7);  
+}
+
+.telephone a:hover,
+.telephone a:focus {
+  color: rgba(255, 255, 255);   
+}
+
+.telephone a:active {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+footer .user-navigation a,
+footer .site-navigation a {
+  color: rgba(255, 255, 255, 0.7);  
+}
+
+footer .user-navigation a:hover,
+footer .user-navigation a:focus,
+footer .site-navigation a:hover,
+footer .site-navigation a:focus {
+  color: rgb(255, 255, 255);      
+}
+
+footer .user-navigation a:active,
+footer .site-navigation a:active {
+  color: rgba(255, 255, 255, 0.3);  
+}
+
+/*-----Футер(Войти, Сравнить, Корзина)-----*/
+.footer-top .login-link,
+.footer-top .user-compare,
+.footer-top .user-order {
+  position: relative;    
+}
+
+.footer-top .login-link a {
+  padding-left: 27px;
+}
+
+/*-----Футер(Войти)-----*/
+.footer-top .login-link::before {
+  content: "";
+
+  position: absolute;
+  width: 13px;
+  height: 12px;
+  top: 9px;
+
+  background-image: url(../img/user-footer.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  transition: all 0.1s linear;
+}
+
+.footer-top .login-link:hover::before,
+.footer-top .login-link:focus::before {
+  opacity: 0.6;
+}
+
+.footer-top .login-link:active::before {
+  opacity: 0.3;
+}
+
+/*-----Футер(Сравнить)-----*/
+.footer-top .user-compare a {
+  padding-left: 20px;
+}
+
+.footer-top .user-compare::before {
+  content: "";
+
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 9px;
+
+  background-image: url(../img/compare-footer.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  transition: all 0.1s linear;
+}
+
+.footer-top .user-compare:hover::before,
+.footer-top .user-compare:focus::before {
+  opacity: 0.6;
+}
+
+.footer-top .user-compare:active:before {
+  opacity: 0.3;
+}
+
+/*-----Футер(Корзина)-----*/
+.footer-top .user-order a {
+ padding-left: 24px;
+}
+
+.footer-top .user-order::before {
+  content: "";
+
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 9px;
+
+  background-image: url(../img/cart-footer.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  transition: all 0.1s linear;
+}
+
+.footer-top .user-order:hover::before,
+.footer-top .user-order:focus::before {
+  opacity: 0.6;  
+}
+
+.footer-top .user-order:active:before {
+  opacity: 0.3;  
+}
+
+.footer-social ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.social-list li {
+ margin-right: 55px;  
+}
+
+/*.social-list li:last-child {
+  margin-right: 0;  
+}*/
+
+.social-button {
+  color: rgb(255, 255, 255);    
+}
+
+footer .decoration-line {
+  min-width: 80px;
+  background-color: rgb(255, 198, 0);
+}
+
+/*-----Отсюда пошли стили для иконок соц.сетей и академии -----*/
+.facebook,
+.instagramm,
+.twitter,
+.footer-copyright {
+ position: relative;
+}
+
+.facebook::before,
+.instagramm::before,
+.twitter::before {
+  content: "";
+
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  top: 50%;
+  left: 50%;  
+  margin-top: -16px;
+  margin-left: -16px;  
+  
+  background-image: url(../img/facebook.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  opacity: 0.3;
+  transition: all 0.1s linear;
+}
+
+.instagramm::before {
+  background-image: url(../img/instagram.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  transition: all 0.1s linear;
+}
+
+.twitter::before {
+  background-image: url(../img/twitter.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  transition: all 0.1s linear;
+}
+
+.facebook:hover:before,
+.facebook:focus:before,
+.instagramm:hover::before,
+.instagramm:focus::before,
+.twitter:hover::before,
+.twitter:focus::before,
+.footer-copyright:hover::before,
+.footer-copyright:focus::before {
+  opacity: 0.6;  
+}
+
+.facebook:active:before,
+.instagramm:active::before,
+.twitter:active::before {
+ opacity: 0.1;   
+}
+
+.footer-copyright::before {
+  content: "";
+
+  position: absolute;
+  width: 27px;
+  height: 35px;
+  top: 50%;
+  left: 50%;
+  margin-top: -18px;
+  margin-left: -27px;
+
+  background-image: url(../img/logo-html.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  transition: all 0.1s linear;
+}
+
+.footer-copyright:active::before {
+  opacity: 0.3;  
+}
+
+/*-----Отсюда пошла форма для отправки письма-----*/
+.feedback label {
   color: rgb(0, 0, 0);
 
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
   font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 40px;
-  list-style-type: none;
-  padding-left: 35px;
-  margin-bottom: 82px;    
+  font-weight: 700; 
+  font-size: 18px;
+  line-height: 24px;
 }
 
-/*-----Отсюда идут стили для каталога-----*/
+.feedback input[type="text"],
+.feedback textarea {
+  color: rgb(0, 0, 0);
+
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;  
+}
+
+.feedback input[type="text"]::placeholder,
+.feedback textarea::placeholder { 
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.feedback :-ms-input-placeholder { 
+  color: rgba(0, 0, 0, 0.4);  
+}
+
+.feedback :-moz-placeholder {
+  color: rgba(0, 0, 0, 0.4); 
+}
+
+.feedback ::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.4);  
+}
+
+/*-----Форма отправки письма-----*/
+.write-us {
+  color: rgb(0, 0, 0);
+  position: fixed;
+
+  top: 30%;
+  margin-left: -480px;
+  left: 50%;
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
+  background-color: rgb(255, 255, 255);
+
+  width: 960px;  
+  padding-top: 99px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-bottom: 92px;  
+} 
+
+.fields-wrap {  
+  display: flex;
+  justify-content: space-between;
+}
+
+.fields-wrap .login,
+.fields-wrap .email {
+ display: flex;
+ flex-direction: column;
+ margin: 0;
+ width: 50%;
+ margin-right: 40px;
+}
+
+.fields-wrap .email {
+  margin-right: auto;  
+}
+
+.fields-wrap .login input[type="text"],
+.fields-wrap .email input[type="text"] {       
+  width: 100%;
+  padding: 21px 21px;
+  margin-bottom: 35px;
+  border: none;    
+}
+
+.fields-color{
+ background-color: rgba(229, 229, 229, 0.5); 
+}
+
+.fields-wrap .login input[type="text"]:hover,
+.fields-wrap .email input[type="text"]:hover,
+.text-email textarea:hover {
+ background-color: rgba(229, 229, 229, 0.8); 
+}
+
+.fields-wrap .login input[type="text"]:focus,
+.fields-wrap .email input[type="text"]:focus,
+.text-email textarea:focus {
+ background-color: rgb(255, 255, 255);
+ outline: none;
+ border: 2px solid rgb(247, 226, 150);
+}
+
+.text-email { 
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  margin-bottom: 50px;  
+}
+
+.text-email textarea {
+  background-color: rgba(229, 229, 229, 0.5);
+  width: 100%;
+  padding: 21px 21px;
+  resize: none;
+  border: none;
+}
+
+.feedback-close {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+
+  width: 55px;
+  height: 55px;
+
+  font-size: 0;
+  border: 0;  
+  background-image: url(../img/modal-close.svg); 
+  background-color: transparent;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  transition: all 0.1s linear;
+  cursor: pointer; 
+}
+
+.feedback-close:hover,
+.feedback-close:focus {
+  opacity: 1;
+  outline: none;  
+}
+
+.feedback-close:active {
+  opacity: 0.3;
+  outline: none;  
+}
+
+.feedback-send {    
+  background-color: transparent;
+  border: none;
+  
+  position: relative;
+  padding: 11px 23px;
+  z-index: 0;    
+}
+
+.feedback-send::before {
+  content: "";
+
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  top: 18px;
+  left: 0px;
+  z-index: -1;
+  transition: all 0.1s linear;
+  
+  background-color: rgb(240, 197, 96);
+}
+
+/*Не работают декор. стили с инпутом, заменил на <button> в разметки,
+пока закоментил как лишнее*/
+/*.feedback input[type="submit"] {
+  text-align: center;
+  vertical-align: middle;  
+  background-color: transparent;
+  border: none;
+}*/
+
+.feedback-send:hover::before,
+.feedback-send:focus::before {
+  height: 100%;
+  top: 0px;
+
+  background-color: rgb(240, 197, 96);
+}
+
+.feedback-send:active {
+  color: rgba(0, 0, 0, 0.3);  
+}
+
+.modal {
+  display: none;
+}
+/*-----Немного анимации-----*/
+@keyframes bounce-right {
+  0% {transform: translateX(1000px);}
+  30% {transform: translateX(-150px);}
+  60% {transform: translateX(50px);}
+  90% {transform: translateX(-25px);}
+  1000% {transform: translateX(0);}
+}
+
+.modal-show-right {
+  display: block;
+  animation-name: bounce-right;
+  animation-duration: 0.7s;  
+}
+
+@keyframes bounce-left {
+  0% {transform: translateX(-1000px);}
+  30% {transform: translateX(150px);}
+  60% {transform: translateX(-50px);}
+  90% {transform: translateX(25px);}
+  1000% {transform: translateX(0);}
+}
+
+.modal-show-left {
+  display: block;
+  animation-name: bounce-left;
+  animation-duration: 0.7s;  
+}
+
+@keyframes shake {
+  0%, 100% {transform: translateX(0);}
+  10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+  20%, 40%, 60%, 80% {transform: translateX(10px);}  
+}
+
+.modal-error {
+  background-color: rgb(237, 181, 181);  
+  animation-name: shake;
+  animation-duration: 0.7s; 
+}
+
+
+
+
+
+/*-----Отсюда идет все по странице каталога-----*/
+.inner-page .login-link a {
+  padding-left: 20px;
+}
+
 .page-title {
   color: rgb(0, 0, 0);
 
@@ -746,13 +1600,22 @@ input[type="radio"].visually-hidden {
   font-weight: 700;
   font-size: 47px;
   line-height: 48px;
+  margin: 0;
+  padding: 0;
   margin-left: 60px;
+  /*margin-bottom: 30px; */
 }
 
+/*-----Хлебные-крошки-----*/
 .breadcrumbs {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
   list-style: none;
-  padding-left: 0;
+  margin: 0;
+  padding: 0;  
   margin-left: 60px;
+  /*margin-bottom: 50px;*/
 }
 
 .breadcrumbs a {
@@ -773,6 +1636,33 @@ input[type="radio"].visually-hidden {
 
 .breadcrumbs a:active {
   color: rgba(0, 0, 0, 0.1);  
+}
+
+.breadcrumbs li {
+  position: relative; 
+  margin-right: 40px;
+}
+
+.breadcrumbs li::after {
+  content: "";
+
+  position: absolute;
+  width: 4px;
+  height: 7px;
+  top: 13px;
+  right: -16px;  
+ 
+  background-image: url(../img/nav-arrow.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.breadcrumbs-current::after {
+  display: none;
+}
+
+.breadcrumb-current {
+ margin-right: 0;  
 }
 
 /*-----Отсюда идут стили для фильтра каталога-----*/
@@ -949,6 +1839,11 @@ input[type="radio"].visually-hidden {
   background-position: 0 0;
 }
 
+.filter-input-checkbox + label:hover::before,
+.filter-input-checkbox:checked + label:hover::after {
+ opacity: 0.6;
+}
+
 .filter-input-radio + label::before {
   content: "";
   position: absolute;
@@ -977,6 +1872,26 @@ input[type="radio"].visually-hidden {
   background-position: 0 0;
 }
 
+.filter-input-radio + label:hover::before,
+.filter-input-radio:checked + label:hover::after {
+  opacity: 0.6; 
+}
+
+.filter input[type="checkbox"],
+.filter input[type="radio"] {
+  cursor: pointer;
+}
+
+.filter-input:disabled + label {
+  color: rgb(166, 166, 166);	
+  opacity: 0.25; 	
+}
+
+.filter-input:disabled + label:hover:before {  
+  opacity: 1; 
+}
+
+/*-----Кнопка показать в фильтре-----*/
 .filter-button {
   position: relative;
   padding: 11px 40px;
@@ -1011,50 +1926,64 @@ input[type="radio"].visually-hidden {
   color: rgba(0, 0, 0, 0.3);
 }
 
-/*Переделать после добавления декоративных чек-боксов/радио
-т.к. при наведении/фокусе цвет меняет только иконка чек-бокса/радио*/
-.filter input[type="checkbox"],
-.filter input[type="radio"] {
-  cursor: pointer;
+/*-----Отсюда идут стили для карточек товара-----*/
+.catalog-columns {
+  display: flex;
+  justify-content: space-between;  
 }
 
-.filter-input:hover + label,
-.filter-input:focus + label {
-  color: rgba(0, 0, 0, 0.6);
+.catalog {
+  width: 760px;
+  min-height: 1290px;
+  margin-bottom: 37px;
+
+  outline: 1px solid black;    
 }
 
-.filter-input:disabled + label {
- color: rgba(166, 166, 166);	
- opacity: 0.25; 	
-}
-
-/*-----Кнопка показать в фильтре-----*/
-.filter input[type="submit"] {   
-  color: rgb(0, 0, 0);
-  
-  font-family: "Gilroy ExtraBold", Arial, sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  letter-spacing: 0.2em;   
-  background-color: transparent;
-  border: none;
-  cursor: pointer;  
+.catalog-item {
+  width: 360px;
+  min-height: 380px;
+  /*margin-bottom: 125px;     */
 }
 
 .catalog-list {
- list-style: none;
- padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  list-style: none;
+  margin: 0;
+  padding: 0;   
 }
 
-.item {
+.product-wrap {
+  position: relative; 
+}
+
+.product-button-wrap {  
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 360px;
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-title-wrap {
+  display: flex;
+  justify-content: space-between;    
+}
+
+.product-title-wrap a {
   color: rgb(0, 0, 0);
-  
+
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
+  outline: 1px solid black;  
 }
 
 .item-price {
@@ -1065,6 +1994,8 @@ input[type="radio"].visually-hidden {
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
+
+  white-space: nowrap;
 }
 
 .add-cart {    
@@ -1101,8 +2032,7 @@ input[type="radio"].visually-hidden {
   color: rgba(0, 0, 0, 0.2);    
 }
 
-/*-----Тут пагинация------*/
-
+/*-----Пагинация------*/
 .pagination-list {
   list-style: none;
   padding-left: 0;
@@ -1138,7 +2068,6 @@ input[type="radio"].visually-hidden {
   color: rgb(0, 0, 0);
 }
 
-
 .pagination-item a:hover,
 .pagination-item a:focus {
   color: rgba(0, 0, 0, 0.6);
@@ -1167,961 +2096,3 @@ input[type="radio"].visually-hidden {
 .pagination-item-current a:active {
   color: rgb(0, 0, 0);
 }
-
-
-/*-----Отсюда пошел футер-----*/
-footer {
-  background-color: #464646;
-}
-
-.footer-logo {
-  color: rgb(255, 198, 0);
-}
-
-.footer-logo:hover,
-.footer-logo:focus {
-  color: rgba(255, 198, 0, 0.6);  	
-}
-
-.footer-logo:active {
-  color: rgba(255, 198, 0, 0.3);  
-}
-
-.address {
-  color: rgb(255, 255, 255); 
-}
-
-.telephone,
-.telephone a {
-  color: rgba(255, 255, 255, 0.7); 	
-}
-
-
-.telephone a:hover,
-.telephone a:focus {
-  color: rgba(255, 255, 255);  	
-}
-
-.telephone a:active {
-  color: rgba(255, 255, 255, 0.3);
-}
-
-
-footer .user-navigation a,
-footer .site-navigation a {
-  color: rgba(255, 255, 255, 0.7);	
-}
-
-footer .user-navigation a:hover,
-footer .user-navigation a:focus,
-footer .site-navigation a:hover,
-footer .site-navigation a:focus {
-  color: rgb(255, 255, 255);    	
-}
-
-footer .user-navigation a:active,
-footer .site-navigation a:active {
-  color: rgba(255, 255, 255, 0.3);  
-}
-
-.footer-social ul {
-  list-style: none;
-  padding-left: 0;   	
-}
-
-.social-button {
-  color: rgb(255, 255, 255);  	
-}
-
-footer .decoration-line {
-  min-width: 80px;
-  background-color: rgb(255, 198, 0);
-}
-
-/*-----Отсюда пошла форма для отправки письма-----*/
-.feedback label {
-  color: rgb(0, 0, 0);
-
-  font-family: "Gilroy ExtraBold", Arial, sans-serif;
-  font-style: normal;
-  font-weight: 700; 
-  font-size: 18px;
-  line-height: 24px;
-}
-
-.feedback input[type="text"],
-.feedback textarea {
-  color: rgb(0, 0, 0);
-
-  font-family: "Open Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 18px;  
-}
-
-.feedback input[type="text"]::placeholder,
-.feedback textarea::placeholder { 
-  color: rgba(0, 0, 0, 0.4);
-}
-
-.feedback :-ms-input-placeholder { 
-  color: rgba(0, 0, 0, 0.4);  
-}
-
-.feedback :-moz-placeholder {
-  color: rgba(0, 0, 0, 0.4); 
-}
-
-.feedback ::-moz-placeholder {
-  color: rgba(0, 0, 0, 0.4);  
-}
-
-/*Не работают декор. стили с инпутом, заменил на <button> в разметки,
-пока закоментил как лишнее*/
-/*.feedback input[type="submit"] {
-  text-align: center;
-  vertical-align: middle;  
-  background-color: transparent;
-  border: none;
-}*/
-
- 
-
-
-
-/*-----Отсюда пошли декор. стили для формы отправки письма-----*/
-.write-us {
-  color: rgb(0, 0, 0);
-  position: fixed;
-
-  top: 30%;
-  margin-left: -480px;
-  left: 50%;
-  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.2);
-  background-color: rgb(255, 255, 255);
-
-  width: 960px;  
-  padding-top: 99px;
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-bottom: 92px;  
-} 
-
-.fields-wrap {  
-  display: flex;
-  justify-content: space-between;
-}
-
-.fields-wrap .login,
-.fields-wrap .email {
- display: flex;
- flex-direction: column;
- margin: 0;
- width: 50%;
- margin-right: 40px;
-}
-
-.fields-wrap .email {
-  margin-right: auto;  
-}
-
-.fields-wrap .login input[type="text"],
-.fields-wrap .email input[type="text"] {       
-  width: 100%;
-  padding: 21px 21px;
-  margin-bottom: 35px;
-  border: none;    
-}
-
-.fields-color{
- background-color: rgba(229, 229, 229, 0.5); 
-}
-
-.fields-wrap .login input[type="text"]:hover,
-.fields-wrap .email input[type="text"]:hover,
-.text-email textarea:hover {
- background-color: rgba(229, 229, 229, 0.8); 
-}
-
-.fields-wrap .login input[type="text"]:focus,
-.fields-wrap .email input[type="text"]:focus,
-.text-email textarea:focus {
- background-color: rgb(255, 255, 255);
- outline: none;
- border: 2px solid rgb(247, 226, 150);
-}
-
-.text-email { 
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin: 0;
-  margin-bottom: 50px;  
-}
-
-.text-email textarea {
-  background-color: rgba(229, 229, 229, 0.5);
-  width: 100%;
-  padding: 21px 21px;
-  resize: none;
-  border: none;
-}
-
-.feedback-close {
-  position: absolute;
-  top: 22px;
-  right: 22px;
-
-  width: 55px;
-  height: 55px;
-
-  font-size: 0;
-  border: 0;  
-  background-image: url(../img/modal-close.svg); 
-  background-color: transparent;
-  background-repeat: no-repeat;
-  opacity: 0.5;
-  transition: all 0.1s linear;
-  cursor: pointer; 
-}
-
-.feedback-close:hover,
-.feedback-close:focus {
-  opacity: 1;
-  outline: none;  
-}
-
-.feedback-close:active {
-  opacity: 0.3;
-  outline: none;  
-}
-
-.feedback-send {    
-  background-color: transparent;
-  border: none;
-  
-  position: relative;
-  padding: 11px 23px;
-  z-index: 0;    
-}
-
-.feedback-send::before {
-  content: "";
-
-  position: absolute;
-  width: 100%;
-  height: 8px;
-  top: 18px;
-  left: 0px;
-  z-index: -1;
-  transition: all 0.1s linear;
-  
-  background-color: rgb(240, 197, 96);
-}
-
-.feedback-send:hover::before,
-.feedback-send:focus::before {
-  height: 100%;
-  top: 0px;
-
-  background-color: rgb(240, 197, 96);
-}
-
-.feedback-send:active {
-  color: rgba(0, 0, 0, 0.3);  
-}
-
-.modal {
-  display: none;
-}
-/*-----Немного анимации-----*/
-@keyframes bounce-right {
-  0% {transform: translateX(1000px);}
-  30% {transform: translateX(-150px);}
-  60% {transform: translateX(50px);}
-  90% {transform: translateX(-25px);}
-  1000% {transform: translateX(0);}
-}
-
-.modal-show-right {
-  display: block;
-  animation-name: bounce-right;
-  animation-duration: 0.7s;  
-}
-
-@keyframes bounce-left {
-  0% {transform: translateX(-1000px);}
-  30% {transform: translateX(150px);}
-  60% {transform: translateX(-50px);}
-  90% {transform: translateX(25px);}
-  1000% {transform: translateX(0);}
-}
-
-.modal-show-left {
-  display: block;
-  animation-name: bounce-left;
-  animation-duration: 0.7s;  
-}
-
-@keyframes shake {
-  0%, 100% {transform: translateX(0);}
-  10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
-  20%, 40%, 60%, 80% {transform: translateX(10px);}  
-}
-
-.modal-error {
-  background-color: rgb(237, 181, 181);  
-  animation-name: shake;
-  animation-duration: 0.7s; 
-}
-
-
-
-/*-----Отсюда пошли сеточные стили-----*/
-html,
-body {
- min-width: 1440px;   
-}
-
-header {
-  width: 1160px;
-  margin: 0 auto;
-  margin-top: 20px;  
-  padding-left: 60px;
-  padding-right: 60px;  
-}
-
-.header-top,
-.header-middle {  
-  display: flex;
-  /*margin: 0 -20px;*/
-  justify-content: space-between;  
-}
-
-/*-----Отсюда пошел верхний контейнер хедера-----*/
-.header-top {
-  align-items: center;
-}
-
-.search-form,
-.header-top .user-navigation {  
-  width: 50%;  
-  /*padding: 0 20px;*/       
-}
-
-.header-top .user-navigation,
-.header-middle .site-navigation {
-  display: flex;
-}
-
-.header-top .user-navigation {
-  justify-content: space-between;
-  padding-left: 20px; 
-}
-
-.header-top .user-navigation li:first-child {
-  margin-right: auto;   
-}
-
-.header-top .user-navigation li:last-child {
-  margin-left: 41px;   
-}
-
-/*-----Отсюда пошел центральный контейнер хедера-----*/
-.menu-catalog {
-  outline: 1px solid black; 
-  width: 50%;
-  /*padding: 0 20px;*/  
-}
-
-.menu-list li {
-  /*break-inside: avoid;*/
-  column-gap: 5px;
-  outline: 1px solid black;
-}
-
-.menu-list {
- column-count: 3;   
-}
-
-.header-middle nav {
-  width: 50%;
-}
-
-.header-middle .site-navigation {
-  justify-content: space-between;
-  padding-left: 20px;
- /*width: 100%;*/
- /*padding: 0 20px;*/  
-  align-self: flex-start;  
-}
-
-.header-middle .site-navigation li:first-child {
-  margin-right: 35px;  
-}
-
-.header-middle .site-navigation li:last-child {
-  margin-left: auto;
-}
-
-
-/*-----Отсюда пошли сеточные стили основного наполнения-----*/
-/*main {
-  width: 1440px;  
-  margin: 0 auto;
-  padding: 90px 140px;
-}*/
-/*Отсюда пошел главный слайдер*/
-
-
-
-
-
-/*-----Отсюда пошел блок популярных товаров-----*/
-.popular-list {
-  list-style: none;
-  margin: 0;
-  padding: 0; 
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start; 
-  outline: 1px solid black;
-}
-
-.popular-wrap { 
-  width: 160px;           
-  background-color: rgb(247, 226, 150);
-  
-  margin-bottom: 35px;
-  transition: all 0.1s linear;  
-}
-
-.popular-1 img {
- margin-top: 52px;
- margin-bottom: 53px;
- margin-left: 31px;
- margin-right: 32px;
- transition: all 0.1s linear;      
-}
-
-.popular-2 img {
- margin-top: 41px;
- margin-bottom: 2px;
- margin-left: 38px;
- margin-right: 36px;
- transition: all 0.1s linear;
-}
-
-.popular-3 img {
- margin-top: 38px;
- margin-bottom: 35px;
- margin-left: 49px;
- margin-right: 40px;
- transition: all 0.1s linear; 
-}
-
-.popular-4 img {
- margin-top: 50px;
- margin-bottom: 45px;
- margin-left: 28px;
- margin-right: 25px;
- transition: all 0.1s linear;
-}
-
-.popular-5 img {
- margin-top: 32px;
- margin-bottom: 30px;
- margin-left: 55px;
- margin-right: 49px;
- transition: all 0.1s linear;
-}
-
-.popular-6 img {
- margin-top: 49px;
- margin-bottom: 42px;
- margin-left: 13px;
- margin-right: 15px;
- transition: all 0.1s linear;
-}
-
-.popular-1:hover .popular-wrap,
-.popular-1:focus .popular-wrap,
-.popular-2:hover .popular-wrap,
-.popular-2:focus .popular-wrap,
-.popular-3:hover .popular-wrap,
-.popular-3:focus .popular-wrap,
-.popular-4:hover .popular-wrap,
-.popular-4:focus .popular-wrap,
-.popular-5:hover .popular-wrap,
-.popular-5:focus .popular-wrap,
-.popular-6:hover .popular-wrap,
-.popular-6:focus .popular-wrap {
-  background-color: rgb(247, 197, 46);
-}
-
-.popular-1:active .popular-wrap img,
-.popular-2:active .popular-wrap img,
-.popular-3:active .popular-wrap img,
-.popular-4:active .popular-wrap img,
-.popular-5:active .popular-wrap img,
-.popular-6:active .popular-wrap img {
-  opacity: 0.3;
-}
-
-.popular-title { 
-  color: rgb(0, 0, 0);
-
-  font-family: "Gilroy ExtraBold", Arial, sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 24px;
-  outline: 1px solid black;
-  width: 160px;
-  margin: 0;
-  padding: 0;  
-}
-
-/*Отсюда пошел слайдер Доставка-Контакты-Кредит*/
-
-.about-us {
-  width: 460px;
-  outline: 1px solid black;
-  padding-bottom: 9px;
-}
-
-.address-map {
-  width: 560px;
-  outline: 1px solid black;
-  padding-bottom: 9px;  
-}
-
-.index-columns {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  
-}
-
-/*-----Отсюда пошли контейнеры футера-----*/
-.container {
-  width: 1440px;  
-  margin: 0 auto;
-  padding: 0 140px 185px;    
-}
-
-
-.footer-top,
-.footer-top .user-navigation,
-.footer-middle,
-.footer-middle .site-navigation,
-.footer-bottom,
-.social-list {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;       
-}
-
-.footer-top .user-navigation li {
-  margin-right: 65px;  
-}
-
-.footer-top .user-navigation li:last-child {
-  margin-right: 0; 
-}
-
-.footer-middle .site-navigation li {  
-  margin-right: 35px;    
-}
-
-.footer-middle .site-navigation li:last-child {
-  margin-right: 0; 
-}
-
-.social-list li {
- margin-right: 55px;  
-}
-
-/*.social-list li:last-child {
-  margin-right: 0;  
-}*/
-
-/*-----Отсюда пошли сеточные стили контейнеров каталога-----*/
-
-.page-title {
-  margin-bottom: 30px;  
-}
-
-.breadcrumbs {
-  margin-bottom: 50px;
-}
-
-.catalog {
-  width: 760px;
-  min-height: 1290px;
-  margin-bottom: 37px;  
-}
-
-.catalog-columns {
-  display: flex;
-  justify-content: space-between;  
-}
-
-.catalog-item {
-  width: 360px;
-  min-height: 380px;
-  margin-bottom: 125px;     
-}
-
-.catalog-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;  
-}
-
-.product-wrap {
-  position: relative; 
-}
-
-.product-button-wrap {  
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 360px;
-  height: 380px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.product-title-wrap {
-  display: flex;
-  justify-content: space-between;
-}
-
-.product-title-wrap span { 
- align-self: center; 
-}
-
-/*-----Отсюда пошли стили для декор. эл-в-----*/
-/*-----Отсюда пошли стили для верхнего контейнера хедера
-и верхнего контейнера футер-----*/
-.menu-title a {  
-  position: relative; 
-}
-
-.menu-title a::after {
-  content: "";
-
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  top: 4px;
-  margin-left: 16px; 
-
-  background-image: url(../img/plus.svg);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  opacity: 0.3;
-}
-
-.user-navigation a {
-  display: block; 
-}
-
-.login-link,
-.user-compare,
-.user-order {
-  display: flex;
-  position: relative;    
-}
-
-.login-link a {
-  padding-left: 27px;
-}
-
-.inner-page .login-link a {
-  padding-left: 20px;
-}
-
-.user-compare a {
-  padding-left: 20px;
-}
-
-.user-order a {
- padding-left: 24px;
-}
-
-.header-top .login-link::before,
-.footer-top .login-link::before {
-  content: "";
-
-  position: absolute;
-  width: 13px;
-  height: 12px;
-  top: 9px;
-
-  background-image: url(../img/user.svg);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  transition: all 0.1s linear;
-}
-
-.footer-top .login-link::before {
-  background-image: url(../img/user-footer.svg);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  transition: all 0.1s linear;
-}
-
-.header-top .user-compare::before,
-.footer-top .user-compare::before {
-  content: "";
-
-  position: absolute;
-  width: 10px;
-  height: 10px;
-  top: 9px;
-
-  background-image: url(../img/compare.svg);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  transition: all 0.1s linear;
-}
-
-.footer-top .user-compare::before {
-  background-image: url(../img/compare-footer.svg);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  transition: all 0.1s linear;
-}
-
-.header-top .user-order::before,
-.footer-top .user-order::before {
-  content: "";
-
-  position: absolute;
-  width: 12px;
-  height: 12px;
-  top: 9px;
-
-  background-image: url(../img/cart.svg);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  transition: all 0.1s linear;
-}
-
-.footer-top .user-order::before {
-  background-image: url(../img/cart-footer.svg);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  transition: all 0.1s linear;
-}
-
-.header-top .login-link:hover::before,
-.header-top .login-link:focus::before,
-.header-top .user-compare:hover::before,
-.header-top .user-compare:focus::before,
-.header-top .user-order:hover::before,
-.header-top .user-order:focus::before,
-.footer-top .login-link:hover::before,
-.footer-top .login-link:focus::before,
-.footer-top .user-compare:hover::before,
-.footer-top .user-compare:focus::before,
-.footer-top .user-order:hover::before,
-.footer-top .user-order:focus::before {
-  opacity: 0.6;  
-}
-
-.header-top .login-link:active::before,
-.header-top .user-compare:active::before,
-.header-top .user-order:active::before,
-.footer-top .login-link:active::before,
-.footer-top .user-compare:active:before,
-.footer-top .user-order:active:before {
-  opacity: 0.3;  
-}
-
-.transport-partnership li {
-  outline: 1px solid black; 
-}
-
-.transport-partnership a {
-  position: relative;  
-}
-
-.transport-partnership a::before {
-  content: ""; 
-
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  top: 0;
-  left: -39px;  
-
-  background-image: url(../img/slider-button-gray.svg);
-  background-repeat: no-repeat;
-  background-position: 0 0;    
-}
-
-/*-----Отсюда пошли декор. стили для кнопок/ссылок-----*/
-/*-----Отсюда пошлик декор стили для кнопкок на главной-----*/
-.about-us-btn,
-.write-us-btn {
-  outline: 1px solid black;
-  position: relative;
-  padding: 11px 23px;
-  z-index: 0;      
-}
-
-.about-us-btn::before,
-.write-us-btn::before {
-  content: "";
-
-  position: absolute;
-  width: 100%;
-  height: 8px;
-  top: 18px;
-  left: 0px;
-  z-index: -1;
-  transition: all 0.1s linear;
-  
-  background-color: rgb(240, 197, 96);      
-}
-
-.about-us-btn:hover::before,
-.about-us-btn:focus::before,
-.write-us-btn:hover::before,
-.write-us-btn:focus::before {
-  height: 100%;
-  top: 0px;
-
-  background-color: rgb(240, 197, 96);
-}
-
-.about-us-btn:active,
-.write-us-btn:active {
- color: rgba(0, 0, 0, 0.3);
-}
-
-
-/*-----Отсюда пошли стили для иконок соц.сетей и академии -----*/
-.facebook,
-.instagramm,
-.twitter,
-.footer-copyright {
- position: relative;
-}
-
-.facebook::before,
-.instagramm::before,
-.twitter::before {
-  content: "";
-
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  top: 50%;
-  left: 50%;  
-  margin-top: -16px;
-  margin-left: -16px;  
-  
-  background-image: url(../img/facebook.svg);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  opacity: 0.3;
-  transition: all 0.1s linear;
-}
-
-.instagramm::before {
-  background-image: url(../img/instagram.svg);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  transition: all 0.1s linear;
-}
-
-.twitter::before {
-  background-image: url(../img/twitter.svg);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  transition: all 0.1s linear;
-}
-
-.facebook:hover:before,
-.facebook:focus:before,
-.instagramm:hover::before,
-.instagramm:focus::before,
-.twitter:hover::before,
-.twitter:focus::before,
-.footer-copyright:hover::before,
-.footer-copyright:focus::before {
-  opacity: 0.6;  
-}
-
-.facebook:active:before,
-.instagramm:active::before,
-.twitter:active::before {
- opacity: 0.1;   
-}
-
-.footer-copyright::before {
-  content: "";
-
-  position: absolute;
-  width: 27px;
-  height: 35px;
-  top: 50%;
-  left: 50%;
-  margin-top: -18px;
-  margin-left: -27px;
-
-  background-image: url(../img/logo-html.svg);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-  transition: all 0.1s linear;
-}
-
-.footer-copyright:active::before {
-  opacity: 0.3;  
-}
-
-/*-----Отсюда пошли декор. стили "хлебных крошек" в каталоге-----*/
-.breadcrumbs {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap; 
-}
-
-.breadcrumbs li {
-  position: relative; 
-  margin-right: 40px;
-}
-
-.breadcrumb-current {
- margin-right: 0;  
-}
-
-.breadcrumbs-current::after {
-  display: none;
-}
-
-.breadcrumbs li::after {
-  content: "";
-
-  position: absolute;
-  width: 4px;
-  height: 7px;
-  top: 13px;
-  right: -16px;  
- 
-  background-image: url(../img/nav-arrow.svg);
-  background-repeat: no-repeat;
-  background-position: 0 0;
-}
-
-/*-----Отсюда пошли декор. стили для карточек товара в каталоге-----*/
-
-
-
