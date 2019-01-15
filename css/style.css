@@ -1961,13 +1961,17 @@ footer .decoration-line {
 
 .product-button-wrap {  
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 360px;
-  height: 380px;
+  top: 50%;
+  left: 50%;
+  margin-left: -100px;
+  margin-top: -40px;
+  width: 200px;
+  height: 80px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  outline: 1px solid black;
 }
 
 .product-title-wrap {
@@ -1998,11 +2002,37 @@ footer .decoration-line {
   white-space: nowrap;
 }
 
-.add-cart {    
+/*Добавить стилизацию для покоя/наведения/нажатия*/
+.add-cart {
+  position: relative;
+  z-index: 0;
+  border: none;
   background-color: transparent;
+  padding: 8px 23px;  
 }
 
-/*Добавить стилизацию для покоя/наведения/нажатия*/
+.add-cart::before {
+  content: "";
+
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  top: 16px;
+  left: 0px;
+  z-index: -1;
+  transition: all 0.1s linear;
+  
+  background-color: rgb(240, 197, 96);
+}
+
+.add-cart:hover::before {
+  height: 100%;
+  top: 0px;
+
+  background-color: rgb(240, 197, 96);
+}
+
+
 .add-cart:active {
   color: rgba(0, 0, 0, 0.3);    	
 }
