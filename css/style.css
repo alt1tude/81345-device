@@ -1588,6 +1588,12 @@ footer .decoration-line {
 
 
 /*-----Отсюда идет все по странице каталога-----*/
+/*.inner-page .container {
+  width: 1440px;  
+  margin: 0 auto;
+  padding: 0 140px 185px;
+}*/
+
 .inner-page .login-link a {
   padding-left: 20px;
 }
@@ -1956,7 +1962,20 @@ footer .decoration-line {
 }
 
 .product-wrap {
-  position: relative; 
+  position: relative;
+  z-index: 0; 
+}
+
+.product-wrap img:hover {
+  opacity: 0.7;
+  -webkit-filter: grayscale(100%); 
+  -webkit-filter: grayscale(1); 
+  -moz-filter: grayscale(100%); 
+  -ms-filter: grayscale(100%); 
+  -o-filter: grayscale(100%); 
+  filter: grayscale(100%); 
+  filter: gray;
+  /*transition: all 0.1s linear;*/
 }
 
 .product-button-wrap {  
@@ -1970,8 +1989,12 @@ footer .decoration-line {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  display: none;
+  z-index: 1;  
+}
 
-  outline: 1px solid black;
+.product-wrap:hover .product-button-wrap {
+  display: flex;
 }
 
 .product-title-wrap {
@@ -2002,11 +2025,11 @@ footer .decoration-line {
   white-space: nowrap;
 }
 
-/*Добавить стилизацию для покоя/наведения/нажатия*/
 .add-cart {
   position: relative;
   z-index: 0;
   border: none;
+  outline: none;
   background-color: transparent;
   padding: 8px 23px;  
 }
@@ -2032,7 +2055,6 @@ footer .decoration-line {
   background-color: rgb(240, 197, 96);
 }
 
-
 .add-cart:active {
   color: rgba(0, 0, 0, 0.3);    	
 }
@@ -2050,6 +2072,7 @@ footer .decoration-line {
   vertical-align: middle;  
   background-color: transparent;
   border: none;
+  outline: none;
   cursor: pointer;    		
 }
 
@@ -2059,7 +2082,36 @@ footer .decoration-line {
 }
 
 .add-compare:active {
-  color: rgba(0, 0, 0, 0.2);    
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.flag span {
+  color: rgba(0, 0, 0, 0.2);
+
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: 0.05em;
+  position: absolute;
+  top: 17px;
+  left: 12px;  
+}
+
+.flag {
+  position: absolute;
+  top: 27px;
+  right: 27px;    
+  width: 60px;
+  height: 60px;
+  border: 2px solid rgba(0, 0, 0, 0.2); 
+  border-radius: 50%;
+  display: none;  
+}
+
+.flag-new {
+  display: block;
 }
 
 /*-----Пагинация------*/
@@ -2070,10 +2122,12 @@ footer .decoration-line {
 
   background-color: rgb(235, 235, 235);  
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
 
-  width: 760px;    
+  width: 760px;
+  /*height: 70px;*/    
 }
 
 .pagination-item a {
@@ -2087,7 +2141,7 @@ footer .decoration-line {
   letter-spacing: 0.2em;
 
   display: flex;
-  padding: 25px 30px;  
+  /*padding: 25px 30px;*/  
 
   outline: 1px solid black;
 }
