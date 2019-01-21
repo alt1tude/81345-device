@@ -65,7 +65,7 @@ header {
   margin-top: 20px;  
   padding-left: 60px;
   padding-right: 60px;
-  background-color: rgb(255, 225, 150);
+  background-color: rgb(247, 226, 150);
 }
 
 a {
@@ -142,10 +142,10 @@ input[type="radio"].visually-hidden {
   background-image: url(../img/search.svg);
   background-repeat: no-repeat;
   background-position: 0 50%;
-  background-color: rgb(247, 226, 150);  
+  background-color: transparent;
   padding: 10px 40px;  
   width: 355px;
-  border: none;
+  border: 2px solid transparent;
   transition: all 0.1s linear;  
 }
 
@@ -610,7 +610,7 @@ input[type="radio"].visually-hidden {
   z-index: -1;
   transition: all 0.1s linear;
 
-  background-color: rgb(240, 197, 96);
+  background-color: rgb(240, 197, 46);
 }
 
 .slide-button:hover::before,
@@ -618,7 +618,7 @@ input[type="radio"].visually-hidden {
   height: 100%;
   top: 0px;
 
-  background-color: rgb(240, 197, 96);
+  background-color: rgb(240, 197, 46);
 }*/
 
 /*Таблица в слайдере, вызывает много для меня непонятного поведения.
@@ -802,7 +802,7 @@ input[type="radio"].visually-hidden {
   z-index: -1;
   transition: all 0.1s linear;  
   
-  background-color: rgb(240, 197, 96);
+  background-color: rgb(240, 197, 46);
 }
 
 .slider-delivery:hover::before,
@@ -814,7 +814,7 @@ input[type="radio"].visually-hidden {
   height: 100%;
   top: 0px;
 
-  background-color: rgb(240, 197, 96);
+  background-color: rgb(240, 197, 46);
 }
 
 .services-slide {
@@ -1057,7 +1057,7 @@ input[type="radio"].visually-hidden {
   z-index: -1;
   transition: all 0.1s linear;
   
-  background-color: rgb(240, 197, 96);      
+  background-color: rgb(240, 197, 46);      
 }
 
 .about-us-btn:hover::before,
@@ -1067,7 +1067,7 @@ input[type="radio"].visually-hidden {
   height: 100%;
   top: 0px;
 
-  background-color: rgb(240, 197, 96);
+  background-color: rgb(240, 197, 46);
 }
 
 .about-us-btn:active,
@@ -1515,7 +1515,7 @@ footer .decoration-line {
   z-index: -1;
   transition: all 0.1s linear;
   
-  background-color: rgb(240, 197, 96);
+  background-color: rgb(240, 197, 46);
 }
 
 /*Не работают декор. стили с инпутом, заменил на <button> в разметки,
@@ -1532,7 +1532,7 @@ footer .decoration-line {
   height: 100%;
   top: 0px;
 
-  background-color: rgb(240, 197, 96);
+  background-color: rgb(240, 197, 46);
 }
 
 .feedback-send:active {
@@ -1588,11 +1588,11 @@ footer .decoration-line {
 
 
 /*-----Отсюда идет все по странице каталога-----*/
-/*.inner-page .container {
-  width: 1440px;  
+.inner-page main {
+  width: 1160px;  
   margin: 0 auto;
-  padding: 0 140px 185px;
-}*/
+  /*padding: 0 140px 185px;*/
+}
 
 .inner-page .login-link a {
   padding-left: 20px;
@@ -1673,7 +1673,7 @@ footer .decoration-line {
 
 /*-----Отсюда идут стили для фильтра каталога-----*/
 .filters {
-  margin-left: 60px; 
+  /*margin-left: 60px; */
   background-color: rgb(238, 238, 238);
   outline: 1px solid black;
 }
@@ -1688,7 +1688,7 @@ footer .decoration-line {
   line-height: 24px;
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  padding: 0;
+  padding: 24px 0;
   margin: 0;
 }
 
@@ -1917,7 +1917,7 @@ footer .decoration-line {
   z-index: -1;
   transition: all 0.1s linear;
   
-  background-color: rgb(240, 197, 96);
+  background-color: rgb(240, 197, 46);
 }
 
 .filter-button:hover::before,
@@ -1925,11 +1925,116 @@ footer .decoration-line {
   height: 100%;
   top: 0px;
 
-  background-color: rgb(240, 197, 96);
+  background-color: rgb(240, 197, 46);
 }
 
 .filter-button:active {
   color: rgba(0, 0, 0, 0.3);
+}
+
+/*-----Сортировка-----*/
+.sorting {
+  background-color: rgb(238, 238, 238);
+  display: flex;
+  align-items: center;  
+  margin-bottom: 60px;
+
+  outline: 1px solid black;
+}
+
+.sorting h2 {
+  color: rgb(0, 0, 0);
+
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.2em;
+  padding: 24px 0;
+  margin: 0;
+  margin-right: 55px;   
+}
+
+.sort-wrap {
+  display: flex;
+  justify-content: space-between;  
+  flex-grow: 1;
+}
+
+.selection a {
+  color: rgba(0, 0, 0, 0.3);
+
+  font-family: "Open Sans Light", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 18px;  
+}
+
+.selection a:hover,
+.selection a:focus {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.selection a:active {
+ color: rgb(0, 0, 0);
+}
+
+.current-selection a {
+   color: rgb(0, 0, 0);
+}
+
+.sort-wrap ul {  
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;    
+}
+
+.selection li {
+  margin-right: 30px;  
+}
+
+.selection li:last-child {
+  margin: auto;
+}
+
+.sorting-icon li {
+  width: 11px;
+  height: 10px;
+  margin-right: 19px;
+}
+
+.sorting-icon li:last-child {
+   margin-right: auto;
+}
+
+.icon-up a {
+  color: transparent;
+  background-image: url(../img/icon-up-dir.svg);
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  opacity: 0.2;  
+}
+
+.icon-up a:hover,
+.icon-down a:hover,
+.icon-up a:focus,
+.icon-down a:focus {
+  opacity: 0.4;
+}
+
+.icon-up a:active,
+.icon-down a:active {
+  opacity: 1;
+}
+
+.icon-down a {
+  color: transparent;
+  background-image: url(../img/icon-down-dir.svg);
+  background-repeat: no-repeat;
+  background-position: 0 50%;  
 }
 
 /*-----Отсюда идут стили для карточек товара-----*/
@@ -1939,16 +2044,13 @@ footer .decoration-line {
 }
 
 .catalog {
-  width: 760px;
-  min-height: 1290px;
-  margin-bottom: 37px;
+  width: 760px;   
 
   outline: 1px solid black;    
 }
 
 .catalog-item {
-  width: 360px;
-  min-height: 380px;
+  width: 360px; 
   /*margin-bottom: 125px;     */
 }
 
@@ -2045,14 +2147,14 @@ footer .decoration-line {
   z-index: -1;
   transition: all 0.1s linear;
   
-  background-color: rgb(240, 197, 96);
+  background-color: rgb(240, 197, 46);
 }
 
 .add-cart:hover::before {
   height: 100%;
   top: 0px;
 
-  background-color: rgb(240, 197, 96);
+  background-color: rgb(240, 197, 46);
 }
 
 .add-cart:active {
@@ -2063,8 +2165,7 @@ footer .decoration-line {
   color: rgba(0, 0, 0, 0.5);
 
   font-family: "Open Sans Light", Arial, sans-serif;
-  font-style: normal;
-  font-weight: 300;
+  font-style: normal;  
   font-size: 13px;
   line-height: 36px;
   font-weight: 300; 
@@ -2120,7 +2221,7 @@ footer .decoration-line {
   padding-left: 0;
   margin: 0;
 
-  background-color: rgb(235, 235, 235);  
+  background-color: rgb(238, 238, 238);  
   display: flex;
   align-items: center;
   flex-wrap: wrap;

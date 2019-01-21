@@ -47,30 +47,25 @@
       </div>
     </header>
 
-    <main class="container">
+    <main>
      
-    	 <h1 class="page-title">Моноподы для селфи</h1>    
+    	<h1 class="page-title">Моноподы для селфи</h1>    
 
-    	 <ul class="breadcrumbs">
+    	<ul class="breadcrumbs">
 	      <li><a href="index.html">Главная</a></li>
     	  <li><a href="#">Каталог товаров</a></li>
     	  <li class="breadcrumbs-current"><a href="#">Моноподы для селфи</a></li>
     	</ul>
-
+       
+      <!-- <section class="sorting">
+        
+      </section> --> 
+          
       <div class="catalog-columns">
         <section class="filters">          
-          <h2 class="btn-style">Фильтр:</h2>
+          <h2>ФИЛЬТР:</h2>     
           <form class="filter" action="#" method="get">
 
-          <fieldset class="filter-selection">
-            <legend>Сортировка:</legend>
-            <ul>
-              <li><a class="price-selection" href="#">По цене</a></li>              
-              <li><a class="type-selection" href="#">По типу</a></li>              
-              <li><a class="best-selling-selection" href="#">По популярности</a></li>           
-            </ul>
-          </fieldset>
-          
           <fieldset class="filter-scrollbar">
             <div class="filter-wrap">
               <legend>Стоимость</legend>
@@ -143,6 +138,24 @@
       </section>
 
       <section class="catalog">
+               
+        <section class="sorting">
+          <h2>СОРТИРОВКА:</h2>
+
+          <div class="sort-wrap">
+            <ul class="selection">
+              <li class="price current-selection"><a  href="#">По цене</a></li>              
+              <li class="type"><a  href="#">По типу</a></li>              
+              <li class="best-selling"><a  href="#">По популярности</a></li>           
+            </ul>
+            <ul class="sorting-icon">
+              <li class="icon-up"><a href="#">UP</a></li>
+              <li class="icon-down icon-currents"><a href="#">DOWN</a></li>
+            </ul>
+          </div>
+
+        </section>
+        
         <h2 class="visually-hidden">Список девайсов для селфи</h2>
         <ul class="catalog-list">
           <li class="catalog-item">
