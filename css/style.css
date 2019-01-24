@@ -407,15 +407,18 @@ input[type="radio"].visually-hidden {
   opacity: 0.3;
 }
 
-.menu-list li {
-  /*break-inside: avoid;*/
-  column-gap: 5px;
-  outline: 1px solid black;
+.menu-list {
+  height: 135px;
+  display: flex;
+  flex-direction: column;  
+  flex-wrap: wrap;   
 }
 
-.menu-list {
- column-count: 3;
- display: none;   
+.menu-list li {
+  width: 20%;
+  margin-bottom: 15px;  
+   
+  outline: 1px solid black;
 }
 
 .menu-title a:hover,
@@ -542,40 +545,35 @@ input[type="radio"].visually-hidden {
   padding: 0;  
 }
 
-/*Для проверки Сергея.
-Стили 1го основного слайдера, пока все кривое.
-Пытался делать также и как 2й слайдер, по аналогии со демки Нердс.
-Не понятно, почему "ломается" 2й слайдер
-при клики на лабелы 1го слайдера*/
 /*-----Отсюда пошел основной слайдер-----*/
 
-/*.slider-main {
-  color: rgb(0, 0, 0);  
-  outline: 1px solid black;
-  position: relative; 
+.slider-main-container {  
+  width: 1160px;
+  margin: 0 auto;
+ 
+  outline: 1px solid black; 
 }
 
-.slider-main-list { 
+.slider-main-list {
   margin: 0;
-  list-style: none;  
+  padding: 0;
+  list-style: none;
 }
 
-.slider-main-item img {
-  outline: 1px solid black;
-}
-.slider-main-wrap {
-  outline: 1px solid black;
-  margin-left: 126px;  
-}*/
-
-/*-----Полоска в слайдере временно черная-----*/
-
-/*.slide-main-decoration-line {
-  width: 7px; 
-  background-color: black;
+.slider-main-item {  
+  display: none;
 }
 
-.slider-main-wrap h3 {
+.slider-main-item:nth-child(1) {
+  display: block;
+}
+
+.slider-main {
+  position: relative;
+  background-color: #eeeeee;
+}
+
+.slider-main-item h3 {
   color: rgb(0, 0, 0);
 
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
@@ -583,20 +581,31 @@ input[type="radio"].visually-hidden {
   font-weight: 700; 
   font-size: 47px;
   line-height: 56px;
-  margin: 0;
-  margin-bottom: 23px;  
 
-  outline: 1px solid black;
+  margin: 0;
+  padding: 0;
 }
 
-.slider-main-wrap p {
-  margin-bottom: 53px;
+.slider-main-item p {
+  color: rgb(0, 0, 0);
+
+  font-family: "Open Sans", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 30px;
+
+  margin: 0;
+  padding: 0;
 }
 
 .slide-button {
-  position: relative;
-  padding: 11px 44px;  
-  z-index: 0;       
+  display: inline-block;
+  position: relative;  
+  padding: 11px 44px;
+  z-index: 0;
+
+  outline: 1px solid black;  
 }
 
 .slide-button::before {
@@ -605,12 +614,13 @@ input[type="radio"].visually-hidden {
   position: absolute;
   width: 100%;
   height: 8px;
-  top: 18px;
+  top: 19px;
   left: 0px;
   z-index: -1;
   transition: all 0.1s linear;
-
+  
   background-color: rgb(240, 197, 46);
+
 }
 
 .slide-button:hover::before,
@@ -619,81 +629,48 @@ input[type="radio"].visually-hidden {
   top: 0px;
 
   background-color: rgb(240, 197, 46);
-}*/
+}
 
-/*Таблица в слайдере, вызывает много для меня непонятного поведения.
-Не реагирует на margin-bottom от вышестоящего тега,
-когда делаешь родительский контейнер флексом не реагирует на padding*/
+.slide-button:active {
+  color: rgba(0, 0, 0, 0.3);   
+} 
 
-/*.slide-item-features {
+.slide-item-features .feature {
   color: rgb(0, 0, 0);
 
-  font-family: "Open Sans Light", Arial, sans-serif;
+  font-family: "Gilroy Light", Arial, sans-serif;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 36px;
   line-height: 48px;
-  font-weight: 300;
-  margin-top: 60px;    
+
 }
 
-.slide-item-features tr:last-child {
+.slide-item-features .title {
   color: rgb(0, 0, 0);
 
-  font-family: "Open Sans Light", Arial, sans-serif;
+  font-family: "Gilroy Light", Arial, sans-serif;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 13px;
   line-height: 20px;
-  font-weight: 300;
 }
 
-.slide-item-features td {
- padding-right: 80px;
+.slide-item-features {
+  display: flex; 
+
+  outline: 1px solid black;
 }
 
-.slide-item-features td:last-child {
- padding-right: 0px;
+.slide-item-features .description {
+  margin-right: 80px;
 }
 
-.slider-main-item {
- display: flex; 
-}*/
-
-/*-----Отсюда надо переделывать-----*/
-
-/*.slider-main-controls label {  
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  margin-right: 21px;   
-
-  vertical-align: top;
-
-  background-color: transparent;
-  border: 1px solid #000000;
-  border-radius: 50%;
-  cursor: pointer;
+.slide-item-features .description:last-child {
+ margin-right: auto;
 }
 
-.slider-main-controls {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 10;  
-  
-  font-size: 0;
-}
 
-.main-slide {
-  display: none;
-}
-
-#slide-1:checked ~ .slider-main-list #main-slide1,
-#slide-2:checked ~ .slider-main-list #main-slide2,
-#slide-3:checked ~ .slider-main-list #main-slide3 {
-  display: flex;
-}*/
 
 
 
@@ -919,6 +896,9 @@ input[type="radio"].visually-hidden {
   padding-bottom: 9px;  
 }
 
+.address-map p {
+  color: rgb(70, 70, 70);  
+}
 
 .decoration-line {
   max-width: 80px;
@@ -937,6 +917,10 @@ input[type="radio"].visually-hidden {
   line-height: 48px;
 }
 
+.about-us p {
+  color: rgb(70, 70, 70);  
+}
+
 .transport-partnership {
   color: rgb(0, 0, 0);
 
@@ -950,26 +934,35 @@ input[type="radio"].visually-hidden {
   margin-bottom: 82px;    
 }
 
-.transport-partnership li {
+.transport-partnership li { 
   outline: 1px solid black; 
 }
 
-.transport-partnership a {
+.transport-partnership li {  
   position: relative;  
 }
 
-.transport-partnership a::before {
+.transport-partnership li::before {
   content: ""; 
 
   position: absolute;
   width: 18px;
   height: 18px;
-  top: 0;
+  top: 11px;
   left: -39px;  
 
   background-image: url(../img/slider-button-gray.svg);
   background-repeat: no-repeat;
   background-position: 0 0;    
+}
+
+.transport-partnership a:hover,
+.transport-partnership a:focus {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.transport-partnership a:active {
+  color: rgba(0, 0, 0, 0.3);
 }
 
 /*-----Отсюда пошли стили iframe GoogleMaps-----*/
@@ -1541,7 +1534,9 @@ footer .decoration-line {
 
 .modal {
   display: none;
+  z-index: 1;
 }
+
 /*-----Немного анимации-----*/
 @keyframes bounce-right {
   0% {transform: translateX(1000px);}
