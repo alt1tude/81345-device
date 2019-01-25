@@ -549,24 +549,59 @@ input[type="radio"].visually-hidden {
 
 .slider-main-container {  
   width: 1160px;
-  margin: 0 auto;
- 
-  outline: 1px solid black; 
+  margin: 0 auto;  
 }
 
 .slider-main-list {
   margin: 0;
   padding: 0;
   list-style: none;
+  /*display: flex;
+  justify-content: flex-end;*/
+
 }
 
-.slider-main-item {  
+.slider-main-wrap {
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.slider-main-item {
   display: none;
 }
 
 .slider-main-item:nth-child(1) {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  /*display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  outline: 1px solid black; 
+
+  width: 500px;*/ 
 }
+
+
+.slider-main-item:nth-child(1) {
+  background-image: url(../img/slider-1.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+/*.slider-main-item:nth-child(2) {
+  background-image: url(../img/slider-2.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}*/
+
+/*.slider-main-item:nth-child(3) {
+  background-image: url(../img/slider-3.png);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}*/
 
 .slider-main {
   position: relative;
@@ -670,9 +705,34 @@ input[type="radio"].visually-hidden {
  margin-right: auto;
 }
 
+.slider-main-controls label {
+  position: relative;
 
+  display: inline-block;
+  width: 12px;  
+  height: 12px;
+  border: 1px solid black;
+   
+  background-color: white;
 
+  cursor: pointer;
+}
 
+.slider-main-controls {
+  position: absolute;
+
+  left: 50%;
+  bottom: 82px;
+
+  width: 100px;
+  height: 18px;
+  outline: 1px solid black;
+
+  text-align: center;
+  font-size: 0;
+  transform: translateX(-50%);
+  
+}
 
 /*-----Отсюда пошел 2й слайдер, слайдер сервисов-----*/
 .slider-services {
