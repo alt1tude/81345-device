@@ -548,68 +548,70 @@ input[type="radio"].visually-hidden {
 
 /*-----Отсюда пошел основной слайдер-----*/
 .slider-main {
-  position: relative; 
-  background-color: #eeeeee;
+  position: relative;  
 }
 
-.slider-main-container {  
+.slider-main-container {   
   width: 1160px;
   margin: 0 auto;
   padding-left: 60px;
-  padding-right: 60px;
-
+  padding-right: 60px;  
 }
 
 .slider-main-list {
   position: relative;
-  top: -30px;
+  top: -120px;
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .slider-main-item {
-  display: flex;
-  justify-content: flex-end;
+  padding-top: 90px;
+  display: none;
 }
 
-.slider-main-item {
-  
- 
-}
-
-.content-wrap {  
+.slide-main-wrap {
+  position: relative;
   width: 500px;
-
-  outline: 1px solid black; 
+  outline: 1px solid black;  
 }
 
-.slider-main-item:nth-child(1) img {
+.slide-main-wrap::before {
+  content: "";
+
   position: absolute;
-
-  top: 0;
-  left: 0; 
+  top: -45px;
+  left: 0;
+  width: 100px;
+  height: 7px;
+  background-color: rgb(255, 255, 255);
 }
 
-/*.slider-main-item:nth-child(1) {
+#slide-1:checked ~ .slider-main-list .main-slide1,
+#slide-2:checked ~ .slider-main-list .main-slide2,
+#slide-3:checked ~ .slider-main-list .main-slide3 {
+ display: flex;
+ justify-content: flex-end;
+}
+
+.slider-main-item:nth-child(1) {
   background-image: url(../img/slider-1.png);
   background-repeat: no-repeat;
   background-position: 0 0;
-}*/
+}
 
-
-/*.slider-main-item:nth-child(2) {
+.slider-main-item:nth-child(2) {
   background-image: url(../img/slider-2.png);
   background-repeat: no-repeat;
   background-position: 0 0;
-}*/
+}
 
-/*.slider-main-item:nth-child(3) {
+.slider-main-item:nth-child(3) {
   background-image: url(../img/slider-3.png);
   background-repeat: no-repeat;
   background-position: 0 0;
-}*/
-
+}
 
 .slider-main-item h3 {
   color: rgb(0, 0, 0);
@@ -618,8 +620,7 @@ input[type="radio"].visually-hidden {
   font-style: normal;
   font-weight: 700; 
   font-size: 47px;
-  line-height: 56px;
-
+  line-height: 56px;  
   margin: 0;
   padding: 0;
   margin-bottom: 44px;  
@@ -644,9 +645,7 @@ input[type="radio"].visually-hidden {
   position: relative;  
   padding: 11px 44px;
   z-index: 0;
-  margin-bottom: 72px;
-
-  outline: 1px solid black;  
+  margin-bottom: 72px;  
 }
 
 .slide-button::before {
@@ -658,10 +657,8 @@ input[type="radio"].visually-hidden {
   top: 19px;
   left: 0px;
   z-index: -1;
-  transition: all 0.1s linear;
-  
+  transition: all 0.1s linear;  
   background-color: rgb(240, 197, 46);
-
 }
 
 .slide-button:hover::before,
@@ -698,9 +695,7 @@ input[type="radio"].visually-hidden {
 }
 
 .slide-item-features {
-  display: flex; 
-
-  outline: 1px solid black;
+  display: flex;  
 }
 
 .slide-item-features .description {
@@ -708,15 +703,15 @@ input[type="radio"].visually-hidden {
 }
 
 .slide-item-features .description:last-child {
- margin-right: auto;
+  margin-right: auto;
 }
 
 .slider-main-controls {
   position: absolute;
   
-  top: 50%;
-  right: 35%;
-  
+  top: 267px;
+  right: 450px;
+  z-index: 1;  
 
   width: 78px;
   
@@ -724,56 +719,48 @@ input[type="radio"].visually-hidden {
   justify-content: space-between;
 
   font-size: 0;
-  outline: 1px solid black;
-
-  transform: translateX(50%);  
 }
 
 .slider-main-controls label {
-  position: relative;
+  width: 12px;
+  height: 12px;
   
-  width: 23px;
-  height: 23px;
-
-
   background-image: url(../img/slider-button-off.svg);
   background-repeat: no-repeat;
-  background-position: 0 0; 
-
+  background-position: 0 0;
+  
   cursor: pointer;
 }
 
-/*.slider-main-controls label::before {
-  content: "";
-
-  position: absolute;
-  width: 23px;
-  height: 23px;
-
+#slide-1:checked ~ .slider-main-controls label[for="slide-1"], 
+#slide-2:checked ~ .slider-main-controls label[for="slide-2"],
+#slide-3:checked ~ .slider-main-controls label[for="slide-3"] {
+  width: 12px;
+  height: 12px;
+  
   background-image: url(../img/slider-button-on.svg);
   background-repeat: no-repeat;
   background-position: 0 0;
-
-}*/
-
+}
 
 
 /*-----Отсюда пошел 2й слайдер, слайдер сервисов-----*/
 .slider-services {
- margin: 0;
- padding: 0;
- background-color: rgb(229, 229, 229);   
+  margin: 0;
+  padding: 0;
+  background-color: rgb(229, 229, 229);   
 }
 
 .slider-container {
-  color: rgb(0, 0, 0);  
+  color: rgb(0, 0, 0);
+  position: relative;
+
+  top: -120px;
+  width: 1160px;
   display: flex; 
   justify-content: space-between;  
   /*margin-bottom: 70px;*/  
-  width: 1160px;
-  margin: 0 auto;
-  position: relative;  
-  top: -120px;
+  margin: 0 auto;  
 }
 
 .slider-services h3 {
