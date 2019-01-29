@@ -65,6 +65,7 @@ header {
   margin-top: 20px;  
   padding-left: 60px;
   padding-right: 60px;
+  padding-bottom: 135px;
   background-color: rgb(247, 226, 150);
 }
 
@@ -388,11 +389,11 @@ input[type="radio"].visually-hidden {
   margin: 0;
 }
 
-.menu-title a {  
+.menu-title {  
   position: relative; 
 }
 
-.menu-title a::after {
+.menu-title::after {
   content: "";
 
   position: absolute;
@@ -408,19 +409,26 @@ input[type="radio"].visually-hidden {
 }
 
 .menu-list {
+  width: 1040px;
   height: 135px;
   display: flex;
   flex-direction: column;  
   flex-wrap: wrap;
+  background-color: rgb(247, 226, 150);
+  display: none;
+  position: absolute; 
+  z-index: 1;    
+}
+
+.menu-title:hover ~ .menu-list {
+  display: flex;
 }
 
 .menu-list li {
   width: 20%;
   margin-bottom: 15px;
-  display: none;  
-   
-  outline: 1px solid black;
 }
+
 
 .menu-title a:hover,
 .menu-title a:focus,
