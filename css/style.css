@@ -417,7 +417,7 @@ input[type="radio"].visually-hidden {
   background-color: rgb(247, 226, 150);
   display: none;
   position: absolute; 
-  z-index: 1;    
+  z-index: 2;    
 }
 
 .menu-title:hover ~ .menu-list {
@@ -428,7 +428,6 @@ input[type="radio"].visually-hidden {
   width: 20%;
   margin-bottom: 15px;
 }
-
 
 .menu-title a:hover,
 .menu-title a:focus,
@@ -563,7 +562,8 @@ input[type="radio"].visually-hidden {
   width: 1160px;
   margin: 0 auto;
   padding-left: 60px;
-  padding-right: 60px;  
+  padding-right: 60px;
+   
 }
 
 .slider-main-list {
@@ -582,19 +582,48 @@ input[type="radio"].visually-hidden {
 .slide-main-wrap {
   position: relative;
   width: 500px;
+  z-index: 1;   
   outline: 1px solid black;  
 }
 
 .slide-main-wrap::before {
-  content: "";
-
   position: absolute;
+
+  content: "";
+  z-index: 0;  
   top: -45px;
   left: 0;
   width: 100px;
   height: 7px;
   background-color: rgb(255, 255, 255);
 }
+
+.main-slide1::after,
+.main-slide2::after,
+.main-slide3::after {
+  position: absolute;
+
+  z-index: 0;
+  top: 70px;
+  color: rgb(255, 255, 255);
+  font-family: "Gilroy ExtraBold", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 179px;
+}
+
+.main-slide1::after {
+  content: "01";
+}
+
+.main-slide2::after {
+  content: "02";
+}
+
+.main-slide3::after {
+  content: "03";
+}
+
 
 #slide-1:checked ~ .slider-main-list .main-slide1,
 #slide-2:checked ~ .slider-main-list .main-slide2,
@@ -718,8 +747,8 @@ input[type="radio"].visually-hidden {
   position: absolute;
   
   top: 267px;
-  right: 450px;
-  z-index: 1;  
+  right: 850px;
+  z-index: 2;  
 
   width: 78px;
   
