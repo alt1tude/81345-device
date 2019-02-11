@@ -1118,7 +1118,7 @@ input[type="radio"].visually-hidden {
 .map-popup iframe {  
   width: 960px;
   height: 559px;
-  border: 0;  
+  border: 0;    
 }
 
 .map-close {
@@ -1877,7 +1877,7 @@ footer .decoration-line {
   margin-bottom: 10px;
 }
 
-.filter legend {
+.filter legend {  
   color: rgb(0, 0, 0);
 
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
@@ -1888,12 +1888,34 @@ footer .decoration-line {
   margin-bottom: 20px;        
 }
 
-.filter-scrollbar .filter-wrap {
-  border-top: 2px solid black;  
-  border-bottom: 2px solid black;   
+.filter-scrollbar {
+  position: relative;
+  top: 2px;
 }
 
-.filter-scrollbar legend {
+.filter-scrollbar::after {
+  position: absolute;
+
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(0, 0, 0);
+}
+
+.filter-scrollbar::before {
+  position: absolute;
+
+  content: "";
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(0, 0, 0);
+} 
+
+.filter-scrollbar legend {  
   margin: 0;
   padding: 0;
   padding-top: 8px;
@@ -1977,7 +1999,8 @@ footer .decoration-line {
 }
 
 .filter-checkbox {
-  margin-bottom: 30px;
+  position: relative;
+  top: 4px;
 }
 
 .filter-checkbox legend {
@@ -2028,10 +2051,21 @@ footer .decoration-line {
  opacity: 0.6;
 }
 
-.filter-radio .filter-wrap {
-  border-top: 2px solid black;
-  margin-top: 22px;
+.filter-radio {
+  position: relative;
+  top: 26px;
   margin-bottom: 20px;
+}
+
+.filter-radio::before {
+  position: absolute;
+
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(0, 0, 0);
 }
 
 .filter-radio legend {
@@ -2089,6 +2123,7 @@ footer .decoration-line {
 /*-----Кнопка показать в фильтре-----*/
 .filter-button {
   position: relative;
+  top: 46px;
   padding: 11px 40px;
   z-index: 0; 
   background-color: transparent;
