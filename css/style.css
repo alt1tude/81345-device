@@ -381,6 +381,7 @@ input[type="radio"].visually-hidden {
 .menu-catalog {
   position: relative;
   width: 25%;
+
 }
 
 .menu-title {  
@@ -404,23 +405,33 @@ input[type="radio"].visually-hidden {
 
 .menu-list {  
   width: 1040px;
-  top: 55px;
-  left: 0;
-  max-height: 0;
-  overflow: hidden;
+  height: 160px;
+ 
   flex-direction: column;  
   flex-wrap: wrap;
   background-color: rgb(247, 226, 150);
+  display: flex;  
   /*display: none;*/
-  position: absolute; 
-  z-index: 2; 
-  /*padding-top: 25px;*/
-  transition: all 0.2s linear;
+  padding-top: 25px;
+  transform: translateY(-100%);
+  transition: all 0.3s linear;
 }
 
-.menu-wrap:hover .menu-list { 
-  max-height: 160px; 
-  display: flex;
+.menu-list-wrap {
+  position: absolute; 
+  overflow: hidden;
+  z-index: 2;
+
+  outline: 1px solid black;
+}
+
+.menu-wrap {
+  outline: 1px solid black;
+}
+
+.menu-wrap:hover .menu-list {
+  transform: translateY(0); 
+  display: flex;  
 }
 
 .menu-list li {
@@ -2054,7 +2065,6 @@ footer .decoration-line {
 .filter-radio {
   position: relative;
   top: 26px;
-  margin-bottom: 20px;
 }
 
 .filter-radio::before {
