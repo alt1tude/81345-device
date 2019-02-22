@@ -205,7 +205,8 @@ input[type="radio"].visually-hidden {
 .search-form input[type="submit"]:hover,
 .search-form input[type="submit"]:focus {
   color: rgb(255, 255, 255);
-  background-color: rgb(0, 0, 0);     	
+  background-color: rgb(0, 0, 0);
+  display: block;     	
 }
 
 .search-form input[type="submit"]:active {
@@ -219,7 +220,7 @@ input[type="radio"].visually-hidden {
 }
 
 .search-form input[type="text"]:focus ~ input[type="submit"] {
-  display: flex;
+  display: block;
 }
 
 .btn-style {
@@ -381,7 +382,6 @@ input[type="radio"].visually-hidden {
 .menu-catalog {
   position: relative;
   width: 25%;
-
 }
 
 .menu-title {  
@@ -410,28 +410,23 @@ input[type="radio"].visually-hidden {
   flex-direction: column;  
   flex-wrap: wrap;
   background-color: rgb(247, 226, 150);
-  display: flex;  
-  /*display: none;*/
+  display: flex; 
+
   padding-top: 25px;
   transform: translateY(-100%);
-  transition: all 0.3s linear;
+  transition: all 0.2s linear;
 }
 
 .menu-list-wrap {
   position: absolute; 
   overflow: hidden;
   z-index: 2;
-
-  outline: 1px solid black;
 }
 
-.menu-wrap {
-  outline: 1px solid black;
-}
-
-.menu-wrap:hover .menu-list {
+.menu-title:hover + .menu-list-wrap .menu-list,
+.menu-title:focus + .menu-list-wrap .menu-list,
+.menu-list:hover {
   transform: translateY(0); 
-  display: flex;  
 }
 
 .menu-list li {
@@ -456,6 +451,7 @@ input[type="radio"].visually-hidden {
 .site-navigation a:active {
   color: rgba(0, 0, 0, 0.3);
 }
+
 
 /*-----Отсюда пошел основной слайдер-----*/
 .slider-main {
@@ -538,7 +534,7 @@ input[type="radio"].visually-hidden {
 .slider-main-item:nth-child(1) {
   background-image: url(../img/slider-1.png);
   background-repeat: no-repeat;
-  background-position: 30px 5px;
+  background-position: 30px 0;
 }
 
 .slider-main-item:nth-child(2) {
@@ -562,10 +558,16 @@ input[type="radio"].visually-hidden {
   font-style: normal;
   font-weight: 700; 
   font-size: 47px;
-  line-height: 56px;  
+  line-height: 56px;
+   
   margin: 0;
   padding: 0;
-  margin-bottom: 18px;  
+  margin-bottom: 18px;
+}
+
+.main-slide1 h3, 
+.main-slide2 h3 {
+  width: 390px;
 }
 
 .slider-main-item p {
@@ -615,16 +617,17 @@ input[type="radio"].visually-hidden {
   color: rgba(0, 0, 0, 0.3);   
 } 
 
-.slide-item-features .feature {
-  color: rgb(0, 0, 0);
+.slide-item-features {
+  border-collapse: collapse;
+}
 
-  font-family: "Gilroy Light", Arial, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 36px;
-  line-height: 48px;
-  margin-bottom: 10px
+.slide-item-features td {
+  text-align: left;
+  padding-right: 75px;
+}
 
+.slide-item-features td:last-child {
+  padding-right: 0;
 }
 
 .slide-item-features .title {
@@ -633,20 +636,19 @@ input[type="radio"].visually-hidden {
   font-family: "Gilroy Light", Arial, sans-serif;
   font-style: normal;
   font-weight: 400;
+  font-size: 36px;
+  line-height: 48px;
+  margin-bottom: 10px
+}
+
+.slide-item-features .feature {
+  color: rgb(0, 0, 0);
+
+  font-family: "Gilroy Light", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
   font-size: 13px;
   line-height: 20px;
-}
-
-.slide-item-features {
-  display: flex;  
-}
-
-.slide-item-features .description {
-  margin-right: 78px;
-}
-
-.slide-item-features .description:last-child {
-  margin-right: auto;
 }
 
 .slider-main-controls {
@@ -791,8 +793,9 @@ input[type="radio"].visually-hidden {
   line-height: 24px;  
   width: 160px;
   margin: 0;
-  padding: 0;  
+  padding: 0;
 }
+
 
 /*-----Отсюда пошел 2й слайдер, слайдер сервисов-----*/
 .slider-services {
@@ -1710,7 +1713,6 @@ footer .decoration-line {
 }
 
 
-
 /*-----Отсюда идет все по странице каталога-----*/
 .inner-page header {
   padding-bottom: 48px;
@@ -1722,8 +1724,7 @@ footer .decoration-line {
 }
 
 .inner-page main {
-  width: 1160px;
-  margin: 0 auto;
+  overflow: hidden;
 }
 
 .inner-page .login-link a {
@@ -1734,10 +1735,19 @@ footer .decoration-line {
   margin-bottom: 58px;
 }
 
+.inner-page .menu-list-wrap {    
+  left: -60px;
+}
+
 .inner-page .menu-list {
   width: 1160px;
-  left: -60px;
-  padding-left: 60px;    
+  padding-left: 60px;
+  padding-right: 60px;  
+}
+
+.inner-page .container {
+  width: 1160px;
+  margin: 0 auto;
 }
 
 .page-title {
@@ -1812,6 +1822,8 @@ footer .decoration-line {
 }
 
 .catalog-columns {
+  width: 1160px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;    
 }
@@ -1832,7 +1844,6 @@ footer .decoration-line {
   top: 0;
   right: 270px;  
   background-color: rgb(238, 238, 238);
-  /*overflow: hidden;*/
 }
 
 .filters h2 {
@@ -1862,14 +1873,13 @@ footer .decoration-line {
   right: 0;
   z-index: -1;
   background-color: rgb(220, 220, 220);
-  /*overflow: hidden;*/  
 }
 
 .filters h2::after {
   content: "";
 
   position: absolute;
-  width: 1500px;
+  width: 1770px;
   height: 100%;
   top: 0;
   left: 270px; 
@@ -2059,7 +2069,7 @@ footer .decoration-line {
 
 .filter-input-checkbox + label:hover::before,
 .filter-input-checkbox:checked + label:hover::after {
- opacity: 0.6;
+  opacity: 0.6;
 }
 
 .filter-radio {
@@ -2242,7 +2252,6 @@ footer .decoration-line {
 }
 
 .icon-up a {
-  color: transparent;
   background-image: url(../img/icon-up-dir.svg);
   background-repeat: no-repeat;
   background-position: 0 50%;
@@ -2262,7 +2271,6 @@ footer .decoration-line {
 }
 
 .icon-down a {
-  color: transparent;
   background-image: url(../img/icon-down-dir.svg);
   background-repeat: no-repeat;
   background-position: 0 50%;  
@@ -2274,6 +2282,7 @@ footer .decoration-line {
 }
 
 .catalog-item {
+  position: relative;
   width: 360px; 
   margin-bottom: 44px;
 }
@@ -2290,10 +2299,10 @@ footer .decoration-line {
 .product-wrap {
   position: relative;
   z-index: 0;
-  margin-bottom: 24px; 
+  margin-bottom: 24px;
 }
 
-.product-wrap img:hover {
+.product-wrap:hover img {
   opacity: 0.7;
   -webkit-filter: grayscale(100%); 
   -webkit-filter: grayscale(1); 
@@ -2316,7 +2325,7 @@ footer .decoration-line {
   flex-direction: column;
   justify-content: center;
   display: none;
-  z-index: 1;  
+  z-index: 1;
 }
 
 .product-wrap:hover .product-button-wrap {
@@ -2335,7 +2344,7 @@ footer .decoration-line {
   font-style: normal;
   font-weight: 700;
   font-size: 18px;
-  line-height: 24px;  
+  line-height: 24px;
 }
 
 .item-price {
@@ -2406,33 +2415,32 @@ footer .decoration-line {
   color: rgba(0, 0, 0, 0.2);
 }
 
-.flag span {
-  color: rgba(0, 0, 0, 0.2);
+/*-----Метка New-----*/
+.flag-new::after {
+  position: absolute;
 
+  content: "NEW";
+  top: 45px;
+  right: 40px;
+  color: rgba(0, 0, 0, 0.2);
   font-family: "Gilroy ExtraBold", Arial, sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 24px;
-  letter-spacing: 0.05em;
-  position: absolute;
-  top: 17px;
-  left: 12px;  
+  letter-spacing: 0.05em; 
 }
 
-.flag {
+.flag-new::before {
   position: absolute;
+
+  content: "";
   top: 27px;
   right: 27px;    
   width: 60px;
   height: 60px;
   border: 2px solid rgba(0, 0, 0, 0.2); 
   border-radius: 50%;
-  display: none;  
-}
-
-.flag-new {
-  display: block;
 }
 
 /*-----Пагинация------*/

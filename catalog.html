@@ -26,17 +26,25 @@
       
     <div class="header-middle">
       <div class="menu-catalog">
-        <div class="menu-wrap">
+
+      <div class="menu-wrap">
         <a class="btn-style menu-title" href="catalog.html">Каталог товаров</a>
-        <ul class="menu-list">   
-          <li><a href="#">Виртуальная реальность</a></li>
-          <li><a href="#">Моноподы для селфи</a></li>
-          <li><a href="#">Экшн-камеры</a></li>
-          <li><a href="#">Фитнес-браслеты</a></li>
-          <li><a href="#">Умные часы</a></li>
-          <li><a href="#">Квадрокоптеры</a></li>         
-        </ul>        
+      
+
+        <div class="menu-list-wrap">  
+          <ul class="menu-list">   
+            <li><a href="#">Виртуальная реальность</a></li>
+            <li><a href="#">Моноподы для селфи</a></li>
+            <li><a href="#">Экшн-камеры</a></li>
+            <li><a href="#">Фитнес-браслеты</a></li>
+            <li><a href="#">Умные часы</a></li>
+            <li><a href="#">Квадрокоптеры</a></li>         
+          </ul>
         </div>
+      
+      </div>
+       
+
       </div>
       <nav>
         <ul class="site-navigation">
@@ -45,18 +53,19 @@
           <li class="btn-style contacts"><a href="#">Контакты</a></li>
         </ul>
       </nav>
-    </div>    
+  </div>   
   </header>
 
 <main>
-  <h1 class="page-title">Моноподы для селфи</h1>    
+  <div class="container">
+    <h1 class="page-title">Моноподы для селфи</h1>    
 
-  <ul class="breadcrumbs">
-	  <li><a href="index.html">Главная</a></li>
-    <li><a href="#">Каталог товаров</a></li>
-    <li class="breadcrumbs-current"><a href="#">Моноподы для селфи</a></li>
-  </ul>
-  
+    <ul class="breadcrumbs">
+      <li><a href="index.html">Главная</a></li>
+      <li><a href="#">Каталог товаров</a></li>
+      <li class="breadcrumbs-current"><a href="#">Моноподы для селфи</a></li>
+    </ul>
+  </div>   
 <div class="catalog-columns">
 
 <section class="filters">          
@@ -139,27 +148,27 @@
 
 <h2 class="visually-hidden">Список девайсов для селфи</h2>
     
-  <section class="sorting">
-      <h2>СОРТИРОВКА:</h2>
-      <div class="sort-wrap">
-      <ul class="selection">
-        <li class="price current-selection"><a  href="#">По цене</a></li>
-        <li class="type"><a  href="#">По типу</a></li>              
-        <li class="best-selling"><a  href="#">По популярности</a></li>
-      </ul>
-      <ul class="sorting-icon">
-        <li class="icon-up"><a href="#">UP</a></li>
-        <li class="icon-down icon-currents"><a href="#">DOWN</a></li>
-      </ul>
-      </div>
-  </section>
+<section class="sorting">
+  <h2>СОРТИРОВКА:</h2>
+  <div class="sort-wrap">
+  <ul class="selection">
+    <li class="price current-selection"><a  href="#">По цене</a></li>
+    <li class="type"><a  href="#">По типу</a></li>              
+    <li class="best-selling"><a  href="#">По популярности</a></li>
+  </ul>
+  <ul class="sorting-icon">
+    <li class="icon-up"><a href="#">UP</a></li>
+    <li class="icon-down icon-currents"><a href="#">DOWN</a></li>
+  </ul>
+  </div>
+</section>
 
 <ul class="catalog-list">
           <li class="catalog-item">
             <div class="product-wrap">
-              
+              <a href="#catalog-item.html">
               <img src="img/item-1.jpg" width="360" height="380" alt="Любительская селфи-палка, 500 руб">
-              <div class="flag"><span>NEW</span></div>
+              </a>            
               <div class="product-button-wrap">
                 <button class="btn-style add-cart" type="button">В КОРЗИНУ</button>
                 <button class="add-compare" type="button">Добавьте к сравнению</button>
@@ -173,25 +182,25 @@
 
           <li class="catalog-item">
             <div class="product-wrap">
-              
+              <a href="#catalog-item.html">
               <img src="img/item-2.jpg" width="360" height="380" alt="Профессиональная селфи-палка, 1500 руб">
-              <div class="flag"><span>NEW</span></div>
+              </a>              
               <div class="product-button-wrap">
                 <button class="btn-style add-cart" type="button">В КОРЗИНУ</button>
                 <button class="add-compare" type="button">Добавьте к сравнению</button>
               </div>           
             </div>
             <div class="product-title-wrap">              
-                <a class="item-title" href="#catalog-item.html">Профессиональная<br> cелфи-палка</a>              
+                <a class="item-title" href="#catalog-item.html">Профессиональная cелфи-палка</a>              
                 <span class="item-price">1 500 руб.</span>
             </div>  
           </li>
 
           <li class="catalog-item">
             <div class="product-wrap">
-              
+              <a href="#catalog-item.html">
               <img src="img/item-3.jpg" width="360" height="380" alt="Непотопляемая селфи-палка, 2500 руб">
-              <div class="flag"><span>NEW</span></div>
+              </a>             
               <div class="product-button-wrap">
                 <button class="btn-style add-cart" type="button">В КОРЗИНУ</button>
                 <button class="add-compare" type="button">Добавьте к сравнению</button>
@@ -204,17 +213,17 @@
           </li>
 
           <li class="catalog-item">
-            <div class="product-wrap">
-              
+            <div class="product-wrap  flag-new">
+              <a href="#catalog-item.html">
               <img src="img/item-4.jpg" width="360" height="380" alt="Селфи-палка «Следуй за мной», 4500 руб">
-              <div class="flag flag-new"><span>NEW</span></div>
+              </a>             
               <div class="product-button-wrap">
                 <button class="btn-style add-cart" type="button">В КОРЗИНУ</button>
                 <button class="add-compare" type="button">Добавьте к сравнению</button>
               </div>           
             </div>
             <div class="product-title-wrap">              
-                <a class="item-title" href="#catalog-item.html">Селфи-палка «Следуй за<br> мной»</a>              
+                <a class="item-title" href="#catalog-item.html">Селфи-палка «Следуй за мной»</a>              
                 <span class="item-price">4 500 руб.</span>
             </div>  
           </li>
