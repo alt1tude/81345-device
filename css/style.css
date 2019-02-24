@@ -46,7 +46,6 @@ body {
   min-width: 1440px;
   margin: 0;
   padding: 0;
-
   font-family: "Open Sans Light", Arial, sans-serif;
   font-style: normal;
   font-weight: 300;
@@ -146,12 +145,12 @@ input[type="radio"].visually-hidden {
   transition: all 0.1s linear;  
 }
 
-/*Для Chrome работает без ::-webkit-input-placeholder. На Opera/Safari не проверялось*/
+/*Для Chrome работает без ::-webkit-input-placeholder.*/
 .search-form input[type="text"]::placeholder {
   color: rgba(0, 0, 0, 0.3);  
 }
 
- /*Загуглил для IE 10+*/
+ /*IE 10+*/
 .search-form :-ms-input-placeholder {
   color: rgba(0, 0, 0, 0.3); 
 }
@@ -185,7 +184,7 @@ input[type="radio"].visually-hidden {
 /*-----Кнопка "Найти"-----*/
 .search-form input[type="submit"] { 
   color: rgb(0, 0, 0);
-  
+
   font-family: "Open Sans Light", Arial, sans-serif;
   font-style: normal;
   font-weight: 300;
@@ -307,7 +306,6 @@ input[type="radio"].visually-hidden {
   width: 13px;
   height: 12px;
   top: 9px;
-
   background-image: url(../img/user.svg);
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -335,7 +333,6 @@ input[type="radio"].visually-hidden {
   width: 10px;
   height: 10px;
   top: 9px;
-
   background-image: url(../img/compare.svg);
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -363,7 +360,6 @@ input[type="radio"].visually-hidden {
   width: 12px;
   height: 12px;
   top: 9px;
-
   background-image: url(../img/cart.svg);
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -396,7 +392,6 @@ input[type="radio"].visually-hidden {
   height: 16px;
   top: 2px;
   margin-left: 10px; 
-
   background-image: url(../img/plus.svg);
   background-repeat: no-repeat;
   background-position: 0 0;
@@ -407,11 +402,10 @@ input[type="radio"].visually-hidden {
   width: 1040px;
   height: 160px;
  
+  display: flex;
   flex-direction: column;  
   flex-wrap: wrap;
-  background-color: rgb(247, 226, 150);
-  display: flex; 
-
+  background-color: rgb(247, 226, 150);   
   padding-top: 25px;
   transform: translateY(-100%);
   transition: all 0.2s linear;
@@ -451,7 +445,6 @@ input[type="radio"].visually-hidden {
 .site-navigation a:active {
   color: rgba(0, 0, 0, 0.3);
 }
-
 
 /*-----Отсюда пошел основной слайдер-----*/
 .slider-main {
@@ -558,8 +551,7 @@ input[type="radio"].visually-hidden {
   font-style: normal;
   font-weight: 700; 
   font-size: 47px;
-  line-height: 56px;
-   
+  line-height: 56px;   
   margin: 0;
   padding: 0;
   margin-bottom: 18px;
@@ -578,7 +570,6 @@ input[type="radio"].visually-hidden {
   font-weight: 400;
   font-size: 15px;
   line-height: 30px;
-
   margin: 0;
   padding: 0;
   margin-bottom: 40px;
@@ -599,7 +590,7 @@ input[type="radio"].visually-hidden {
   width: 100%;
   height: 8px;
   top: 19px;
-  left: 0px;
+  left: 0;
   z-index: -1;
   transition: all 0.1s linear;  
   background-color: rgb(240, 197, 46);
@@ -608,8 +599,7 @@ input[type="radio"].visually-hidden {
 .slide-button:hover::before,
 .slide-button:focus::before {
   height: 100%;
-  top: 0px;
-
+  top: 0;
   background-color: rgb(240, 197, 46);
 }
 
@@ -638,7 +628,7 @@ input[type="radio"].visually-hidden {
   font-weight: 400;
   font-size: 36px;
   line-height: 48px;
-  margin-bottom: 10px
+  margin-bottom: 10px;
 }
 
 .slide-item-features .feature {
@@ -796,7 +786,6 @@ input[type="radio"].visually-hidden {
   padding: 0;
 }
 
-
 /*-----Отсюда пошел 2й слайдер, слайдер сервисов-----*/
 .slider-services {
   margin: 0;
@@ -813,7 +802,6 @@ input[type="radio"].visually-hidden {
   display: flex; 
   justify-content: space-between;  
   margin: 0 auto;
-
 }
 
 .slider-services h3 {
@@ -1416,9 +1404,9 @@ footer .decoration-line {
 .instagramm,
 .twitter,
 .footer-copyright {
-  display: block;
-  font-size: 0;
   position: relative;
+  display: block;
+  font-size: 0;  
 }
 
 .facebook::before,
@@ -1711,7 +1699,6 @@ footer .decoration-line {
   animation-name: shake;
   animation-duration: 0.7s; 
 }
-
 
 /*-----Отсюда идет все по странице каталога-----*/
 .inner-page header {
@@ -2042,11 +2029,11 @@ footer .decoration-line {
 }
 
 .filter-input-checkbox + label::before {
-  content: "";
   position: absolute;
+
+  content: "";  
   top: 8px;
   left: -40px;
-
   width: 23px;
   height: 23px;
   background-image: url("../img/checkbox-off.svg");
@@ -2055,11 +2042,11 @@ footer .decoration-line {
 }
 
 .filter-input-checkbox:checked + label::after {
-  content: "";
   position: absolute;
+
+  content: "";  
   top: 8px;
   left: -40px;
-
   width: 27px;
   height: 23px;  
   background-image: url("../img/checkbox-on.svg");
@@ -2096,11 +2083,11 @@ footer .decoration-line {
 }
 
 .filter-input-radio + label::before {
-  content: "";
   position: absolute;
+
+  content: "";  
   top: 8px;
   left: -40px;
-
   width: 25px;
   height: 25px;  
   background-image: url("../img/radio-off.svg");
@@ -2109,11 +2096,11 @@ footer .decoration-line {
 }
 
 .filter-input-radio:checked + label::after {
-  content: "";
   position: absolute;
+
+  content: "";  
   top: 8px;
   left: -40px;
-
   width: 25px;
   height: 25px;  
   background-image: url("../img/radio-on.svg");
@@ -2151,9 +2138,9 @@ footer .decoration-line {
 }
 
 .filter-button::before {
-  content: "";
-
   position: absolute;
+
+  content: "";  
   width: 100%;
   height: 8px;
   top: 19px;
@@ -2223,14 +2210,14 @@ footer .decoration-line {
 }
 
 .current-selection a {
-   color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
 }
 
 .sort-wrap ul {  
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;    
+  display: flex;   
 }
 
 .selection li {
@@ -2242,8 +2229,6 @@ footer .decoration-line {
 }
 
 .sorting-icon li {
-  width: 11px;
-  height: 10px;
   margin-right: 19px;
 }
 
@@ -2251,11 +2236,25 @@ footer .decoration-line {
   margin-right: auto;
 }
 
+.sorting-icon a {
+  width: 11px;
+  height: 10px;
+  display: inline-block;
+  text-indent: 900px;
+  overflow: hidden;
+}
+
 .icon-up a {
   background-image: url(../img/icon-up-dir.svg);
   background-repeat: no-repeat;
-  background-position: 0 50%;
-  opacity: 0.2; 
+  background-position: 0 0;
+  opacity: 0.2;
+}
+
+.icon-down a {
+  background-image: url(../img/icon-down-dir.svg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }
 
 .icon-up a:hover,
@@ -2268,12 +2267,6 @@ footer .decoration-line {
 .icon-up a:active,
 .icon-down a:active {
   opacity: 1;
-}
-
-.icon-down a {
-  background-image: url(../img/icon-down-dir.svg);
-  background-repeat: no-repeat;
-  background-position: 0 50%;  
 }
 
 /*-----Отсюда идут стили для карточек товара-----*/
@@ -2368,9 +2361,9 @@ footer .decoration-line {
 }
 
 .add-cart::before {
-  content: "";
-
   position: absolute;
+
+  content: "";  
   width: 100%;
   height: 8px;
   top: 16px;
@@ -2494,7 +2487,7 @@ footer .decoration-line {
 
 .pagination-item-prev a,
 .pagination-item-next a {
-   padding: 22px 30px;   
+  padding: 22px 30px;   
 }
 
 .pagination-item a:hover,
@@ -2510,8 +2503,8 @@ footer .decoration-line {
 .pagination-item-prev a:focus,
 .pagination-item-next a:hover,
 .pagination-item-next a:focus {
- background-color: rgb(217, 217, 217);
- color: rgb(0, 0, 0); 
+  background-color: rgb(217, 217, 217);
+  color: rgb(0, 0, 0); 
 }
 
 .pagination-item-prev a:active,
