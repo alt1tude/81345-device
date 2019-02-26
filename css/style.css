@@ -648,7 +648,7 @@ input[type="radio"].visually-hidden {
   position: relative;  
   padding: 11px 44px;
   z-index: 0;
-  margin-bottom: 47px;  
+  margin-bottom: 47px;
 }
 
 .slide-button::before {
@@ -719,9 +719,9 @@ input[type="radio"].visually-hidden {
   right: 84px;
   z-index: 2;  
   font-size: 0;  
-  display: -webkit-inline-box;  
-  display: -ms-inline-flexbox;  
-  display: inline-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;  
+  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;  
@@ -2184,6 +2184,11 @@ footer .decoration-line {
   cursor: pointer;    
 }
 
+.range-controls .toggle:active {
+  width: 24px;
+  height: 24px; 
+}
+
 .range-controls .toggle-min {
   left: -8px;
 }
@@ -2484,6 +2489,7 @@ footer .decoration-line {
   width: 11px;
   height: 10px;
   display: inline-block;
+  vertical-align: middle; 
   text-indent: 900px;
   overflow: hidden;
 }
