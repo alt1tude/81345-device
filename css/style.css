@@ -344,7 +344,7 @@ input[type="radio"].visually-hidden {
   position: relative;    
 }
 
-.header-top .login-link a {
+.main-page .header-top .login-link a {
   padding-left: 27px;
 }
 
@@ -1482,7 +1482,7 @@ input[type="radio"].visually-hidden {
   position: relative;    
 }
 
-.footer-top .login-link a {
+.main-page .footer-top .login-link a {
   padding-left: 27px;
 }
 
@@ -1971,8 +1971,12 @@ input[type="radio"].visually-hidden {
   overflow: hidden;
 }
 
-.inner-page .login-link a {
-  padding-left: 24px;
+.inner-page .header-top .login-name {
+  padding-left: 26px;
+}
+
+.inner-page .header-top .login-exit {
+  margin-left: 20px;  
 }
 
 .inner-page .login-name::before {
@@ -2028,17 +2032,18 @@ input[type="radio"].visually-hidden {
   color: rgba(0, 0, 0, 0.3);
 }
 
-.inner-page .main-footer .login-link {
-  /*padding-left: 24px;*/
-}
-
 .inner-page .main-footer .login-name,
 .inner-page .main-footer .user-compare a,
 .inner-page .main-footer .user-order a {
   color: rgba(255, 255, 255, 0.7);
 }
 
+.inner-page .main-footer .login-name {
+  padding-left: 24px;  
+}
+
 .inner-page .main-footer .login-exit {
+  margin-left: 18px;
   color: rgba(255, 255, 255, 0.3);
 }
 
@@ -2171,7 +2176,7 @@ input[type="radio"].visually-hidden {
   width: 4px;
   height: 7px;
   top: 13px;
-  right: -16px; 
+  right: -20px; 
   background-image: url(../img/nav-arrow.svg);
   background-repeat: no-repeat;
   background-position: 0 0;
